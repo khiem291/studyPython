@@ -7,19 +7,21 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 import unittest, time, re
 
-class Ddd(unittest.TestCase):
+class VerifyTitle(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Firefox()
         self.driver.implicitly_wait(30)
-        self.base_url = "https://www.google.com/"
+        self.base_url = "http://jsbin.com/?html,output"
         self.verificationErrors = []
         self.accept_next_alert = True
     
-    def test_ddd(self):
+    def test_verify_title(self):
         driver = self.driver
-        driver.get(self.base_url + "/?gws_rd=ssl")
-        driver.find_element_by_css_selector("a.gb_ga.gb_2").click()
-        driver.find_element_by_css_selector("#gb49 > span.gb_va").click()
+        driver.get("http://newtours.demoaut.com/")
+         = driver.title
+         print("${abc}")
+         try: self.assertEqual("Welcome: Mercury Tours", driver.title)
+         except AssertionError as e: self.verificationErrors.append(str(e))
     
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)
