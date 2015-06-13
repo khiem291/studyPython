@@ -1,0 +1,1518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20101124 21:16:43.004" generator="Robot 2.5.4 (Python 2.6.1 on darwin)">
+<suite source="/users/gturnquist/dropbox/python_testing_cookbook/code/05" name="05">
+<doc></doc>
+<metadata>
+</metadata>
+<suite source="/users/gturnquist/dropbox/python_testing_cookbook/code/05/recipe39.html" name="Recipe39">
+<doc></doc>
+<metadata>
+</metadata>
+<test critical="yes" name="Adding two items of the same kind with no sales tax" timeout="">
+<doc></doc>
+<kw type="kw" name="Adding items to cart" timeout="">
+<doc></doc>
+<arguments>
+<arg>frozen pizza</arg>
+<arg>2.50</arg>
+<arg>frozen pizza</arg>
+<arg>2.50</arg>
+<arg>0.0</arg>
+<arg>5.00</arg>
+</arguments>
+<kw type="kw" name="Add item" timeout="">
+<doc></doc>
+<arguments>
+<arg>${item1}</arg>
+<arg>${price1}</arg>
+</arguments>
+<kw type="kw" name="recipe39.Add Item To Cart" timeout="">
+<doc></doc>
+<arguments>
+<arg>${description}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.394" starttime="20101124 21:16:43.393"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.395" starttime="20101124 21:16:43.392"></status>
+</kw>
+<kw type="kw" name="Add item" timeout="">
+<doc></doc>
+<arguments>
+<arg>${item2}</arg>
+<arg>${price2}</arg>
+</arguments>
+<kw type="kw" name="recipe39.Add Item To Cart" timeout="">
+<doc></doc>
+<arguments>
+<arg>${description}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.398" starttime="20101124 21:16:43.396"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.398" starttime="20101124 21:16:43.395"></status>
+</kw>
+<kw type="kw" name="${calculated total} = recipe39.Get Total" timeout="">
+<doc></doc>
+<arguments>
+<arg>${tax}</arg>
+</arguments>
+<msg timestamp="20101124 21:16:43.399" level="INFO">${calculated total} = 5.00</msg>
+<status status="PASS" endtime="20101124 21:16:43.399" starttime="20101124 21:16:43.398"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal" timeout="">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${calculated total}</arg>
+<arg>${total}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.401" starttime="20101124 21:16:43.400"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.401" starttime="20101124 21:16:43.391"></status>
+</kw>
+<tags>
+</tags>
+<status status="PASS" endtime="20101124 21:16:43.402" starttime="20101124 21:16:43.390"></status>
+</test>
+<test critical="yes" name="Adding two items of the same kind with sales tax" timeout="">
+<doc></doc>
+<kw type="kw" name="Adding items to cart" timeout="">
+<doc></doc>
+<arguments>
+<arg>frozen pizza</arg>
+<arg>2.50</arg>
+<arg>frozen pizza</arg>
+<arg>2.50</arg>
+<arg>10.0</arg>
+<arg>5.50</arg>
+</arguments>
+<kw type="kw" name="Add item" timeout="">
+<doc></doc>
+<arguments>
+<arg>${item1}</arg>
+<arg>${price1}</arg>
+</arguments>
+<kw type="kw" name="recipe39.Add Item To Cart" timeout="">
+<doc></doc>
+<arguments>
+<arg>${description}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.408" starttime="20101124 21:16:43.407"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.408" starttime="20101124 21:16:43.406"></status>
+</kw>
+<kw type="kw" name="Add item" timeout="">
+<doc></doc>
+<arguments>
+<arg>${item2}</arg>
+<arg>${price2}</arg>
+</arguments>
+<kw type="kw" name="recipe39.Add Item To Cart" timeout="">
+<doc></doc>
+<arguments>
+<arg>${description}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.441" starttime="20101124 21:16:43.418"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.443" starttime="20101124 21:16:43.409"></status>
+</kw>
+<kw type="kw" name="${calculated total} = recipe39.Get Total" timeout="">
+<doc></doc>
+<arguments>
+<arg>${tax}</arg>
+</arguments>
+<msg timestamp="20101124 21:16:43.444" level="INFO">${calculated total} = 5.50</msg>
+<status status="PASS" endtime="20101124 21:16:43.444" starttime="20101124 21:16:43.443"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal" timeout="">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${calculated total}</arg>
+<arg>${total}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.445" starttime="20101124 21:16:43.444"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.445" starttime="20101124 21:16:43.405"></status>
+</kw>
+<tags>
+</tags>
+<status status="PASS" endtime="20101124 21:16:43.446" starttime="20101124 21:16:43.404"></status>
+</test>
+<test critical="yes" name="Adding two different items with no sales tax" timeout="">
+<doc></doc>
+<kw type="kw" name="Adding items to cart" timeout="">
+<doc></doc>
+<arguments>
+<arg>frozen pizza</arg>
+<arg>2.50</arg>
+<arg>carton of milk</arg>
+<arg>3.50</arg>
+<arg>0.0</arg>
+<arg>6.00</arg>
+</arguments>
+<kw type="kw" name="Add item" timeout="">
+<doc></doc>
+<arguments>
+<arg>${item1}</arg>
+<arg>${price1}</arg>
+</arguments>
+<kw type="kw" name="recipe39.Add Item To Cart" timeout="">
+<doc></doc>
+<arguments>
+<arg>${description}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.451" starttime="20101124 21:16:43.450"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.452" starttime="20101124 21:16:43.449"></status>
+</kw>
+<kw type="kw" name="Add item" timeout="">
+<doc></doc>
+<arguments>
+<arg>${item2}</arg>
+<arg>${price2}</arg>
+</arguments>
+<kw type="kw" name="recipe39.Add Item To Cart" timeout="">
+<doc></doc>
+<arguments>
+<arg>${description}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.455" starttime="20101124 21:16:43.454"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.455" starttime="20101124 21:16:43.453"></status>
+</kw>
+<kw type="kw" name="${calculated total} = recipe39.Get Total" timeout="">
+<doc></doc>
+<arguments>
+<arg>${tax}</arg>
+</arguments>
+<msg timestamp="20101124 21:16:43.457" level="INFO">${calculated total} = 6.00</msg>
+<status status="PASS" endtime="20101124 21:16:43.456" starttime="20101124 21:16:43.456"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal" timeout="">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${calculated total}</arg>
+<arg>${total}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.458" starttime="20101124 21:16:43.457"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.458" starttime="20101124 21:16:43.447"></status>
+</kw>
+<tags>
+</tags>
+<status status="PASS" endtime="20101124 21:16:43.458" starttime="20101124 21:16:43.446"></status>
+</test>
+<test critical="yes" name="Adding two different items with sales tax" timeout="">
+<doc></doc>
+<kw type="kw" name="Adding items to cart" timeout="">
+<doc></doc>
+<arguments>
+<arg>frozen pizza</arg>
+<arg>2.50</arg>
+<arg>carton of milk</arg>
+<arg>3.50</arg>
+<arg>10.0</arg>
+<arg>6.60</arg>
+</arguments>
+<kw type="kw" name="Add item" timeout="">
+<doc></doc>
+<arguments>
+<arg>${item1}</arg>
+<arg>${price1}</arg>
+</arguments>
+<kw type="kw" name="recipe39.Add Item To Cart" timeout="">
+<doc></doc>
+<arguments>
+<arg>${description}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.465" starttime="20101124 21:16:43.463"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.465" starttime="20101124 21:16:43.462"></status>
+</kw>
+<kw type="kw" name="Add item" timeout="">
+<doc></doc>
+<arguments>
+<arg>${item2}</arg>
+<arg>${price2}</arg>
+</arguments>
+<kw type="kw" name="recipe39.Add Item To Cart" timeout="">
+<doc></doc>
+<arguments>
+<arg>${description}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.467" starttime="20101124 21:16:43.467"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.468" starttime="20101124 21:16:43.466"></status>
+</kw>
+<kw type="kw" name="${calculated total} = recipe39.Get Total" timeout="">
+<doc></doc>
+<arguments>
+<arg>${tax}</arg>
+</arguments>
+<msg timestamp="20101124 21:16:43.469" level="INFO">${calculated total} = 6.60</msg>
+<status status="PASS" endtime="20101124 21:16:43.469" starttime="20101124 21:16:43.468"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal" timeout="">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${calculated total}</arg>
+<arg>${total}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.470" starttime="20101124 21:16:43.469"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.470" starttime="20101124 21:16:43.460"></status>
+</kw>
+<tags>
+</tags>
+<status status="PASS" endtime="20101124 21:16:43.471" starttime="20101124 21:16:43.459"></status>
+</test>
+<status status="PASS" endtime="20101124 21:16:43.471" starttime="20101124 21:16:43.387"></status>
+</suite>
+<suite source="/users/gturnquist/dropbox/python_testing_cookbook/code/05/recipe40.html" name="Recipe40">
+<doc></doc>
+<metadata>
+</metadata>
+<test critical="yes" name="Scenario: Seeing that an empty cart behaves correctly" timeout="">
+<doc></doc>
+<kw type="kw" name="Given an empty cart" timeout="">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="recipe40.Create Empty Cart" timeout="">
+<doc></doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.479" starttime="20101124 21:16:43.478"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.479" starttime="20101124 21:16:43.477"></status>
+</kw>
+<kw type="kw" name="Then item" timeout="">
+<doc></doc>
+<arguments>
+<arg>5</arg>
+<arg>is a</arg>
+<arg>ERROR</arg>
+</arguments>
+<kw type="kw" name="${fetched item} = recipe40.Lookup Item" timeout="">
+<doc></doc>
+<arguments>
+<arg>${index}</arg>
+</arguments>
+<msg timestamp="20101124 21:16:43.483" level="INFO">${fetched item} = ERROR</msg>
+<status status="PASS" endtime="20101124 21:16:43.483" starttime="20101124 21:16:43.482"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal" timeout="">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${description}</arg>
+<arg>${fetched item}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.484" starttime="20101124 21:16:43.483"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.484" starttime="20101124 21:16:43.479"></status>
+</kw>
+<kw type="kw" name="And price" timeout="">
+<doc></doc>
+<arguments>
+<arg>-2</arg>
+<arg>is</arg>
+<arg>ERROR</arg>
+</arguments>
+<kw type="kw" name="${calc price} = recipe40.Lookup Price" timeout="">
+<doc></doc>
+<arguments>
+<arg>${index}</arg>
+</arguments>
+<msg timestamp="20101124 21:16:43.489" level="INFO">${calc price} = ERROR</msg>
+<status status="PASS" endtime="20101124 21:16:43.486" starttime="20101124 21:16:43.486"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal" timeout="">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${calc price}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.490" starttime="20101124 21:16:43.489"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.490" starttime="20101124 21:16:43.484"></status>
+</kw>
+<kw type="kw" name="And the cart has" timeout="">
+<doc></doc>
+<arguments>
+<arg>0</arg>
+<arg>items</arg>
+</arguments>
+<kw type="kw" name="${size of cart} = recipe40.Size Of Cart" timeout="">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20101124 21:16:43.492" level="INFO">${size of cart} = 0</msg>
+<status status="PASS" endtime="20101124 21:16:43.492" starttime="20101124 21:16:43.491"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.492" starttime="20101124 21:16:43.490"></status>
+</kw>
+<kw type="kw" name="And the total cost with" timeout="">
+<doc></doc>
+<arguments>
+<arg>0</arg>
+<arg>% taxes is</arg>
+<arg>0.00</arg>
+</arguments>
+<kw type="kw" name="${calc total} = recipe40.Total" timeout="">
+<doc></doc>
+<arguments>
+<arg>${tax}</arg>
+</arguments>
+<msg timestamp="20101124 21:16:43.495" level="INFO">${calc total} = 0.00</msg>
+<status status="PASS" endtime="20101124 21:16:43.494" starttime="20101124 21:16:43.494"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal" timeout="">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${calc total}</arg>
+<arg>${total}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.495" starttime="20101124 21:16:43.495"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.496" starttime="20101124 21:16:43.493"></status>
+</kw>
+<kw type="kw" name="And the total cost with" timeout="">
+<doc></doc>
+<arguments>
+<arg>10</arg>
+<arg>% taxes is</arg>
+<arg>0.00</arg>
+</arguments>
+<kw type="kw" name="${calc total} = recipe40.Total" timeout="">
+<doc></doc>
+<arguments>
+<arg>${tax}</arg>
+</arguments>
+<msg timestamp="20101124 21:16:43.499" level="INFO">${calc total} = 0.00</msg>
+<status status="PASS" endtime="20101124 21:16:43.498" starttime="20101124 21:16:43.497"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal" timeout="">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${calc total}</arg>
+<arg>${total}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.500" starttime="20101124 21:16:43.499"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.500" starttime="20101124 21:16:43.496"></status>
+</kw>
+<tags>
+</tags>
+<status status="PASS" endtime="20101124 21:16:43.501" starttime="20101124 21:16:43.476"></status>
+</test>
+<test critical="yes" name="Scenario: Seeing a cart getting loaded with multiple of the same" timeout="">
+<doc></doc>
+<kw type="kw" name="Given an empty cart" timeout="">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="recipe40.Create Empty Cart" timeout="">
+<doc></doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.504" starttime="20101124 21:16:43.503"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.504" starttime="20101124 21:16:43.502"></status>
+</kw>
+<kw type="kw" name="When I add a" timeout="">
+<doc></doc>
+<arguments>
+<arg>carton of milk</arg>
+<arg>for</arg>
+<arg>2.50</arg>
+</arguments>
+<kw type="kw" name="recipe40.Add Item" timeout="">
+<doc></doc>
+<arguments>
+<arg>${description}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.506" starttime="20101124 21:16:43.505"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.506" starttime="20101124 21:16:43.504"></status>
+</kw>
+<kw type="kw" name="And I add a" timeout="">
+<doc></doc>
+<arguments>
+<arg>carton of milk</arg>
+<arg>for</arg>
+<arg>2.50</arg>
+</arguments>
+<kw type="kw" name="recipe40.Add Item" timeout="">
+<doc></doc>
+<arguments>
+<arg>${description}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.509" starttime="20101124 21:16:43.508"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.509" starttime="20101124 21:16:43.507"></status>
+</kw>
+<kw type="kw" name="Then item" timeout="">
+<doc></doc>
+<arguments>
+<arg>1</arg>
+<arg>is a</arg>
+<arg>carton of milk</arg>
+</arguments>
+<kw type="kw" name="${fetched item} = recipe40.Lookup Item" timeout="">
+<doc></doc>
+<arguments>
+<arg>${index}</arg>
+</arguments>
+<msg timestamp="20101124 21:16:43.512" level="INFO">${fetched item} = carton of milk</msg>
+<status status="PASS" endtime="20101124 21:16:43.512" starttime="20101124 21:16:43.511"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal" timeout="">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${description}</arg>
+<arg>${fetched item}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.513" starttime="20101124 21:16:43.512"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.513" starttime="20101124 21:16:43.509"></status>
+</kw>
+<kw type="kw" name="And price" timeout="">
+<doc></doc>
+<arguments>
+<arg>1</arg>
+<arg>is</arg>
+<arg>5.00</arg>
+</arguments>
+<kw type="kw" name="${calc price} = recipe40.Lookup Price" timeout="">
+<doc></doc>
+<arguments>
+<arg>${index}</arg>
+</arguments>
+<msg timestamp="20101124 21:16:43.516" level="INFO">${calc price} = 5.00</msg>
+<status status="PASS" endtime="20101124 21:16:43.515" starttime="20101124 21:16:43.514"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal" timeout="">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${calc price}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.518" starttime="20101124 21:16:43.517"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.518" starttime="20101124 21:16:43.513"></status>
+</kw>
+<kw type="kw" name="And the cart has" timeout="">
+<doc></doc>
+<arguments>
+<arg>2</arg>
+<arg>items</arg>
+</arguments>
+<kw type="kw" name="${size of cart} = recipe40.Size Of Cart" timeout="">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20101124 21:16:43.522" level="INFO">${size of cart} = 2</msg>
+<status status="PASS" endtime="20101124 21:16:43.522" starttime="20101124 21:16:43.521"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.522" starttime="20101124 21:16:43.519"></status>
+</kw>
+<kw type="kw" name="And the total cost with" timeout="">
+<doc></doc>
+<arguments>
+<arg>10</arg>
+<arg>% taxes is</arg>
+<arg>5.50</arg>
+</arguments>
+<kw type="kw" name="${calc total} = recipe40.Total" timeout="">
+<doc></doc>
+<arguments>
+<arg>${tax}</arg>
+</arguments>
+<msg timestamp="20101124 21:16:43.525" level="INFO">${calc total} = 5.50</msg>
+<status status="PASS" endtime="20101124 21:16:43.525" starttime="20101124 21:16:43.524"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal" timeout="">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${calc total}</arg>
+<arg>${total}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.526" starttime="20101124 21:16:43.525"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.527" starttime="20101124 21:16:43.522"></status>
+</kw>
+<tags>
+</tags>
+<status status="PASS" endtime="20101124 21:16:43.527" starttime="20101124 21:16:43.501"></status>
+</test>
+<test critical="yes" name="Scenario: Seeing a cart getting loaded with different items" timeout="">
+<doc></doc>
+<kw type="kw" name="Given an empty cart" timeout="">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="recipe40.Create Empty Cart" timeout="">
+<doc></doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.531" starttime="20101124 21:16:43.531"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.531" starttime="20101124 21:16:43.530"></status>
+</kw>
+<kw type="kw" name="When I add a" timeout="">
+<doc></doc>
+<arguments>
+<arg>carton of milk</arg>
+<arg>for</arg>
+<arg>2.50</arg>
+</arguments>
+<kw type="kw" name="recipe40.Add Item" timeout="">
+<doc></doc>
+<arguments>
+<arg>${description}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.534" starttime="20101124 21:16:43.533"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.534" starttime="20101124 21:16:43.532"></status>
+</kw>
+<kw type="kw" name="And I add a" timeout="">
+<doc></doc>
+<arguments>
+<arg>frozen pizza</arg>
+<arg>for</arg>
+<arg>3.00</arg>
+</arguments>
+<kw type="kw" name="recipe40.Add Item" timeout="">
+<doc></doc>
+<arguments>
+<arg>${description}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.537" starttime="20101124 21:16:43.536"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.537" starttime="20101124 21:16:43.535"></status>
+</kw>
+<kw type="kw" name="Then item" timeout="">
+<doc></doc>
+<arguments>
+<arg>1</arg>
+<arg>is a</arg>
+<arg>carton of milk</arg>
+</arguments>
+<kw type="kw" name="${fetched item} = recipe40.Lookup Item" timeout="">
+<doc></doc>
+<arguments>
+<arg>${index}</arg>
+</arguments>
+<msg timestamp="20101124 21:16:43.542" level="INFO">${fetched item} = carton of milk</msg>
+<status status="PASS" endtime="20101124 21:16:43.542" starttime="20101124 21:16:43.542"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal" timeout="">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${description}</arg>
+<arg>${fetched item}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.544" starttime="20101124 21:16:43.543"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.544" starttime="20101124 21:16:43.540"></status>
+</kw>
+<kw type="kw" name="And item" timeout="">
+<doc></doc>
+<arguments>
+<arg>2</arg>
+<arg>is a</arg>
+<arg>frozen pizza</arg>
+</arguments>
+<kw type="kw" name="Then item" timeout="">
+<doc></doc>
+<arguments>
+<arg>${index}</arg>
+<arg>${noop}</arg>
+<arg>${description}</arg>
+</arguments>
+<kw type="kw" name="${fetched item} = recipe40.Lookup Item" timeout="">
+<doc></doc>
+<arguments>
+<arg>${index}</arg>
+</arguments>
+<msg timestamp="20101124 21:16:43.548" level="INFO">${fetched item} = frozen pizza</msg>
+<status status="PASS" endtime="20101124 21:16:43.548" starttime="20101124 21:16:43.547"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal" timeout="">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${description}</arg>
+<arg>${fetched item}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.552" starttime="20101124 21:16:43.552"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.553" starttime="20101124 21:16:43.546"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.554" starttime="20101124 21:16:43.545"></status>
+</kw>
+<kw type="kw" name="And price" timeout="">
+<doc></doc>
+<arguments>
+<arg>1</arg>
+<arg>is</arg>
+<arg>2.50</arg>
+</arguments>
+<kw type="kw" name="${calc price} = recipe40.Lookup Price" timeout="">
+<doc></doc>
+<arguments>
+<arg>${index}</arg>
+</arguments>
+<msg timestamp="20101124 21:16:43.557" level="INFO">${calc price} = 2.50</msg>
+<status status="PASS" endtime="20101124 21:16:43.556" starttime="20101124 21:16:43.555"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal" timeout="">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${calc price}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.558" starttime="20101124 21:16:43.557"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.558" starttime="20101124 21:16:43.554"></status>
+</kw>
+<kw type="kw" name="And price" timeout="">
+<doc></doc>
+<arguments>
+<arg>2</arg>
+<arg>is</arg>
+<arg>3.00</arg>
+</arguments>
+<kw type="kw" name="${calc price} = recipe40.Lookup Price" timeout="">
+<doc></doc>
+<arguments>
+<arg>${index}</arg>
+</arguments>
+<msg timestamp="20101124 21:16:43.561" level="INFO">${calc price} = 3.00</msg>
+<status status="PASS" endtime="20101124 21:16:43.561" starttime="20101124 21:16:43.560"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal" timeout="">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${calc price}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.562" starttime="20101124 21:16:43.561"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.562" starttime="20101124 21:16:43.559"></status>
+</kw>
+<kw type="kw" name="And the total cost with" timeout="">
+<doc></doc>
+<arguments>
+<arg>0</arg>
+<arg>% taxes is</arg>
+<arg>5.50</arg>
+</arguments>
+<kw type="kw" name="${calc total} = recipe40.Total" timeout="">
+<doc></doc>
+<arguments>
+<arg>${tax}</arg>
+</arguments>
+<msg timestamp="20101124 21:16:43.564" level="INFO">${calc total} = 5.50</msg>
+<status status="PASS" endtime="20101124 21:16:43.564" starttime="20101124 21:16:43.564"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal" timeout="">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${calc total}</arg>
+<arg>${total}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.566" starttime="20101124 21:16:43.565"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.566" starttime="20101124 21:16:43.563"></status>
+</kw>
+<kw type="kw" name="And the total cost with" timeout="">
+<doc></doc>
+<arguments>
+<arg>10</arg>
+<arg>% taxes is</arg>
+<arg>6.05</arg>
+</arguments>
+<kw type="kw" name="${calc total} = recipe40.Total" timeout="">
+<doc></doc>
+<arguments>
+<arg>${tax}</arg>
+</arguments>
+<msg timestamp="20101124 21:16:43.569" level="INFO">${calc total} = 6.05</msg>
+<status status="PASS" endtime="20101124 21:16:43.569" starttime="20101124 21:16:43.568"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal" timeout="">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${calc total}</arg>
+<arg>${total}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.570" starttime="20101124 21:16:43.569"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.571" starttime="20101124 21:16:43.566"></status>
+</kw>
+<tags>
+</tags>
+<status status="PASS" endtime="20101124 21:16:43.571" starttime="20101124 21:16:43.527"></status>
+</test>
+<status status="PASS" endtime="20101124 21:16:43.572" starttime="20101124 21:16:43.472"></status>
+</suite>
+<suite source="/users/gturnquist/dropbox/python_testing_cookbook/code/05/recipe41.txt" name="Recipe41">
+<doc></doc>
+<metadata>
+</metadata>
+<test critical="yes" name="Simple check of adding one item" timeout="">
+<doc></doc>
+<kw type="kw" name="Given an empty cart" timeout="">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="recipe41.Create Empty Cart" timeout="">
+<doc></doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.579" starttime="20101124 21:16:43.578"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.579" starttime="20101124 21:16:43.578"></status>
+</kw>
+<kw type="kw" name="When I add a" timeout="">
+<doc></doc>
+<arguments>
+<arg>carton of milk</arg>
+<arg>for</arg>
+<arg>2.50</arg>
+</arguments>
+<kw type="kw" name="recipe41.Add Item" timeout="">
+<doc></doc>
+<arguments>
+<arg>${description}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.581" starttime="20101124 21:16:43.580"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.581" starttime="20101124 21:16:43.579"></status>
+</kw>
+<kw type="kw" name="Then the total with" timeout="">
+<doc></doc>
+<arguments>
+<arg>0</arg>
+<arg>% tax is</arg>
+<arg>2.50</arg>
+</arguments>
+<kw type="kw" name="${calc total} = recipe41.Total" timeout="">
+<doc></doc>
+<arguments>
+<arg>${tax}</arg>
+</arguments>
+<msg timestamp="20101124 21:16:43.583" level="INFO">${calc total} = 2.50</msg>
+<status status="PASS" endtime="20101124 21:16:43.583" starttime="20101124 21:16:43.582"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal" timeout="">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${calc total}</arg>
+<arg>${total}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.584" starttime="20101124 21:16:43.583"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.584" starttime="20101124 21:16:43.581"></status>
+</kw>
+<kw type="kw" name="And the total with" timeout="">
+<doc></doc>
+<arguments>
+<arg>10</arg>
+<arg>% tax is</arg>
+<arg>2.75</arg>
+</arguments>
+<kw type="kw" name="Then the total with" timeout="">
+<doc></doc>
+<arguments>
+<arg>${tax}</arg>
+<arg>${noop}</arg>
+<arg>${total}</arg>
+</arguments>
+<kw type="kw" name="${calc total} = recipe41.Total" timeout="">
+<doc></doc>
+<arguments>
+<arg>${tax}</arg>
+</arguments>
+<msg timestamp="20101124 21:16:43.588" level="INFO">${calc total} = 2.75</msg>
+<status status="PASS" endtime="20101124 21:16:43.587" starttime="20101124 21:16:43.587"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal" timeout="">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${calc total}</arg>
+<arg>${total}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.589" starttime="20101124 21:16:43.588"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.589" starttime="20101124 21:16:43.586"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.589" starttime="20101124 21:16:43.585"></status>
+</kw>
+<tags>
+</tags>
+<status status="PASS" endtime="20101124 21:16:43.589" starttime="20101124 21:16:43.577"></status>
+</test>
+<test critical="yes" name="More complex by storing cart to database" timeout="">
+<doc>This test case has special tagging, so it can be excluded. This is in case the developer doesn't have the right database system installed to interact properly.cart.db</doc>
+<kw type="kw" name="Given an empty cart" timeout="">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="recipe41.Create Empty Cart" timeout="">
+<doc></doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.594" starttime="20101124 21:16:43.594"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.595" starttime="20101124 21:16:43.593"></status>
+</kw>
+<kw type="kw" name="When I add a" timeout="">
+<doc></doc>
+<arguments>
+<arg>carton of milk</arg>
+<arg>for</arg>
+<arg>2.50</arg>
+</arguments>
+<kw type="kw" name="recipe41.Add Item" timeout="">
+<doc></doc>
+<arguments>
+<arg>${description}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.598" starttime="20101124 21:16:43.597"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.598" starttime="20101124 21:16:43.595"></status>
+</kw>
+<kw type="kw" name="And I add a" timeout="">
+<doc></doc>
+<arguments>
+<arg>frozen pizza</arg>
+<arg>for</arg>
+<arg>3.50</arg>
+</arguments>
+<kw type="kw" name="recipe41.Add Item" timeout="">
+<doc></doc>
+<arguments>
+<arg>${description}</arg>
+<arg>${price}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.600" starttime="20101124 21:16:43.600"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.601" starttime="20101124 21:16:43.599"></status>
+</kw>
+<kw type="kw" name="And I store the cart" timeout="">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="BuiltIn.Set Test Variable" timeout="">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${cart id}</arg>
+<arg>store cart</arg>
+</arguments>
+<msg timestamp="20101124 21:16:43.603" level="INFO">${cart id} = store cart</msg>
+<status status="PASS" endtime="20101124 21:16:43.603" starttime="20101124 21:16:43.602"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.604" starttime="20101124 21:16:43.601"></status>
+</kw>
+<kw type="kw" name="And I retrieve the cart" timeout="">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="recipe41.Retrieve Cart" timeout="">
+<doc></doc>
+<arguments>
+<arg>${cart id}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.608" starttime="20101124 21:16:43.607"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.608" starttime="20101124 21:16:43.605"></status>
+</kw>
+<kw type="kw" name="Then there are" timeout="">
+<doc></doc>
+<arguments>
+<arg>2</arg>
+<arg>items</arg>
+</arguments>
+<kw type="kw" name="${calc size} = recipe41.Size Of Cart" timeout="">
+<doc></doc>
+<arguments>
+</arguments>
+<msg timestamp="20101124 21:16:43.611" level="INFO">${calc size} = 2</msg>
+<status status="PASS" endtime="20101124 21:16:43.610" starttime="20101124 21:16:43.610"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Be Equal As Numbers" timeout="">
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<arguments>
+<arg>${calc size}</arg>
+<arg>${size}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:43.616" starttime="20101124 21:16:43.616"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:43.617" starttime="20101124 21:16:43.609"></status>
+</kw>
+<tags>
+<tag>database</tag>
+</tags>
+<status status="PASS" endtime="20101124 21:16:43.617" starttime="20101124 21:16:43.590"></status>
+</test>
+<status status="PASS" endtime="20101124 21:16:43.618" starttime="20101124 21:16:43.572"></status>
+</suite>
+<suite source="/users/gturnquist/dropbox/python_testing_cookbook/code/05/recipe42.txt" name="Recipe42">
+<doc></doc>
+<metadata>
+</metadata>
+<kw type="setup" name="Startup" timeout="">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="SeleniumLibrary.Start Selenium Server" timeout="">
+<doc>Starts the Selenium Server provided with SeleniumLibrary.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20101124 21:16:43.677" level="INFO">Selenium Server started with command "java -jar /Users/gturnquist/ptc/lib/python2.6/site-packages/SeleniumLibrary/lib/selenium-server.jar -port 4444 -firefoxProfileTemplate /Users/gturnquist/ptc/lib/python2.6/site-packages/SeleniumLibrary/firefoxprofile"</msg>
+<msg timestamp="20101124 21:16:43.677" html="yes" level="INFO">Selenium server log is written to &lt;a href="file:///users/gturnquist/dropbox/python_testing_cookbook/code/05/selenium_server_log.txt"&gt;/users/gturnquist/dropbox/python_testing_cookbook/code/05/selenium_server_log.txt&lt;/a&gt;.</msg>
+<status status="PASS" endtime="20101124 21:16:43.678" starttime="20101124 21:16:43.665"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Sleep" timeout="">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20101124 21:16:46.697" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20101124 21:16:46.698" starttime="20101124 21:16:43.693"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:16:46.698" starttime="20101124 21:16:43.664"></status>
+</kw>
+<test critical="yes" name="Inspect empty cart in detail" timeout="">
+<doc></doc>
+<kw type="setup" name="SeleniumLibrary.Open Browser" timeout="">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>http://localhost:8000</arg>
+</arguments>
+<msg timestamp="20101124 21:16:55.913" level="INFO">Opening browser 'firefox' to base url 'http://localhost:8000'</msg>
+<status status="PASS" endtime="20101124 21:16:55.913" starttime="20101124 21:16:46.700"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Click Link" timeout="">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>Cart</arg>
+</arguments>
+<msg timestamp="20101124 21:16:56.096" level="INFO">Clicking link 'Cart'.</msg>
+<status status="PASS" endtime="20101124 21:16:56.096" starttime="20101124 21:16:55.914"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Page Should Contain" timeout="">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Your cart is empty</arg>
+</arguments>
+<msg timestamp="20101124 21:16:56.120" level="INFO">Current page contains text 'Your cart is empty'.</msg>
+<status status="PASS" endtime="20101124 21:16:56.120" starttime="20101124 21:16:56.097"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Page Should Contain" timeout="">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>0 - $0.00</arg>
+</arguments>
+<msg timestamp="20101124 21:16:56.141" level="INFO">Current page contains text '0 - $0.00'.</msg>
+<status status="PASS" endtime="20101124 21:16:56.141" starttime="20101124 21:16:56.121"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Capture Page Screenshot" timeout="">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>recipe42-scenario1-1.png</arg>
+</arguments>
+<msg timestamp="20101124 21:16:56.266" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="recipe42-scenario1-1.png"&gt;&lt;img src="recipe42-scenario1-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20101124 21:16:56.267" starttime="20101124 21:16:56.141"></status>
+</kw>
+<kw type="teardown" name="SeleniumLibrary.Close All Browsers" timeout="">
+<doc>Closes all open browsers and empties the connection cache.</doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20101124 21:16:56.353" starttime="20101124 21:16:56.267"></status>
+</kw>
+<tags>
+</tags>
+<status status="PASS" endtime="20101124 21:16:56.353" starttime="20101124 21:16:46.698"></status>
+</test>
+<test critical="yes" name="Load up a cart with 2 of the same" timeout="">
+<doc></doc>
+<kw type="setup" name="SeleniumLibrary.Open Browser" timeout="">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>http://localhost:8000</arg>
+</arguments>
+<msg timestamp="20101124 21:17:04.836" level="INFO">Opening browser 'firefox' to base url 'http://localhost:8000'</msg>
+<status status="PASS" endtime="20101124 21:17:04.837" starttime="20101124 21:16:56.355"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Click Link" timeout="">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>Science Fiction</arg>
+<arg>don't wait</arg>
+</arguments>
+<msg timestamp="20101124 21:17:04.885" level="INFO">Clicking link 'Science Fiction'.</msg>
+<status status="PASS" endtime="20101124 21:17:04.886" starttime="20101124 21:17:04.837"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Capture Page Screenshot" timeout="">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>recipe42-scenario2-1.png</arg>
+</arguments>
+<msg timestamp="20101124 21:17:05.002" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="recipe42-scenario2-1.png"&gt;&lt;img src="recipe42-scenario2-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20101124 21:17:05.003" starttime="20101124 21:17:04.886"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Click Link" timeout="">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>Robots Attack!</arg>
+</arguments>
+<msg timestamp="20101124 21:17:05.449" level="INFO">Clicking link 'Robots Attack!'.</msg>
+<status status="PASS" endtime="20101124 21:17:05.449" starttime="20101124 21:17:05.003"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Capture Page Screenshot" timeout="">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>recipe42-scenario2-2.png</arg>
+</arguments>
+<msg timestamp="20101124 21:17:05.541" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="recipe42-scenario2-2.png"&gt;&lt;img src="recipe42-scenario2-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20101124 21:17:05.544" starttime="20101124 21:17:05.450"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Input Text" timeout="">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>quantity</arg>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20101124 21:17:05.573" level="INFO">Typing text '2' into text field 'quantity'</msg>
+<status status="PASS" endtime="20101124 21:17:05.573" starttime="20101124 21:17:05.546"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Capture Page Screenshot" timeout="">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>recipe42-scenario2-3.png</arg>
+</arguments>
+<msg timestamp="20101124 21:17:05.677" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="recipe42-scenario2-3.png"&gt;&lt;img src="recipe42-scenario2-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20101124 21:17:05.677" starttime="20101124 21:17:05.573"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Click Button" timeout="">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>Add to cart</arg>
+</arguments>
+<msg timestamp="20101124 21:17:06.070" level="INFO">Clicking button 'Add to cart'.</msg>
+<status status="PASS" endtime="20101124 21:17:06.070" starttime="20101124 21:17:05.677"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Click Link" timeout="">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>Cart</arg>
+</arguments>
+<msg timestamp="20101124 21:17:06.379" level="INFO">Clicking link 'Cart'.</msg>
+<status status="PASS" endtime="20101124 21:17:06.379" starttime="20101124 21:17:06.071"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Capture Page Screenshot" timeout="">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>recipe42-scenario2-4.png</arg>
+</arguments>
+<msg timestamp="20101124 21:17:06.494" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="recipe42-scenario2-4.png"&gt;&lt;img src="recipe42-scenario2-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20101124 21:17:06.494" starttime="20101124 21:17:06.379"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Textfield Value Should Be" timeout="">
+<doc>Verifies the value in text field identified by `locator` is exactly `expected`.</doc>
+<arguments>
+<arg>quantity</arg>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20101124 21:17:06.538" level="INFO">Content of text field 'quantity' is '2'.</msg>
+<status status="PASS" endtime="20101124 21:17:06.538" starttime="20101124 21:17:06.495"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Page Should Contain" timeout="">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Robots Attack! (Hard cover)</arg>
+</arguments>
+<msg timestamp="20101124 21:17:06.566" level="INFO">Current page contains text 'Robots Attack! (Hard cover)'.</msg>
+<status status="PASS" endtime="20101124 21:17:06.566" starttime="20101124 21:17:06.538"></status>
+</kw>
+<kw type="kw" name="Html Should Contain" timeout="">
+<doc></doc>
+<arguments>
+<arg>&lt;td align="center"&gt;$7.99&lt;/td&gt;</arg>
+</arguments>
+<kw type="kw" name="${html} = SeleniumLibrary.Get Source" timeout="">
+<doc>Returns the entire html source of the current page or frame.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20101124 21:17:06.606" level="INFO">${html} = &lt;head&gt;
+
+
+
+
+
+    
+    &lt;link rel="stylesheet" href="/static/css/style.css"&gt;
+    &lt;title&gt;Simple Satchmo&lt;/title&gt;
+    
+
+
+
+
+
+
+&lt;/head&gt;&lt;body&gt;
+    
+
+
+
+
+
+
+    &lt;div id="container"&gt;
+	    &lt;div id="top"&gt;
+	        &lt;h...</msg>
+<status status="PASS" endtime="20101124 21:17:06.605" starttime="20101124 21:17:06.568"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Contain" timeout="">
+<doc>Fails if `item1` does not contain `item2` one or more times.</doc>
+<arguments>
+<arg>${html}</arg>
+<arg>${expected}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:17:06.608" starttime="20101124 21:17:06.607"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:17:06.608" starttime="20101124 21:17:06.567"></status>
+</kw>
+<kw type="kw" name="Html Should Contain" timeout="">
+<doc></doc>
+<arguments>
+<arg>&lt;td align="center"&gt;$15.98&lt;/td&gt;</arg>
+</arguments>
+<kw type="kw" name="${html} = SeleniumLibrary.Get Source" timeout="">
+<doc>Returns the entire html source of the current page or frame.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20101124 21:17:06.744" level="INFO">${html} = &lt;head&gt;
+
+
+
+
+
+    
+    &lt;link rel="stylesheet" href="/static/css/style.css"&gt;
+    &lt;title&gt;Simple Satchmo&lt;/title&gt;
+    
+
+
+
+
+
+
+&lt;/head&gt;&lt;body&gt;
+    
+
+
+
+
+
+
+    &lt;div id="container"&gt;
+	    &lt;div id="top"&gt;
+	        &lt;h...</msg>
+<status status="PASS" endtime="20101124 21:17:06.743" starttime="20101124 21:17:06.610"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Contain" timeout="">
+<doc>Fails if `item1` does not contain `item2` one or more times.</doc>
+<arguments>
+<arg>${html}</arg>
+<arg>${expected}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:17:06.745" starttime="20101124 21:17:06.744"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:17:06.745" starttime="20101124 21:17:06.609"></status>
+</kw>
+<kw type="kw" name="Html Should Contain" timeout="">
+<doc></doc>
+<arguments>
+<arg>&lt;td&gt;$15.98&lt;/td&gt;</arg>
+</arguments>
+<kw type="kw" name="${html} = SeleniumLibrary.Get Source" timeout="">
+<doc>Returns the entire html source of the current page or frame.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20101124 21:17:06.782" level="INFO">${html} = &lt;head&gt;
+
+
+
+
+
+    
+    &lt;link rel="stylesheet" href="/static/css/style.css"&gt;
+    &lt;title&gt;Simple Satchmo&lt;/title&gt;
+    
+
+
+
+
+
+
+&lt;/head&gt;&lt;body&gt;
+    
+
+
+
+
+
+
+    &lt;div id="container"&gt;
+	    &lt;div id="top"&gt;
+	        &lt;h...</msg>
+<status status="PASS" endtime="20101124 21:17:06.782" starttime="20101124 21:17:06.747"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Contain" timeout="">
+<doc>Fails if `item1` does not contain `item2` one or more times.</doc>
+<arguments>
+<arg>${html}</arg>
+<arg>${expected}</arg>
+</arguments>
+<status status="PASS" endtime="20101124 21:17:06.784" starttime="20101124 21:17:06.783"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:17:06.784" starttime="20101124 21:17:06.746"></status>
+</kw>
+<kw type="teardown" name="SeleniumLibrary.Close All Browsers" timeout="">
+<doc>Closes all open browsers and empties the connection cache.</doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20101124 21:17:06.829" starttime="20101124 21:17:06.785"></status>
+</kw>
+<tags>
+</tags>
+<status status="PASS" endtime="20101124 21:17:06.829" starttime="20101124 21:16:56.354"></status>
+</test>
+<kw type="teardown" name="SeleniumLibrary.Stop Selenium Server" timeout="">
+<doc>Stops the selenium server (and closes all browsers).</doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20101124 21:17:06.836" starttime="20101124 21:17:06.831"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:17:06.837" starttime="20101124 21:16:43.618"></status>
+</suite>
+<suite source="/users/gturnquist/dropbox/python_testing_cookbook/code/05/recipe43.txt" name="Recipe43">
+<doc></doc>
+<metadata>
+</metadata>
+<kw type="setup" name="Startup" timeout="">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="SeleniumLibrary.Start Selenium Server" timeout="">
+<doc>Starts the Selenium Server provided with SeleniumLibrary.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20101124 21:17:06.848" level="INFO">Selenium Server started with command "java -jar /Users/gturnquist/ptc/lib/python2.6/site-packages/SeleniumLibrary/lib/selenium-server.jar -port 4444 -firefoxProfileTemplate /Users/gturnquist/ptc/lib/python2.6/site-packages/SeleniumLibrary/firefoxprofile"</msg>
+<msg timestamp="20101124 21:17:06.848" html="yes" level="INFO">Selenium server log is written to &lt;a href="file:///users/gturnquist/dropbox/python_testing_cookbook/code/05/selenium_server_log.txt"&gt;/users/gturnquist/dropbox/python_testing_cookbook/code/05/selenium_server_log.txt&lt;/a&gt;.</msg>
+<status status="PASS" endtime="20101124 21:17:06.849" starttime="20101124 21:17:06.841"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Sleep" timeout="">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20101124 21:17:09.851" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20101124 21:17:09.851" starttime="20101124 21:17:06.850"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:17:09.851" starttime="20101124 21:17:06.840"></status>
+</kw>
+<test critical="yes" name="Logging in to the admin page" timeout="">
+<doc></doc>
+<kw type="kw" name="SeleniumLibrary.Open Browser" timeout="">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>http://localhost:8000/admin</arg>
+</arguments>
+<msg timestamp="20101124 21:17:18.832" level="INFO">Opening browser 'firefox' to base url 'http://localhost:8000/admin'</msg>
+<status status="PASS" endtime="20101124 21:17:18.832" starttime="20101124 21:17:09.853"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Input Text" timeout="">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username</arg>
+<arg>gturnquist</arg>
+</arguments>
+<msg timestamp="20101124 21:17:18.891" level="INFO">Typing text 'gturnquist' into text field 'username'</msg>
+<status status="PASS" endtime="20101124 21:17:18.892" starttime="20101124 21:17:18.832"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Input Text" timeout="">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>password</arg>
+</arguments>
+<msg timestamp="20101124 21:17:18.924" level="INFO">Typing text 'password' into text field 'password'</msg>
+<status status="PASS" endtime="20101124 21:17:18.924" starttime="20101124 21:17:18.892"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Submit Form" timeout="">
+<doc>Submits a form identified by `locator`.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20101124 21:17:19.321" level="INFO">Submitting form ''.</msg>
+<status status="PASS" endtime="20101124 21:17:19.322" starttime="20101124 21:17:18.924"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Page Should Contain Link" timeout="">
+<doc>Verifies link identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>Products</arg>
+</arguments>
+<msg timestamp="20101124 21:17:19.389" level="INFO">Current page contains link 'Products'.</msg>
+<status status="PASS" endtime="20101124 21:17:19.389" starttime="20101124 21:17:19.322"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Close All Browsers" timeout="">
+<doc>Closes all open browsers and empties the connection cache.</doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20101124 21:17:19.537" starttime="20101124 21:17:19.390"></status>
+</kw>
+<tags>
+</tags>
+<status status="PASS" endtime="20101124 21:17:19.538" starttime="20101124 21:17:09.852"></status>
+</test>
+<test critical="yes" name="Check product catalog" timeout="">
+<doc></doc>
+<kw type="kw" name="Given that I am logged in" timeout="">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="SeleniumLibrary.Open Browser" timeout="">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>http://localhost:8000/admin/</arg>
+</arguments>
+<msg timestamp="20101124 21:17:27.944" level="INFO">Opening browser 'firefox' to base url 'http://localhost:8000/admin/'</msg>
+<status status="PASS" endtime="20101124 21:17:27.944" starttime="20101124 21:17:19.540"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Input Text" timeout="">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username</arg>
+<arg>gturnquist</arg>
+</arguments>
+<msg timestamp="20101124 21:17:27.970" level="INFO">Typing text 'gturnquist' into text field 'username'</msg>
+<status status="PASS" endtime="20101124 21:17:27.970" starttime="20101124 21:17:27.945"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Input Text" timeout="">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>password</arg>
+<arg>password</arg>
+</arguments>
+<msg timestamp="20101124 21:17:27.994" level="INFO">Typing text 'password' into text field 'password'</msg>
+<status status="PASS" endtime="20101124 21:17:27.994" starttime="20101124 21:17:27.971"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Submit Form" timeout="">
+<doc>Submits a form identified by `locator`.</doc>
+<arguments>
+</arguments>
+<msg timestamp="20101124 21:17:28.448" level="INFO">Submitting form ''.</msg>
+<status status="PASS" endtime="20101124 21:17:28.449" starttime="20101124 21:17:27.995"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:17:28.449" starttime="20101124 21:17:19.540"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Click Link" timeout="">
+<doc>Clicks a link identified by locator.</doc>
+<arguments>
+<arg>Products</arg>
+</arguments>
+<msg timestamp="20101124 21:17:30.232" level="INFO">Clicking link 'Products'.</msg>
+<status status="PASS" endtime="20101124 21:17:30.232" starttime="20101124 21:17:28.449"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Capture Page Screenshot" timeout="">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>recipe43-scenario2-1.png</arg>
+</arguments>
+<msg timestamp="20101124 21:17:30.466" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="recipe43-scenario2-1.png"&gt;&lt;img src="recipe43-scenario2-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20101124 21:17:30.466" starttime="20101124 21:17:30.232"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Table Should Contain" timeout="">
+<doc>Verifies that the `expected content` can be found somewhere in the table.</doc>
+<arguments>
+<arg>result_list</arg>
+<arg>Robots Attack!</arg>
+</arguments>
+<msg timestamp="20101124 21:17:30.525" level="INFO">Current page contains element 'css=table#result_list:contains('Robots Attack!')'.</msg>
+<status status="PASS" endtime="20101124 21:17:30.526" starttime="20101124 21:17:30.467"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Table Row Should Contain" timeout="">
+<doc>Verifies that a specific table row contains the `expected_content`.</doc>
+<arguments>
+<arg>result_list</arg>
+<arg>4</arg>
+<arg>Robots Attack!</arg>
+</arguments>
+<msg timestamp="20101124 21:17:30.572" level="INFO">Current page contains element 'css=table#result_list tr:nth-child(4):contains('Robots Attack!')'.</msg>
+<status status="PASS" endtime="20101124 21:17:30.572" starttime="20101124 21:17:30.526"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Table Row Should Contain" timeout="">
+<doc>Verifies that a specific table row contains the `expected_content`.</doc>
+<arguments>
+<arg>result_list</arg>
+<arg>4</arg>
+<arg>7.99</arg>
+</arguments>
+<msg timestamp="20101124 21:17:30.610" level="INFO">Current page contains element 'css=table#result_list tr:nth-child(4):contains('7.99')'.</msg>
+<status status="PASS" endtime="20101124 21:17:30.611" starttime="20101124 21:17:30.573"></status>
+</kw>
+<kw type="kw" name="SeleniumLibrary.Close All Browsers" timeout="">
+<doc>Closes all open browsers and empties the connection cache.</doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20101124 21:17:30.653" starttime="20101124 21:17:30.611"></status>
+</kw>
+<tags>
+</tags>
+<status status="PASS" endtime="20101124 21:17:30.654" starttime="20101124 21:17:19.538"></status>
+</test>
+<kw type="teardown" name="SeleniumLibrary.Stop Selenium Server" timeout="">
+<doc>Stops the selenium server (and closes all browsers).</doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20101124 21:17:30.661" starttime="20101124 21:17:30.655"></status>
+</kw>
+<status status="PASS" endtime="20101124 21:17:30.661" starttime="20101124 21:17:06.838"></status>
+</suite>
+<status status="PASS" endtime="20101124 21:17:30.662" starttime="20101124 21:16:43.353"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="13">Critical Tests</stat>
+<stat fail="0" pass="13">All Tests</stat>
+</total>
+<tag>
+<stat info="" fail="0" pass="1">database</stat>
+</tag>
+<suite>
+<stat fail="0" doc="05" pass="13">05</stat>
+<stat fail="0" doc="05.Recipe39" pass="4">05.Recipe39</stat>
+<stat fail="0" doc="05.Recipe40" pass="3">05.Recipe40</stat>
+<stat fail="0" doc="05.Recipe41" pass="2">05.Recipe41</stat>
+<stat fail="0" doc="05.Recipe42" pass="2">05.Recipe42</stat>
+<stat fail="0" doc="05.Recipe43" pass="2">05.Recipe43</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

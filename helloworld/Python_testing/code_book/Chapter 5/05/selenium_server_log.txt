@@ -1,0 +1,78 @@
+21:17:07.214 INFO - Java: Apple Inc. 17.1-b03-307
+21:17:07.215 INFO - OS: Mac OS X 10.6.4 x86_64
+21:17:07.229 INFO - v2.0 [a2], with Core v2.0 [a2]
+21:17:07.331 INFO - RemoteWebDriver instances should connect to: http://192.168.183.1:4444/wd/hub
+21:17:07.332 INFO - Version Jetty/5.1.x
+21:17:07.333 INFO - Started HttpContext[/selenium-server/driver,/selenium-server/driver]
+21:17:07.334 INFO - Started HttpContext[/selenium-server,/selenium-server]
+21:17:07.334 INFO - Started HttpContext[/,/]
+21:17:07.541 INFO - Started org.openqa.jetty.jetty.servlet.ServletHandler@1d3c468a
+21:17:07.541 INFO - Started HttpContext[/wd,/wd]
+21:17:07.552 INFO - Started SocketListener on 0.0.0.0:4444
+21:17:07.552 INFO - Started org.openqa.jetty.jetty.Server@790bc49d
+21:17:09.898 INFO - Checking Resource aliases
+21:17:09.903 INFO - Command request: getNewBrowserSession[*firefox, http://localhost:8000/admin, ] on session null
+21:17:09.906 INFO - creating new remote session
+21:17:09.971 INFO - Allocated session dbb88aed096b49e981469dc6477cc718 for http://localhost:8000/admin, launching...
+21:17:09.972 WARN - It looks like your baseUrl (http://localhost:8000/admin) is pointing to a file, not a directory (it doesn't end with a /).  We're going to have to strip off the last part of the pathname.
+21:17:10.083 INFO - Preparing Firefox profile...
+21:17:14.903 INFO - Launching Firefox...
+21:17:18.483 INFO - Got result: OK,dbb88aed096b49e981469dc6477cc718 on session dbb88aed096b49e981469dc6477cc718
+21:17:18.492 INFO - Command request: setTimeout[5000.0, ] on session dbb88aed096b49e981469dc6477cc718
+21:17:18.501 INFO - Got result: OK on session dbb88aed096b49e981469dc6477cc718
+21:17:18.505 INFO - Command request: open[http://localhost:8000/admin, False] on session dbb88aed096b49e981469dc6477cc718
+21:17:18.830 INFO - Got result: OK on session dbb88aed096b49e981469dc6477cc718
+21:17:18.835 INFO - Command request: type[username, gturnquist] on session dbb88aed096b49e981469dc6477cc718
+21:17:18.890 INFO - Got result: OK on session dbb88aed096b49e981469dc6477cc718
+21:17:18.896 INFO - Command request: type[password, password] on session dbb88aed096b49e981469dc6477cc718
+21:17:18.922 INFO - Got result: OK on session dbb88aed096b49e981469dc6477cc718
+21:17:18.927 INFO - Command request: submit[xpath=//form, ] on session dbb88aed096b49e981469dc6477cc718
+21:17:18.950 INFO - Got result: OK on session dbb88aed096b49e981469dc6477cc718
+21:17:18.954 INFO - Command request: waitForPageToLoad[5000.0, ] on session dbb88aed096b49e981469dc6477cc718
+21:17:19.320 INFO - Got result: OK on session dbb88aed096b49e981469dc6477cc718
+21:17:19.329 INFO - Command request: getLocation[, ] on session dbb88aed096b49e981469dc6477cc718
+21:17:19.339 INFO - Got result: OK,http://localhost:8000/admin/ on session dbb88aed096b49e981469dc6477cc718
+21:17:19.343 INFO - Command request: isElementPresent[xpath=//a[@id="Products" or @name="Products" or @href="Products" or normalize-space(descendant-or-self::text())="Products" or @href="http://localhost:8000/admin/Products"], ] on session dbb88aed096b49e981469dc6477cc718
+21:17:19.388 INFO - Got result: OK,true on session dbb88aed096b49e981469dc6477cc718
+21:17:19.393 INFO - Command request: testComplete[, ] on session dbb88aed096b49e981469dc6477cc718
+21:17:19.393 INFO - Killing Firefox...
+21:17:19.535 INFO - Got result: OK on session dbb88aed096b49e981469dc6477cc718
+21:17:19.543 INFO - Command request: getNewBrowserSession[*firefox, http://localhost:8000/admin/, ] on session null
+21:17:19.543 INFO - creating new remote session
+21:17:19.544 INFO - Allocated session 66320a513af04533946f350b5b9afe39 for http://localhost:8000/admin/, launching...
+21:17:19.610 INFO - Preparing Firefox profile...
+21:17:24.374 INFO - Launching Firefox...
+21:17:27.637 INFO - Got result: OK,66320a513af04533946f350b5b9afe39 on session 66320a513af04533946f350b5b9afe39
+21:17:27.643 INFO - Command request: setTimeout[5000.0, ] on session 66320a513af04533946f350b5b9afe39
+21:17:27.661 INFO - Got result: OK on session 66320a513af04533946f350b5b9afe39
+21:17:27.665 INFO - Command request: open[http://localhost:8000/admin/, False] on session 66320a513af04533946f350b5b9afe39
+21:17:27.943 INFO - Got result: OK on session 66320a513af04533946f350b5b9afe39
+21:17:27.949 INFO - Command request: type[username, gturnquist] on session 66320a513af04533946f350b5b9afe39
+21:17:27.969 INFO - Got result: OK on session 66320a513af04533946f350b5b9afe39
+21:17:27.973 INFO - Command request: type[password, password] on session 66320a513af04533946f350b5b9afe39
+21:17:27.993 INFO - Got result: OK on session 66320a513af04533946f350b5b9afe39
+21:17:27.997 INFO - Command request: submit[xpath=//form, ] on session 66320a513af04533946f350b5b9afe39
+21:17:28.026 INFO - Got result: OK on session 66320a513af04533946f350b5b9afe39
+21:17:28.032 INFO - Command request: waitForPageToLoad[5000.0, ] on session 66320a513af04533946f350b5b9afe39
+21:17:28.447 INFO - Got result: OK on session 66320a513af04533946f350b5b9afe39
+21:17:28.452 INFO - Command request: getLocation[, ] on session 66320a513af04533946f350b5b9afe39
+21:17:28.464 INFO - Got result: OK,http://localhost:8000/admin/ on session 66320a513af04533946f350b5b9afe39
+21:17:28.467 INFO - Command request: click[xpath=//a[@id="Products" or @name="Products" or @href="Products" or normalize-space(descendant-or-self::text())="Products" or @href="http://localhost:8000/admin/Products"], ] on session 66320a513af04533946f350b5b9afe39
+21:17:28.486 INFO - Got result: OK on session 66320a513af04533946f350b5b9afe39
+21:17:28.491 INFO - Command request: waitForPageToLoad[5000.0, ] on session 66320a513af04533946f350b5b9afe39
+21:17:30.230 INFO - Got result: OK on session 66320a513af04533946f350b5b9afe39
+21:17:30.235 INFO - Command request: captureEntirePageScreenshotToString[background=#CCFFDD, ] on session 66320a513af04533946f350b5b9afe39
+21:17:30.453 INFO - Got result: [base64 encoded PNG] on session 66320a513af04533946f350b5b9afe39
+21:17:30.470 INFO - Command request: isElementPresent[css=table#result_list:contains('Robots Attack!'), ] on session 66320a513af04533946f350b5b9afe39
+21:17:30.517 INFO - Got result: OK,true on session 66320a513af04533946f350b5b9afe39
+21:17:30.536 INFO - Command request: isElementPresent[css=table#result_list tr:nth-child(4):contains('Robots Attack!'), ] on session 66320a513af04533946f350b5b9afe39
+21:17:30.554 INFO - Got result: OK,true on session 66320a513af04533946f350b5b9afe39
+21:17:30.576 INFO - Command request: isElementPresent[css=table#result_list tr:nth-child(4):contains('7.99'), ] on session 66320a513af04533946f350b5b9afe39
+21:17:30.608 INFO - Got result: OK,true on session 66320a513af04533946f350b5b9afe39
+21:17:30.615 INFO - Command request: testComplete[, ] on session 66320a513af04533946f350b5b9afe39
+21:17:30.615 INFO - Killing Firefox...
+21:17:30.652 INFO - Got result: OK on session 66320a513af04533946f350b5b9afe39
+21:17:30.658 INFO - Command request: shutDownSeleniumServer[, ] on session null
+21:17:30.658 INFO - Shutdown command received
+21:17:30.659 INFO - initiating shutdown
+21:17:30.659 INFO - Got result: OK on session null

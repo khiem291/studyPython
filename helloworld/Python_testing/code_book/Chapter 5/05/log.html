@@ -1,0 +1,4845 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Expires" content="Mon, 20 Jan 2001 20:01:21 GMT" />
+<meta name="generator" content="Robot 2.5.4 (Python 2.6.1 on darwin)" />
+<style media="all" type="text/css">
+  /* Generic styles */
+  body {
+    font-family: sans-serif;
+    font-size: 0.8em;
+    color: black;
+    padding: 6px;
+  }
+  h2 {
+    margin-top: 1.2em;
+  }
+  /* Statistics Table */
+  table.statistics {
+    width: 58em;
+    border: 1px solid black;
+    border-collapse: collapse;
+    empty-cells: show;
+    margin-bottom: 1em;
+  }
+  table.statistics td, table.statistics th {
+    border: 1px solid black;
+    padding: 1px 4px;
+    margin: 0px;
+  }
+  table.statistics th {
+    background: #C6C6C6;
+  }
+  .col_stat_name {
+    width: 40em;
+  }
+  .col_stat {
+    width: 3em;
+    text-align: center;
+  }
+  .stat_name {
+    float: left;
+  }
+  .stat_name a, .stat_name span {
+    font-weight: bold;
+  }
+  .tag_links {
+    font-size: 0.9em;
+    float: right;
+    margin-top: 0.05em;
+  }
+  .tag_links span {
+    margin-left: 0.2em;
+  }
+  /* Statistics Table Graph */
+  .pass_bar {
+    background: #00f000;
+  }
+  .fail_bar {
+    background: red;
+  }
+  .no_tags_bar {
+    background: #E9E9E9;
+  }
+  .graph {
+    position: relative;
+    border: 1px solid black;
+    width: 11em;
+    height: 0.75em;
+    padding: 0px;
+    background: #E9E9E9;
+  }
+  .graph b {
+    display: block;
+    position: relative;
+    height: 100%;
+    float: left;
+    font-size: 4px;  /* to make graphs thin also in IE */
+  }
+  /* Tables in documentation */
+  table.doc {
+    border: 1px solid gray;
+    background: transparent;
+    border-collapse: collapse;
+    empty-cells: show;
+    font-size: 0.9em;
+  }
+  table.doc td {
+    border: 1px solid gray;
+    padding: 0.1em 0.3em;
+    height: 1.2em;
+  }
+  /* Misc Styles */
+  .not_available {
+    color: gray;      /* no grey in IE */
+    font-weight: normal;
+  }
+  .parent_name {
+    font-size: 0.7em;
+    letter-spacing: -0.07em;
+  }
+  a:link, a:visited {
+    text-decoration: none;
+    color: blue;
+  }
+  a:hover, a:active {
+    text-decoration: underline;
+    color: purple;
+  }
+  /* Headers */
+  .header {
+    width: 58em;
+    margin: 6px 0px;
+  }
+  h1 {
+    margin: 0px;
+    width: 70%;
+    float: left;
+  }
+  .times {
+    width: 29%;
+    float: right;
+    text-align: right;
+  }
+  .generated_time, .generated_ago {
+    font-size: 0.9em;
+  }
+  .spacer {
+    font-size: 0.8em;
+    clear: both;
+  }
+  /* Status text colors */
+  .error, .fail {
+    color: red;
+  }
+  .pass {
+    color: #009900;
+  }
+  .warn {
+    color: #FFCC00;
+  }
+  .not_run {
+    color: #663300;
+  }
+</style>
+<style media="print" type="text/css">
+  body {
+    background: white;
+    padding: 0px;
+    font-size: 8pt;
+  }
+  a:link, a:visited {
+    color: black;
+  }
+  .header, table.details, table.statistics {
+    width: 100%;
+  }
+  .generated_ago, .expand {
+    display: none;
+  }
+</style>
+<style media="all" type="text/css">
+  /* Tables */
+  body {
+    background: white;
+  }
+  table.suite, table.errors {
+    width: 100%;
+    border: 1px solid gray;  /* no grey in IE */
+    margin: 0.2em 0em;
+    padding: 0.2em;
+  }
+  table.errors td.level {
+    font-weight: bold;
+    width: 4em;
+    text-align: center;
+    vertical-align: top;
+  }
+  table.errors td.time {
+    width: 10em;
+    vertical-align: top;
+  }
+  table.test {
+    width: 100%;
+    border: 1px dashed gray;
+    margin: 0.2em 0em;
+    padding: 0.2em;
+  }
+  table.metadata, table.keyword, table.messages {
+    margin-left: 1.1em;
+    width: 100%;
+  }
+  table.metadata, table.messages {
+    margin-right: 2em;
+  }
+  table.keyword table.metadata {
+    font-size: 0.9em;
+    margin-left: 1.4em;
+  }
+  table.messages {
+    font-family: monospace;
+    font-size: 1.2em;
+  }
+  table.metadata th {
+    width: 12em;
+    text-align: left;
+    vertical-align: top;
+  }
+  table.metadata td {
+    padding-left: 0.5em;
+    vertical-align: top;
+  }
+  table.messages td {
+    vertical-align: top;
+  }
+  table.messages td.time {
+    width: 6em;
+    letter-spacing: -0.05em;
+  }
+  table.messages td.level {
+    width: 4em;
+    text-align: center;
+  }
+  /* Folding buttons */
+  div.foldingbutton {
+    text-align: center;
+    line-height: 0.8em;
+    font-size: 0.8em;
+    margin: 0.2em 0.4em 0em 0.1em;
+    height: 0.9em;
+    width: 0.9em;
+    float: left;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid black;
+    border: 1px solid black;
+  }
+  div.foldingbutton:hover {
+    background: yellow;
+  }
+ .expand {
+   float: right;
+   margin-right: 0.5em;
+   font-size: 0.8em;
+  }
+  /* Test, suite and kw names */
+  .name, .splitname {
+    font-weight: bold;
+    text-decoration: none;
+  }
+  a.name:hover {
+    text-decoration: none;
+    color: black;
+  }
+</style>
+<script type="text/javascript">
+    function toggle_child_visibility(element_id) {
+        if (document.getElementById(element_id + '_children') != null) {
+            toggle_visibility(element_id + '_children')
+        }
+        else {
+            toggle_visibility(element_id)
+        }
+        if (document.getElementById(element_id + '_foldlink') != null) {
+            toggle_visibility(element_id + '_foldlink')
+        }
+        if (document.getElementById(element_id + '_unfoldlink') != null) {
+            toggle_visibility(element_id + '_unfoldlink')
+        }
+    }
+    function toggle_visibility(element_id) {
+        var element = document.getElementById(element_id)
+        if (element == null) {
+            return
+        }
+        if (element.style.display == 'none') {
+            element.style.display = 'block'
+        }
+        else {
+            element.style.display = 'none'
+        }
+    }
+    function expand_all_children(element_id) {
+        var elements = document.getElementById(element_id).getElementsByTagName('div')
+        for (var i=0; i<elements.length; i++) {
+            var element = elements[i]
+            if (element.className == 'indent' && element.style.display == 'none') {
+                toggle_child_visibility(element.getAttribute('id').replace(/_children/, ''))
+            }
+        }
+    }
+    function open_element_by_url() {
+        var name = get_element_name_from_url()
+        if (name != null) {
+            set_element_visible(name)
+            window.location.hash = name  // does not seem to work with Opera
+        }
+    }
+    function get_element_name_from_url() {
+        var hash = window.location.hash
+        if (hash == '' || hash == '#' || hash == null) {
+            return null
+        }
+        return hash.slice(1).replace(/%20/g, ' ')
+    }
+    function set_element_visible(id_or_name) {
+        var element = document.getElementById(id_or_name)
+        if (element) {
+            open_parents(element)
+            return
+        }
+        var elements = document.getElementsByName(id_or_name)
+        for (var i=0; i<elements.length; i++) {
+            open_parents(elements[i])
+        }
+    }
+    // Find right type of parent element, open it and its parents
+    function open_parents(element) {
+        var parent = element.parentNode
+        if (!parent) {
+            return
+        }
+        // Find a parent table with id
+        while (parent.nodeName != 'TABLE' || parent.getAttribute('id') == null) {
+            parent = parent.parentNode
+            if (!parent) {
+               return
+            }
+        }
+        var element_id = parent.getAttribute('id')
+        if (document.getElementById(element_id+'_children').style.display == 'none') {
+            toggle_child_visibility(element_id)
+        }
+        open_parents(parent)
+    }
+</script>
+
+<title>05 Test Log</title>
+</head>
+<body onload="open_element_by_url()">
+<div class="header">
+  <h1>05 Test Log</h1>
+  <div class="times">
+    <span class="generated_time">Generated<br />20101124&nbsp;21:17:30&nbsp;GMT&nbsp;-05:00</span><br />
+	<span class="generated_ago">
+<script type="text/javascript">
+  function get_end(number) {
+    if (number == 1) { return ' ' }
+    return 's '
+  }
+  function get_sec_str(secs) {
+    return secs + ' second' + get_end(secs)
+  }
+  function get_min_str(mins) {
+    return mins + ' minute' + get_end(mins)
+  }
+  function get_hour_str(hours) {
+    return hours + ' hour' + get_end(hours)
+  }
+  function get_day_str(days) {
+    return days + ' day' + get_end(days)
+  }
+  function get_year_str(years) {
+    return years + ' year' + get_end(years)
+  }
+  generated = 1290655050
+  current = Math.round(new Date().getTime() / 1000)  // getTime returns millis
+  elapsed = current - generated
+  // elapsed should only be negative if clocks are not in sync
+  if (elapsed < 0) {
+    elapsed = Math.abs(elapsed)
+    prefix = '- '
+  }
+  else {
+    prefix = ''
+  }
+  secs  = elapsed % 60
+  mins  = Math.floor(elapsed / 60) % 60
+  hours = Math.floor(elapsed / (60*60)) % 24
+  days  = Math.floor(elapsed / (60*60*24)) % 365
+  years = Math.floor(elapsed / (60*60*24*365))
+  if (years > 0) {
+    // compencate the effect of leap years (not perfect but should be enough)
+    days = days - Math.floor(years / 4)
+    if (days < 0) { days = 0 }
+    output = get_year_str(years) + get_day_str(days)
+  }
+  else if (days > 0) {
+    output = get_day_str(days) +  get_hour_str(hours)
+  }
+  else if (hours > 0) {
+    output = get_hour_str(hours) + get_min_str(mins)
+  }
+  else if (mins > 0) {
+    output = get_min_str(mins) + get_sec_str(secs)
+  }
+  else {
+    output = get_sec_str(secs)
+  }
+  document.write(prefix + output + 'ago')
+</script>
+    </span>
+  </div>
+</div>
+<div class="spacer">&nbsp;</div>
+<h2>Test Statistics</h2>
+<table class="statistics">
+<tr>
+<th class="col_stat_name">Total Statistics</th>
+<th class="col_stat">Total</th>
+<th class="col_stat">Pass</th>
+<th class="col_stat">Fail</th>
+<th class="col_graph">Graph</th>
+</tr>
+<tr>
+<td class="col_stat_name">
+<div class="stat_name"><span>Critical Tests</span></div>
+</td>
+<td class="col_stat">13</td>
+<td class="col_stat">13</td>
+<td class="col_stat">0</td>
+<td class="col_graph">
+<div class="graph">
+<b class="pass_bar" style="width: 99.99%;" title="100.0%"></b>
+<b class="fail_bar" style="width: 0.00%;" title="0.0%"></b>
+</div>
+</td>
+</tr>
+<tr>
+<td class="col_stat_name">
+<div class="stat_name"><span>All Tests</span></div>
+</td>
+<td class="col_stat">13</td>
+<td class="col_stat">13</td>
+<td class="col_stat">0</td>
+<td class="col_graph">
+<div class="graph">
+<b class="pass_bar" style="width: 99.99%;" title="100.0%"></b>
+<b class="fail_bar" style="width: 0.00%;" title="0.0%"></b>
+</div>
+</td>
+</tr>
+</table>
+<table class="statistics">
+<tr>
+<th class="col_stat_name">Statistics by Tag</th>
+<th class="col_stat">Total</th>
+<th class="col_stat">Pass</th>
+<th class="col_stat">Fail</th>
+<th class="col_graph">Graph</th>
+</tr>
+<tr>
+<td class="col_stat_name">
+<div class="stat_name"><span>database</span></div>
+<div class="tag_links">
+</div>
+</td>
+<td class="col_stat">1</td>
+<td class="col_stat">1</td>
+<td class="col_stat">0</td>
+<td class="col_graph">
+<div class="graph">
+<b class="pass_bar" style="width: 99.99%;" title="100.0%"></b>
+<b class="fail_bar" style="width: 0.00%;" title="0.0%"></b>
+</div>
+</td>
+</tr>
+</table>
+<table class="statistics">
+<tr>
+<th class="col_stat_name">Statistics by Suite</th>
+<th class="col_stat">Total</th>
+<th class="col_stat">Pass</th>
+<th class="col_stat">Fail</th>
+<th class="col_graph">Graph</th>
+</tr>
+<tr>
+<td class="col_stat_name">
+<div class="stat_name"><a href="#suite_05" onclick="set_element_visible('suite_05')" title="05">05</a></div>
+</td>
+<td class="col_stat">13</td>
+<td class="col_stat">13</td>
+<td class="col_stat">0</td>
+<td class="col_graph">
+<div class="graph">
+<b class="pass_bar" style="width: 99.99%;" title="100.0%"></b>
+<b class="fail_bar" style="width: 0.00%;" title="0.0%"></b>
+</div>
+</td>
+</tr>
+<tr>
+<td class="col_stat_name">
+<div class="stat_name"><a href="#suite_05.Recipe39" onclick="set_element_visible('suite_05.Recipe39')" title="05.Recipe39"><span class="parent_name">05 . </span>Recipe39</a></div>
+</td>
+<td class="col_stat">4</td>
+<td class="col_stat">4</td>
+<td class="col_stat">0</td>
+<td class="col_graph">
+<div class="graph">
+<b class="pass_bar" style="width: 99.99%;" title="100.0%"></b>
+<b class="fail_bar" style="width: 0.00%;" title="0.0%"></b>
+</div>
+</td>
+</tr>
+<tr>
+<td class="col_stat_name">
+<div class="stat_name"><a href="#suite_05.Recipe40" onclick="set_element_visible('suite_05.Recipe40')" title="05.Recipe40"><span class="parent_name">05 . </span>Recipe40</a></div>
+</td>
+<td class="col_stat">3</td>
+<td class="col_stat">3</td>
+<td class="col_stat">0</td>
+<td class="col_graph">
+<div class="graph">
+<b class="pass_bar" style="width: 99.99%;" title="100.0%"></b>
+<b class="fail_bar" style="width: 0.00%;" title="0.0%"></b>
+</div>
+</td>
+</tr>
+<tr>
+<td class="col_stat_name">
+<div class="stat_name"><a href="#suite_05.Recipe41" onclick="set_element_visible('suite_05.Recipe41')" title="05.Recipe41"><span class="parent_name">05 . </span>Recipe41</a></div>
+</td>
+<td class="col_stat">2</td>
+<td class="col_stat">2</td>
+<td class="col_stat">0</td>
+<td class="col_graph">
+<div class="graph">
+<b class="pass_bar" style="width: 99.99%;" title="100.0%"></b>
+<b class="fail_bar" style="width: 0.00%;" title="0.0%"></b>
+</div>
+</td>
+</tr>
+<tr>
+<td class="col_stat_name">
+<div class="stat_name"><a href="#suite_05.Recipe42" onclick="set_element_visible('suite_05.Recipe42')" title="05.Recipe42"><span class="parent_name">05 . </span>Recipe42</a></div>
+</td>
+<td class="col_stat">2</td>
+<td class="col_stat">2</td>
+<td class="col_stat">0</td>
+<td class="col_graph">
+<div class="graph">
+<b class="pass_bar" style="width: 99.99%;" title="100.0%"></b>
+<b class="fail_bar" style="width: 0.00%;" title="0.0%"></b>
+</div>
+</td>
+</tr>
+<tr>
+<td class="col_stat_name">
+<div class="stat_name"><a href="#suite_05.Recipe43" onclick="set_element_visible('suite_05.Recipe43')" title="05.Recipe43"><span class="parent_name">05 . </span>Recipe43</a></div>
+</td>
+<td class="col_stat">2</td>
+<td class="col_stat">2</td>
+<td class="col_stat">0</td>
+<td class="col_graph">
+<div class="graph">
+<b class="pass_bar" style="width: 99.99%;" title="100.0%"></b>
+<b class="fail_bar" style="width: 0.00%;" title="0.0%"></b>
+</div>
+</td>
+</tr>
+</table>
+<h2>Test Execution Log</h2>
+<table class="suite" id="suite000001">
+<tr>
+<td>
+<a class="expand" href="javascript:expand_all_children('suite000001')">Expand All</a>
+<div class="foldingbutton" id="suite000001_unfoldlink" onclick="toggle_child_visibility('suite000001');" style="display: none;">+</div>
+<div class="foldingbutton" id="suite000001_foldlink" onclick="toggle_child_visibility('suite000001');" style="display: block;">-</div>
+<span class="pass">TEST&nbsp;SUITE: </span>
+<a class="name" name="suite_05" title="05">05</a>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="suite000001_children" style="display: block;">
+<table class="metadata">
+<tr><th>Full Name:</th><td>05</td></tr>
+<tr><th>Source:</th><td><a href="05">/users/gturnquist/dropbox/python_testing_cookbook/code/05</a></td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.353 / 20101124 21:17:30.662 / 00:00:47.309</td></tr>
+<tr><th>Overall Status:</th><td class="pass">PASS</td></tr>
+<tr><th>Message:</th><td>13&nbsp;critical&nbsp;tests,&nbsp;13&nbsp;passed,&nbsp;<span>0&nbsp;failed</span><br />13&nbsp;tests&nbsp;total,&nbsp;13&nbsp;passed,&nbsp;<span>0&nbsp;failed</span></td></tr>
+</table>
+<table class="suite" id="suite000002">
+<tr>
+<td>
+<a class="expand" href="javascript:expand_all_children('suite000002')">Expand All</a>
+<div class="foldingbutton" id="suite000002_unfoldlink" onclick="toggle_child_visibility('suite000002');" style="display: none;">-</div>
+<div class="foldingbutton" id="suite000002_foldlink" onclick="toggle_child_visibility('suite000002');" style="display: block;">+</div>
+<span class="pass">TEST&nbsp;SUITE: </span>
+<a class="name" name="suite_05.Recipe39" title="05.Recipe39">Recipe39</a>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="suite000002_children" style="display: none;">
+<table class="metadata">
+<tr><th>Full Name:</th><td>05.Recipe39</td></tr>
+<tr><th>Source:</th><td><a href="recipe39.html">/users/gturnquist/dropbox/python_testing_cookbook/code/05/recipe39.html</a></td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.387 / 20101124 21:16:43.471 / 00:00:00.084</td></tr>
+<tr><th>Overall Status:</th><td class="pass">PASS</td></tr>
+<tr><th>Message:</th><td>4&nbsp;critical&nbsp;tests,&nbsp;4&nbsp;passed,&nbsp;<span>0&nbsp;failed</span><br />4&nbsp;tests&nbsp;total,&nbsp;4&nbsp;passed,&nbsp;<span>0&nbsp;failed</span></td></tr>
+</table>
+<table class="test" id="test000001">
+<tr>
+<td>
+<a class="expand" href="javascript:expand_all_children('test000001')">Expand All</a>
+<div class="foldingbutton" id="test000001_unfoldlink" onclick="toggle_child_visibility('test000001');" style="display: none;">-</div>
+<div class="foldingbutton" id="test000001_foldlink" onclick="toggle_child_visibility('test000001');" style="display: block;">+</div>
+<span class="pass">TEST&nbsp;CASE: </span>
+<a class="name" name="test_05.Recipe39.Adding two items of the same kind with no sales tax" title="05.Recipe39.Adding two items of the same kind with no sales tax">Adding two items of the same kind with no sales tax</a>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="test000001_children" style="display: none;">
+<table class="metadata">
+<tr><th>Full Name:</th><td>05.Recipe39.Adding two items of the same kind with no sales tax</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.390 / 20101124 21:16:43.402 / 00:00:00.012</td></tr>
+<tr><th>Status:</th><td class="pass">PASS (critical)</td></tr>
+</table>
+<table class="keyword" id="kw000001">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000001_unfoldlink" onclick="toggle_child_visibility('kw000001');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000001_foldlink" onclick="toggle_child_visibility('kw000001');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Adding items to cart </span>
+<span class="arg">frozen pizza, 2.50, frozen pizza, 2.50, 0.0, 5.00</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000001_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.391 / 20101124 21:16:43.401 / 00:00:00.010</td></tr>
+</table>
+<table class="keyword" id="kw000002">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000002_unfoldlink" onclick="toggle_child_visibility('kw000002');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000002_foldlink" onclick="toggle_child_visibility('kw000002');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Add item </span>
+<span class="arg">${item1}, ${price1}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000002_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.392 / 20101124 21:16:43.395 / 00:00:00.003</td></tr>
+</table>
+<table class="keyword" id="kw000003">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000003_unfoldlink" onclick="toggle_child_visibility('kw000003');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000003_foldlink" onclick="toggle_child_visibility('kw000003');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">recipe39.Add Item To Cart </span>
+<span class="arg">${description}, ${price}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000003_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.393 / 20101124 21:16:43.394 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000004">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000004_unfoldlink" onclick="toggle_child_visibility('kw000004');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000004_foldlink" onclick="toggle_child_visibility('kw000004');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Add item </span>
+<span class="arg">${item2}, ${price2}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000004_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.395 / 20101124 21:16:43.398 / 00:00:00.003</td></tr>
+</table>
+<table class="keyword" id="kw000005">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000005_unfoldlink" onclick="toggle_child_visibility('kw000005');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000005_foldlink" onclick="toggle_child_visibility('kw000005');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">recipe39.Add Item To Cart </span>
+<span class="arg">${description}, ${price}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000005_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.396 / 20101124 21:16:43.398 / 00:00:00.002</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000006">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000006_unfoldlink" onclick="toggle_child_visibility('kw000006');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000006_foldlink" onclick="toggle_child_visibility('kw000006');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${calculated total} = recipe39.Get Total </span>
+<span class="arg">${tax}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000006_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.398 / 20101124 21:16:43.399 / 00:00:00.001</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.399</td>
+<td class="info level">INFO</td>
+<td class="msg">${calculated total} = 5.00</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000007">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000007_unfoldlink" onclick="toggle_child_visibility('kw000007');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000007_foldlink" onclick="toggle_child_visibility('kw000007');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Should Be Equal </span>
+<span class="arg">${calculated total}, ${total}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000007_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Fails if the given objects are unequal.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.400 / 20101124 21:16:43.401 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="test" id="test000002">
+<tr>
+<td>
+<a class="expand" href="javascript:expand_all_children('test000002')">Expand All</a>
+<div class="foldingbutton" id="test000002_unfoldlink" onclick="toggle_child_visibility('test000002');" style="display: none;">-</div>
+<div class="foldingbutton" id="test000002_foldlink" onclick="toggle_child_visibility('test000002');" style="display: block;">+</div>
+<span class="pass">TEST&nbsp;CASE: </span>
+<a class="name" name="test_05.Recipe39.Adding two items of the same kind with sales tax" title="05.Recipe39.Adding two items of the same kind with sales tax">Adding two items of the same kind with sales tax</a>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="test000002_children" style="display: none;">
+<table class="metadata">
+<tr><th>Full Name:</th><td>05.Recipe39.Adding two items of the same kind with sales tax</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.404 / 20101124 21:16:43.446 / 00:00:00.042</td></tr>
+<tr><th>Status:</th><td class="pass">PASS (critical)</td></tr>
+</table>
+<table class="keyword" id="kw000008">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000008_unfoldlink" onclick="toggle_child_visibility('kw000008');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000008_foldlink" onclick="toggle_child_visibility('kw000008');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Adding items to cart </span>
+<span class="arg">frozen pizza, 2.50, frozen pizza, 2.50, 10.0, 5.50</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000008_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.405 / 20101124 21:16:43.445 / 00:00:00.040</td></tr>
+</table>
+<table class="keyword" id="kw000009">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000009_unfoldlink" onclick="toggle_child_visibility('kw000009');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000009_foldlink" onclick="toggle_child_visibility('kw000009');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Add item </span>
+<span class="arg">${item1}, ${price1}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000009_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.406 / 20101124 21:16:43.408 / 00:00:00.002</td></tr>
+</table>
+<table class="keyword" id="kw000010">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000010_unfoldlink" onclick="toggle_child_visibility('kw000010');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000010_foldlink" onclick="toggle_child_visibility('kw000010');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">recipe39.Add Item To Cart </span>
+<span class="arg">${description}, ${price}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000010_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.407 / 20101124 21:16:43.408 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000011">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000011_unfoldlink" onclick="toggle_child_visibility('kw000011');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000011_foldlink" onclick="toggle_child_visibility('kw000011');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Add item </span>
+<span class="arg">${item2}, ${price2}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000011_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.409 / 20101124 21:16:43.443 / 00:00:00.034</td></tr>
+</table>
+<table class="keyword" id="kw000012">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000012_unfoldlink" onclick="toggle_child_visibility('kw000012');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000012_foldlink" onclick="toggle_child_visibility('kw000012');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">recipe39.Add Item To Cart </span>
+<span class="arg">${description}, ${price}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000012_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.418 / 20101124 21:16:43.441 / 00:00:00.023</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000013">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000013_unfoldlink" onclick="toggle_child_visibility('kw000013');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000013_foldlink" onclick="toggle_child_visibility('kw000013');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${calculated total} = recipe39.Get Total </span>
+<span class="arg">${tax}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000013_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.443 / 20101124 21:16:43.444 / 00:00:00.001</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.444</td>
+<td class="info level">INFO</td>
+<td class="msg">${calculated total} = 5.50</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000014">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000014_unfoldlink" onclick="toggle_child_visibility('kw000014');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000014_foldlink" onclick="toggle_child_visibility('kw000014');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Should Be Equal </span>
+<span class="arg">${calculated total}, ${total}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000014_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Fails if the given objects are unequal.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.444 / 20101124 21:16:43.445 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="test" id="test000003">
+<tr>
+<td>
+<a class="expand" href="javascript:expand_all_children('test000003')">Expand All</a>
+<div class="foldingbutton" id="test000003_unfoldlink" onclick="toggle_child_visibility('test000003');" style="display: none;">-</div>
+<div class="foldingbutton" id="test000003_foldlink" onclick="toggle_child_visibility('test000003');" style="display: block;">+</div>
+<span class="pass">TEST&nbsp;CASE: </span>
+<a class="name" name="test_05.Recipe39.Adding two different items with no sales tax" title="05.Recipe39.Adding two different items with no sales tax">Adding two different items with no sales tax</a>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="test000003_children" style="display: none;">
+<table class="metadata">
+<tr><th>Full Name:</th><td>05.Recipe39.Adding two different items with no sales tax</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.446 / 20101124 21:16:43.458 / 00:00:00.012</td></tr>
+<tr><th>Status:</th><td class="pass">PASS (critical)</td></tr>
+</table>
+<table class="keyword" id="kw000015">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000015_unfoldlink" onclick="toggle_child_visibility('kw000015');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000015_foldlink" onclick="toggle_child_visibility('kw000015');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Adding items to cart </span>
+<span class="arg">frozen pizza, 2.50, carton of milk, 3.50, 0.0, 6.00</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000015_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.447 / 20101124 21:16:43.458 / 00:00:00.011</td></tr>
+</table>
+<table class="keyword" id="kw000016">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000016_unfoldlink" onclick="toggle_child_visibility('kw000016');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000016_foldlink" onclick="toggle_child_visibility('kw000016');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Add item </span>
+<span class="arg">${item1}, ${price1}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000016_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.449 / 20101124 21:16:43.452 / 00:00:00.003</td></tr>
+</table>
+<table class="keyword" id="kw000017">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000017_unfoldlink" onclick="toggle_child_visibility('kw000017');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000017_foldlink" onclick="toggle_child_visibility('kw000017');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">recipe39.Add Item To Cart </span>
+<span class="arg">${description}, ${price}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000017_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.450 / 20101124 21:16:43.451 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000018">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000018_unfoldlink" onclick="toggle_child_visibility('kw000018');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000018_foldlink" onclick="toggle_child_visibility('kw000018');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Add item </span>
+<span class="arg">${item2}, ${price2}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000018_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.453 / 20101124 21:16:43.455 / 00:00:00.002</td></tr>
+</table>
+<table class="keyword" id="kw000019">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000019_unfoldlink" onclick="toggle_child_visibility('kw000019');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000019_foldlink" onclick="toggle_child_visibility('kw000019');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">recipe39.Add Item To Cart </span>
+<span class="arg">${description}, ${price}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000019_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.454 / 20101124 21:16:43.455 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000020">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000020_unfoldlink" onclick="toggle_child_visibility('kw000020');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000020_foldlink" onclick="toggle_child_visibility('kw000020');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${calculated total} = recipe39.Get Total </span>
+<span class="arg">${tax}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000020_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.456 / 20101124 21:16:43.456 / 00:00:00.000</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.457</td>
+<td class="info level">INFO</td>
+<td class="msg">${calculated total} = 6.00</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000021">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000021_unfoldlink" onclick="toggle_child_visibility('kw000021');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000021_foldlink" onclick="toggle_child_visibility('kw000021');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Should Be Equal </span>
+<span class="arg">${calculated total}, ${total}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000021_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Fails if the given objects are unequal.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.457 / 20101124 21:16:43.458 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="test" id="test000004">
+<tr>
+<td>
+<a class="expand" href="javascript:expand_all_children('test000004')">Expand All</a>
+<div class="foldingbutton" id="test000004_unfoldlink" onclick="toggle_child_visibility('test000004');" style="display: none;">-</div>
+<div class="foldingbutton" id="test000004_foldlink" onclick="toggle_child_visibility('test000004');" style="display: block;">+</div>
+<span class="pass">TEST&nbsp;CASE: </span>
+<a class="name" name="test_05.Recipe39.Adding two different items with sales tax" title="05.Recipe39.Adding two different items with sales tax">Adding two different items with sales tax</a>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="test000004_children" style="display: none;">
+<table class="metadata">
+<tr><th>Full Name:</th><td>05.Recipe39.Adding two different items with sales tax</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.459 / 20101124 21:16:43.471 / 00:00:00.012</td></tr>
+<tr><th>Status:</th><td class="pass">PASS (critical)</td></tr>
+</table>
+<table class="keyword" id="kw000022">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000022_unfoldlink" onclick="toggle_child_visibility('kw000022');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000022_foldlink" onclick="toggle_child_visibility('kw000022');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Adding items to cart </span>
+<span class="arg">frozen pizza, 2.50, carton of milk, 3.50, 10.0, 6.60</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000022_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.460 / 20101124 21:16:43.470 / 00:00:00.010</td></tr>
+</table>
+<table class="keyword" id="kw000023">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000023_unfoldlink" onclick="toggle_child_visibility('kw000023');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000023_foldlink" onclick="toggle_child_visibility('kw000023');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Add item </span>
+<span class="arg">${item1}, ${price1}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000023_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.462 / 20101124 21:16:43.465 / 00:00:00.003</td></tr>
+</table>
+<table class="keyword" id="kw000024">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000024_unfoldlink" onclick="toggle_child_visibility('kw000024');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000024_foldlink" onclick="toggle_child_visibility('kw000024');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">recipe39.Add Item To Cart </span>
+<span class="arg">${description}, ${price}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000024_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.463 / 20101124 21:16:43.465 / 00:00:00.002</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000025">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000025_unfoldlink" onclick="toggle_child_visibility('kw000025');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000025_foldlink" onclick="toggle_child_visibility('kw000025');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Add item </span>
+<span class="arg">${item2}, ${price2}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000025_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.466 / 20101124 21:16:43.468 / 00:00:00.002</td></tr>
+</table>
+<table class="keyword" id="kw000026">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000026_unfoldlink" onclick="toggle_child_visibility('kw000026');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000026_foldlink" onclick="toggle_child_visibility('kw000026');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">recipe39.Add Item To Cart </span>
+<span class="arg">${description}, ${price}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000026_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.467 / 20101124 21:16:43.467 / 00:00:00.000</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000027">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000027_unfoldlink" onclick="toggle_child_visibility('kw000027');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000027_foldlink" onclick="toggle_child_visibility('kw000027');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${calculated total} = recipe39.Get Total </span>
+<span class="arg">${tax}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000027_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.468 / 20101124 21:16:43.469 / 00:00:00.001</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.469</td>
+<td class="info level">INFO</td>
+<td class="msg">${calculated total} = 6.60</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000028">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000028_unfoldlink" onclick="toggle_child_visibility('kw000028');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000028_foldlink" onclick="toggle_child_visibility('kw000028');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Should Be Equal </span>
+<span class="arg">${calculated total}, ${total}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000028_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Fails if the given objects are unequal.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.469 / 20101124 21:16:43.470 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="suite" id="suite000003">
+<tr>
+<td>
+<a class="expand" href="javascript:expand_all_children('suite000003')">Expand All</a>
+<div class="foldingbutton" id="suite000003_unfoldlink" onclick="toggle_child_visibility('suite000003');" style="display: none;">-</div>
+<div class="foldingbutton" id="suite000003_foldlink" onclick="toggle_child_visibility('suite000003');" style="display: block;">+</div>
+<span class="pass">TEST&nbsp;SUITE: </span>
+<a class="name" name="suite_05.Recipe40" title="05.Recipe40">Recipe40</a>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="suite000003_children" style="display: none;">
+<table class="metadata">
+<tr><th>Full Name:</th><td>05.Recipe40</td></tr>
+<tr><th>Source:</th><td><a href="recipe40.html">/users/gturnquist/dropbox/python_testing_cookbook/code/05/recipe40.html</a></td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.472 / 20101124 21:16:43.572 / 00:00:00.100</td></tr>
+<tr><th>Overall Status:</th><td class="pass">PASS</td></tr>
+<tr><th>Message:</th><td>3&nbsp;critical&nbsp;tests,&nbsp;3&nbsp;passed,&nbsp;<span>0&nbsp;failed</span><br />3&nbsp;tests&nbsp;total,&nbsp;3&nbsp;passed,&nbsp;<span>0&nbsp;failed</span></td></tr>
+</table>
+<table class="test" id="test000005">
+<tr>
+<td>
+<a class="expand" href="javascript:expand_all_children('test000005')">Expand All</a>
+<div class="foldingbutton" id="test000005_unfoldlink" onclick="toggle_child_visibility('test000005');" style="display: none;">-</div>
+<div class="foldingbutton" id="test000005_foldlink" onclick="toggle_child_visibility('test000005');" style="display: block;">+</div>
+<span class="pass">TEST&nbsp;CASE: </span>
+<a class="name" name="test_05.Recipe40.Scenario: Seeing that an empty cart behaves correctly" title="05.Recipe40.Scenario: Seeing that an empty cart behaves correctly">Scenario: Seeing that an empty cart behaves correctly</a>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="test000005_children" style="display: none;">
+<table class="metadata">
+<tr><th>Full Name:</th><td>05.Recipe40.Scenario: Seeing that an empty cart behaves correctly</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.476 / 20101124 21:16:43.501 / 00:00:00.025</td></tr>
+<tr><th>Status:</th><td class="pass">PASS (critical)</td></tr>
+</table>
+<table class="keyword" id="kw000029">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000029_unfoldlink" onclick="toggle_child_visibility('kw000029');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000029_foldlink" onclick="toggle_child_visibility('kw000029');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Given an empty cart </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000029_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.477 / 20101124 21:16:43.479 / 00:00:00.002</td></tr>
+</table>
+<table class="keyword" id="kw000030">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000030_unfoldlink" onclick="toggle_child_visibility('kw000030');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000030_foldlink" onclick="toggle_child_visibility('kw000030');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">recipe40.Create Empty Cart </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000030_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.478 / 20101124 21:16:43.479 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000031">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000031_unfoldlink" onclick="toggle_child_visibility('kw000031');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000031_foldlink" onclick="toggle_child_visibility('kw000031');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Then item </span>
+<span class="arg">5, is a, ERROR</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000031_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.479 / 20101124 21:16:43.484 / 00:00:00.005</td></tr>
+</table>
+<table class="keyword" id="kw000032">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000032_unfoldlink" onclick="toggle_child_visibility('kw000032');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000032_foldlink" onclick="toggle_child_visibility('kw000032');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${fetched item} = recipe40.Lookup Item </span>
+<span class="arg">${index}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000032_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.482 / 20101124 21:16:43.483 / 00:00:00.001</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.483</td>
+<td class="info level">INFO</td>
+<td class="msg">${fetched item} = ERROR</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000033">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000033_unfoldlink" onclick="toggle_child_visibility('kw000033');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000033_foldlink" onclick="toggle_child_visibility('kw000033');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Should Be Equal </span>
+<span class="arg">${description}, ${fetched item}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000033_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Fails if the given objects are unequal.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.483 / 20101124 21:16:43.484 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000034">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000034_unfoldlink" onclick="toggle_child_visibility('kw000034');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000034_foldlink" onclick="toggle_child_visibility('kw000034');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">And price </span>
+<span class="arg">-2, is, ERROR</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000034_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.484 / 20101124 21:16:43.490 / 00:00:00.006</td></tr>
+</table>
+<table class="keyword" id="kw000035">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000035_unfoldlink" onclick="toggle_child_visibility('kw000035');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000035_foldlink" onclick="toggle_child_visibility('kw000035');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${calc price} = recipe40.Lookup Price </span>
+<span class="arg">${index}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000035_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.486 / 20101124 21:16:43.486 / 00:00:00.000</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.489</td>
+<td class="info level">INFO</td>
+<td class="msg">${calc price} = ERROR</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000036">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000036_unfoldlink" onclick="toggle_child_visibility('kw000036');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000036_foldlink" onclick="toggle_child_visibility('kw000036');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Should Be Equal </span>
+<span class="arg">${calc price}, ${price}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000036_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Fails if the given objects are unequal.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.489 / 20101124 21:16:43.490 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000037">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000037_unfoldlink" onclick="toggle_child_visibility('kw000037');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000037_foldlink" onclick="toggle_child_visibility('kw000037');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">And the cart has </span>
+<span class="arg">0, items</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000037_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.490 / 20101124 21:16:43.492 / 00:00:00.002</td></tr>
+</table>
+<table class="keyword" id="kw000038">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000038_unfoldlink" onclick="toggle_child_visibility('kw000038');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000038_foldlink" onclick="toggle_child_visibility('kw000038');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${size of cart} = recipe40.Size Of Cart </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000038_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.491 / 20101124 21:16:43.492 / 00:00:00.001</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.492</td>
+<td class="info level">INFO</td>
+<td class="msg">${size of cart} = 0</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000039">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000039_unfoldlink" onclick="toggle_child_visibility('kw000039');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000039_foldlink" onclick="toggle_child_visibility('kw000039');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">And the total cost with </span>
+<span class="arg">0, % taxes is, 0.00</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000039_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.493 / 20101124 21:16:43.496 / 00:00:00.003</td></tr>
+</table>
+<table class="keyword" id="kw000040">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000040_unfoldlink" onclick="toggle_child_visibility('kw000040');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000040_foldlink" onclick="toggle_child_visibility('kw000040');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${calc total} = recipe40.Total </span>
+<span class="arg">${tax}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000040_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.494 / 20101124 21:16:43.494 / 00:00:00.000</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.495</td>
+<td class="info level">INFO</td>
+<td class="msg">${calc total} = 0.00</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000041">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000041_unfoldlink" onclick="toggle_child_visibility('kw000041');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000041_foldlink" onclick="toggle_child_visibility('kw000041');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Should Be Equal </span>
+<span class="arg">${calc total}, ${total}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000041_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Fails if the given objects are unequal.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.495 / 20101124 21:16:43.495 / 00:00:00.000</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000042">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000042_unfoldlink" onclick="toggle_child_visibility('kw000042');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000042_foldlink" onclick="toggle_child_visibility('kw000042');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">And the total cost with </span>
+<span class="arg">10, % taxes is, 0.00</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000042_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.496 / 20101124 21:16:43.500 / 00:00:00.004</td></tr>
+</table>
+<table class="keyword" id="kw000043">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000043_unfoldlink" onclick="toggle_child_visibility('kw000043');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000043_foldlink" onclick="toggle_child_visibility('kw000043');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${calc total} = recipe40.Total </span>
+<span class="arg">${tax}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000043_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.497 / 20101124 21:16:43.498 / 00:00:00.001</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.499</td>
+<td class="info level">INFO</td>
+<td class="msg">${calc total} = 0.00</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000044">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000044_unfoldlink" onclick="toggle_child_visibility('kw000044');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000044_foldlink" onclick="toggle_child_visibility('kw000044');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Should Be Equal </span>
+<span class="arg">${calc total}, ${total}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000044_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Fails if the given objects are unequal.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.499 / 20101124 21:16:43.500 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="test" id="test000006">
+<tr>
+<td>
+<a class="expand" href="javascript:expand_all_children('test000006')">Expand All</a>
+<div class="foldingbutton" id="test000006_unfoldlink" onclick="toggle_child_visibility('test000006');" style="display: none;">-</div>
+<div class="foldingbutton" id="test000006_foldlink" onclick="toggle_child_visibility('test000006');" style="display: block;">+</div>
+<span class="pass">TEST&nbsp;CASE: </span>
+<a class="name" name="test_05.Recipe40.Scenario: Seeing a cart getting loaded with multiple of the same" title="05.Recipe40.Scenario: Seeing a cart getting loaded with multiple of the same">Scenario: Seeing a cart getting loaded with multiple of the same</a>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="test000006_children" style="display: none;">
+<table class="metadata">
+<tr><th>Full Name:</th><td>05.Recipe40.Scenario: Seeing a cart getting loaded with multiple of the same</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.501 / 20101124 21:16:43.527 / 00:00:00.026</td></tr>
+<tr><th>Status:</th><td class="pass">PASS (critical)</td></tr>
+</table>
+<table class="keyword" id="kw000045">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000045_unfoldlink" onclick="toggle_child_visibility('kw000045');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000045_foldlink" onclick="toggle_child_visibility('kw000045');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Given an empty cart </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000045_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.502 / 20101124 21:16:43.504 / 00:00:00.002</td></tr>
+</table>
+<table class="keyword" id="kw000046">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000046_unfoldlink" onclick="toggle_child_visibility('kw000046');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000046_foldlink" onclick="toggle_child_visibility('kw000046');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">recipe40.Create Empty Cart </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000046_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.503 / 20101124 21:16:43.504 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000047">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000047_unfoldlink" onclick="toggle_child_visibility('kw000047');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000047_foldlink" onclick="toggle_child_visibility('kw000047');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">When I add a </span>
+<span class="arg">carton of milk, for, 2.50</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000047_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.504 / 20101124 21:16:43.506 / 00:00:00.002</td></tr>
+</table>
+<table class="keyword" id="kw000048">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000048_unfoldlink" onclick="toggle_child_visibility('kw000048');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000048_foldlink" onclick="toggle_child_visibility('kw000048');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">recipe40.Add Item </span>
+<span class="arg">${description}, ${price}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000048_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.505 / 20101124 21:16:43.506 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000049">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000049_unfoldlink" onclick="toggle_child_visibility('kw000049');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000049_foldlink" onclick="toggle_child_visibility('kw000049');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">And I add a </span>
+<span class="arg">carton of milk, for, 2.50</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000049_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.507 / 20101124 21:16:43.509 / 00:00:00.002</td></tr>
+</table>
+<table class="keyword" id="kw000050">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000050_unfoldlink" onclick="toggle_child_visibility('kw000050');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000050_foldlink" onclick="toggle_child_visibility('kw000050');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">recipe40.Add Item </span>
+<span class="arg">${description}, ${price}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000050_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.508 / 20101124 21:16:43.509 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000051">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000051_unfoldlink" onclick="toggle_child_visibility('kw000051');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000051_foldlink" onclick="toggle_child_visibility('kw000051');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Then item </span>
+<span class="arg">1, is a, carton of milk</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000051_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.509 / 20101124 21:16:43.513 / 00:00:00.004</td></tr>
+</table>
+<table class="keyword" id="kw000052">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000052_unfoldlink" onclick="toggle_child_visibility('kw000052');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000052_foldlink" onclick="toggle_child_visibility('kw000052');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${fetched item} = recipe40.Lookup Item </span>
+<span class="arg">${index}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000052_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.511 / 20101124 21:16:43.512 / 00:00:00.001</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.512</td>
+<td class="info level">INFO</td>
+<td class="msg">${fetched item} = carton of milk</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000053">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000053_unfoldlink" onclick="toggle_child_visibility('kw000053');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000053_foldlink" onclick="toggle_child_visibility('kw000053');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Should Be Equal </span>
+<span class="arg">${description}, ${fetched item}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000053_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Fails if the given objects are unequal.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.512 / 20101124 21:16:43.513 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000054">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000054_unfoldlink" onclick="toggle_child_visibility('kw000054');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000054_foldlink" onclick="toggle_child_visibility('kw000054');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">And price </span>
+<span class="arg">1, is, 5.00</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000054_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.513 / 20101124 21:16:43.518 / 00:00:00.005</td></tr>
+</table>
+<table class="keyword" id="kw000055">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000055_unfoldlink" onclick="toggle_child_visibility('kw000055');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000055_foldlink" onclick="toggle_child_visibility('kw000055');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${calc price} = recipe40.Lookup Price </span>
+<span class="arg">${index}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000055_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.514 / 20101124 21:16:43.515 / 00:00:00.001</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.516</td>
+<td class="info level">INFO</td>
+<td class="msg">${calc price} = 5.00</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000056">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000056_unfoldlink" onclick="toggle_child_visibility('kw000056');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000056_foldlink" onclick="toggle_child_visibility('kw000056');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Should Be Equal </span>
+<span class="arg">${calc price}, ${price}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000056_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Fails if the given objects are unequal.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.517 / 20101124 21:16:43.518 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000057">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000057_unfoldlink" onclick="toggle_child_visibility('kw000057');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000057_foldlink" onclick="toggle_child_visibility('kw000057');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">And the cart has </span>
+<span class="arg">2, items</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000057_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.519 / 20101124 21:16:43.522 / 00:00:00.003</td></tr>
+</table>
+<table class="keyword" id="kw000058">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000058_unfoldlink" onclick="toggle_child_visibility('kw000058');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000058_foldlink" onclick="toggle_child_visibility('kw000058');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${size of cart} = recipe40.Size Of Cart </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000058_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.521 / 20101124 21:16:43.522 / 00:00:00.001</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.522</td>
+<td class="info level">INFO</td>
+<td class="msg">${size of cart} = 2</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000059">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000059_unfoldlink" onclick="toggle_child_visibility('kw000059');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000059_foldlink" onclick="toggle_child_visibility('kw000059');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">And the total cost with </span>
+<span class="arg">10, % taxes is, 5.50</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000059_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.522 / 20101124 21:16:43.527 / 00:00:00.005</td></tr>
+</table>
+<table class="keyword" id="kw000060">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000060_unfoldlink" onclick="toggle_child_visibility('kw000060');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000060_foldlink" onclick="toggle_child_visibility('kw000060');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${calc total} = recipe40.Total </span>
+<span class="arg">${tax}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000060_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.524 / 20101124 21:16:43.525 / 00:00:00.001</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.525</td>
+<td class="info level">INFO</td>
+<td class="msg">${calc total} = 5.50</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000061">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000061_unfoldlink" onclick="toggle_child_visibility('kw000061');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000061_foldlink" onclick="toggle_child_visibility('kw000061');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Should Be Equal </span>
+<span class="arg">${calc total}, ${total}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000061_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Fails if the given objects are unequal.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.525 / 20101124 21:16:43.526 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="test" id="test000007">
+<tr>
+<td>
+<a class="expand" href="javascript:expand_all_children('test000007')">Expand All</a>
+<div class="foldingbutton" id="test000007_unfoldlink" onclick="toggle_child_visibility('test000007');" style="display: none;">-</div>
+<div class="foldingbutton" id="test000007_foldlink" onclick="toggle_child_visibility('test000007');" style="display: block;">+</div>
+<span class="pass">TEST&nbsp;CASE: </span>
+<a class="name" name="test_05.Recipe40.Scenario: Seeing a cart getting loaded with different items" title="05.Recipe40.Scenario: Seeing a cart getting loaded with different items">Scenario: Seeing a cart getting loaded with different items</a>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="test000007_children" style="display: none;">
+<table class="metadata">
+<tr><th>Full Name:</th><td>05.Recipe40.Scenario: Seeing a cart getting loaded with different items</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.527 / 20101124 21:16:43.571 / 00:00:00.044</td></tr>
+<tr><th>Status:</th><td class="pass">PASS (critical)</td></tr>
+</table>
+<table class="keyword" id="kw000062">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000062_unfoldlink" onclick="toggle_child_visibility('kw000062');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000062_foldlink" onclick="toggle_child_visibility('kw000062');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Given an empty cart </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000062_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.530 / 20101124 21:16:43.531 / 00:00:00.001</td></tr>
+</table>
+<table class="keyword" id="kw000063">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000063_unfoldlink" onclick="toggle_child_visibility('kw000063');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000063_foldlink" onclick="toggle_child_visibility('kw000063');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">recipe40.Create Empty Cart </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000063_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.531 / 20101124 21:16:43.531 / 00:00:00.000</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000064">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000064_unfoldlink" onclick="toggle_child_visibility('kw000064');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000064_foldlink" onclick="toggle_child_visibility('kw000064');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">When I add a </span>
+<span class="arg">carton of milk, for, 2.50</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000064_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.532 / 20101124 21:16:43.534 / 00:00:00.002</td></tr>
+</table>
+<table class="keyword" id="kw000065">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000065_unfoldlink" onclick="toggle_child_visibility('kw000065');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000065_foldlink" onclick="toggle_child_visibility('kw000065');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">recipe40.Add Item </span>
+<span class="arg">${description}, ${price}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000065_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.533 / 20101124 21:16:43.534 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000066">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000066_unfoldlink" onclick="toggle_child_visibility('kw000066');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000066_foldlink" onclick="toggle_child_visibility('kw000066');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">And I add a </span>
+<span class="arg">frozen pizza, for, 3.00</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000066_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.535 / 20101124 21:16:43.537 / 00:00:00.002</td></tr>
+</table>
+<table class="keyword" id="kw000067">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000067_unfoldlink" onclick="toggle_child_visibility('kw000067');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000067_foldlink" onclick="toggle_child_visibility('kw000067');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">recipe40.Add Item </span>
+<span class="arg">${description}, ${price}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000067_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.536 / 20101124 21:16:43.537 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000068">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000068_unfoldlink" onclick="toggle_child_visibility('kw000068');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000068_foldlink" onclick="toggle_child_visibility('kw000068');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Then item </span>
+<span class="arg">1, is a, carton of milk</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000068_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.540 / 20101124 21:16:43.544 / 00:00:00.004</td></tr>
+</table>
+<table class="keyword" id="kw000069">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000069_unfoldlink" onclick="toggle_child_visibility('kw000069');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000069_foldlink" onclick="toggle_child_visibility('kw000069');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${fetched item} = recipe40.Lookup Item </span>
+<span class="arg">${index}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000069_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.542 / 20101124 21:16:43.542 / 00:00:00.000</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.542</td>
+<td class="info level">INFO</td>
+<td class="msg">${fetched item} = carton of milk</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000070">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000070_unfoldlink" onclick="toggle_child_visibility('kw000070');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000070_foldlink" onclick="toggle_child_visibility('kw000070');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Should Be Equal </span>
+<span class="arg">${description}, ${fetched item}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000070_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Fails if the given objects are unequal.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.543 / 20101124 21:16:43.544 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000071">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000071_unfoldlink" onclick="toggle_child_visibility('kw000071');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000071_foldlink" onclick="toggle_child_visibility('kw000071');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">And item </span>
+<span class="arg">2, is a, frozen pizza</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000071_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.545 / 20101124 21:16:43.554 / 00:00:00.009</td></tr>
+</table>
+<table class="keyword" id="kw000072">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000072_unfoldlink" onclick="toggle_child_visibility('kw000072');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000072_foldlink" onclick="toggle_child_visibility('kw000072');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Then item </span>
+<span class="arg">${index}, ${noop}, ${description}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000072_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.546 / 20101124 21:16:43.553 / 00:00:00.007</td></tr>
+</table>
+<table class="keyword" id="kw000073">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000073_unfoldlink" onclick="toggle_child_visibility('kw000073');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000073_foldlink" onclick="toggle_child_visibility('kw000073');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${fetched item} = recipe40.Lookup Item </span>
+<span class="arg">${index}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000073_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.547 / 20101124 21:16:43.548 / 00:00:00.001</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.548</td>
+<td class="info level">INFO</td>
+<td class="msg">${fetched item} = frozen pizza</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000074">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000074_unfoldlink" onclick="toggle_child_visibility('kw000074');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000074_foldlink" onclick="toggle_child_visibility('kw000074');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Should Be Equal </span>
+<span class="arg">${description}, ${fetched item}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000074_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Fails if the given objects are unequal.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.552 / 20101124 21:16:43.552 / 00:00:00.000</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000075">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000075_unfoldlink" onclick="toggle_child_visibility('kw000075');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000075_foldlink" onclick="toggle_child_visibility('kw000075');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">And price </span>
+<span class="arg">1, is, 2.50</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000075_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.554 / 20101124 21:16:43.558 / 00:00:00.004</td></tr>
+</table>
+<table class="keyword" id="kw000076">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000076_unfoldlink" onclick="toggle_child_visibility('kw000076');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000076_foldlink" onclick="toggle_child_visibility('kw000076');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${calc price} = recipe40.Lookup Price </span>
+<span class="arg">${index}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000076_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.555 / 20101124 21:16:43.556 / 00:00:00.001</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.557</td>
+<td class="info level">INFO</td>
+<td class="msg">${calc price} = 2.50</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000077">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000077_unfoldlink" onclick="toggle_child_visibility('kw000077');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000077_foldlink" onclick="toggle_child_visibility('kw000077');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Should Be Equal </span>
+<span class="arg">${calc price}, ${price}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000077_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Fails if the given objects are unequal.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.557 / 20101124 21:16:43.558 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000078">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000078_unfoldlink" onclick="toggle_child_visibility('kw000078');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000078_foldlink" onclick="toggle_child_visibility('kw000078');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">And price </span>
+<span class="arg">2, is, 3.00</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000078_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.559 / 20101124 21:16:43.562 / 00:00:00.003</td></tr>
+</table>
+<table class="keyword" id="kw000079">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000079_unfoldlink" onclick="toggle_child_visibility('kw000079');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000079_foldlink" onclick="toggle_child_visibility('kw000079');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${calc price} = recipe40.Lookup Price </span>
+<span class="arg">${index}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000079_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.560 / 20101124 21:16:43.561 / 00:00:00.001</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.561</td>
+<td class="info level">INFO</td>
+<td class="msg">${calc price} = 3.00</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000080">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000080_unfoldlink" onclick="toggle_child_visibility('kw000080');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000080_foldlink" onclick="toggle_child_visibility('kw000080');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Should Be Equal </span>
+<span class="arg">${calc price}, ${price}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000080_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Fails if the given objects are unequal.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.561 / 20101124 21:16:43.562 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000081">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000081_unfoldlink" onclick="toggle_child_visibility('kw000081');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000081_foldlink" onclick="toggle_child_visibility('kw000081');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">And the total cost with </span>
+<span class="arg">0, % taxes is, 5.50</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000081_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.563 / 20101124 21:16:43.566 / 00:00:00.003</td></tr>
+</table>
+<table class="keyword" id="kw000082">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000082_unfoldlink" onclick="toggle_child_visibility('kw000082');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000082_foldlink" onclick="toggle_child_visibility('kw000082');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${calc total} = recipe40.Total </span>
+<span class="arg">${tax}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000082_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.564 / 20101124 21:16:43.564 / 00:00:00.000</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.564</td>
+<td class="info level">INFO</td>
+<td class="msg">${calc total} = 5.50</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000083">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000083_unfoldlink" onclick="toggle_child_visibility('kw000083');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000083_foldlink" onclick="toggle_child_visibility('kw000083');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Should Be Equal </span>
+<span class="arg">${calc total}, ${total}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000083_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Fails if the given objects are unequal.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.565 / 20101124 21:16:43.566 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000084">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000084_unfoldlink" onclick="toggle_child_visibility('kw000084');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000084_foldlink" onclick="toggle_child_visibility('kw000084');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">And the total cost with </span>
+<span class="arg">10, % taxes is, 6.05</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000084_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.566 / 20101124 21:16:43.571 / 00:00:00.005</td></tr>
+</table>
+<table class="keyword" id="kw000085">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000085_unfoldlink" onclick="toggle_child_visibility('kw000085');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000085_foldlink" onclick="toggle_child_visibility('kw000085');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${calc total} = recipe40.Total </span>
+<span class="arg">${tax}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000085_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.568 / 20101124 21:16:43.569 / 00:00:00.001</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.569</td>
+<td class="info level">INFO</td>
+<td class="msg">${calc total} = 6.05</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000086">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000086_unfoldlink" onclick="toggle_child_visibility('kw000086');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000086_foldlink" onclick="toggle_child_visibility('kw000086');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Should Be Equal </span>
+<span class="arg">${calc total}, ${total}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000086_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Fails if the given objects are unequal.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.569 / 20101124 21:16:43.570 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="suite" id="suite000004">
+<tr>
+<td>
+<a class="expand" href="javascript:expand_all_children('suite000004')">Expand All</a>
+<div class="foldingbutton" id="suite000004_unfoldlink" onclick="toggle_child_visibility('suite000004');" style="display: none;">-</div>
+<div class="foldingbutton" id="suite000004_foldlink" onclick="toggle_child_visibility('suite000004');" style="display: block;">+</div>
+<span class="pass">TEST&nbsp;SUITE: </span>
+<a class="name" name="suite_05.Recipe41" title="05.Recipe41">Recipe41</a>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="suite000004_children" style="display: none;">
+<table class="metadata">
+<tr><th>Full Name:</th><td>05.Recipe41</td></tr>
+<tr><th>Source:</th><td><a href="recipe41.txt">/users/gturnquist/dropbox/python_testing_cookbook/code/05/recipe41.txt</a></td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.572 / 20101124 21:16:43.618 / 00:00:00.046</td></tr>
+<tr><th>Overall Status:</th><td class="pass">PASS</td></tr>
+<tr><th>Message:</th><td>2&nbsp;critical&nbsp;tests,&nbsp;2&nbsp;passed,&nbsp;<span>0&nbsp;failed</span><br />2&nbsp;tests&nbsp;total,&nbsp;2&nbsp;passed,&nbsp;<span>0&nbsp;failed</span></td></tr>
+</table>
+<table class="test" id="test000008">
+<tr>
+<td>
+<a class="expand" href="javascript:expand_all_children('test000008')">Expand All</a>
+<div class="foldingbutton" id="test000008_unfoldlink" onclick="toggle_child_visibility('test000008');" style="display: none;">-</div>
+<div class="foldingbutton" id="test000008_foldlink" onclick="toggle_child_visibility('test000008');" style="display: block;">+</div>
+<span class="pass">TEST&nbsp;CASE: </span>
+<a class="name" name="test_05.Recipe41.Simple check of adding one item" title="05.Recipe41.Simple check of adding one item">Simple check of adding one item</a>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="test000008_children" style="display: none;">
+<table class="metadata">
+<tr><th>Full Name:</th><td>05.Recipe41.Simple check of adding one item</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.577 / 20101124 21:16:43.589 / 00:00:00.012</td></tr>
+<tr><th>Status:</th><td class="pass">PASS (critical)</td></tr>
+</table>
+<table class="keyword" id="kw000087">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000087_unfoldlink" onclick="toggle_child_visibility('kw000087');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000087_foldlink" onclick="toggle_child_visibility('kw000087');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Given an empty cart </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000087_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.578 / 20101124 21:16:43.579 / 00:00:00.001</td></tr>
+</table>
+<table class="keyword" id="kw000088">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000088_unfoldlink" onclick="toggle_child_visibility('kw000088');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000088_foldlink" onclick="toggle_child_visibility('kw000088');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">recipe41.Create Empty Cart </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000088_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.578 / 20101124 21:16:43.579 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000089">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000089_unfoldlink" onclick="toggle_child_visibility('kw000089');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000089_foldlink" onclick="toggle_child_visibility('kw000089');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">When I add a </span>
+<span class="arg">carton of milk, for, 2.50</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000089_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.579 / 20101124 21:16:43.581 / 00:00:00.002</td></tr>
+</table>
+<table class="keyword" id="kw000090">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000090_unfoldlink" onclick="toggle_child_visibility('kw000090');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000090_foldlink" onclick="toggle_child_visibility('kw000090');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">recipe41.Add Item </span>
+<span class="arg">${description}, ${price}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000090_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.580 / 20101124 21:16:43.581 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000091">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000091_unfoldlink" onclick="toggle_child_visibility('kw000091');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000091_foldlink" onclick="toggle_child_visibility('kw000091');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Then the total with </span>
+<span class="arg">0, % tax is, 2.50</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000091_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.581 / 20101124 21:16:43.584 / 00:00:00.003</td></tr>
+</table>
+<table class="keyword" id="kw000092">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000092_unfoldlink" onclick="toggle_child_visibility('kw000092');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000092_foldlink" onclick="toggle_child_visibility('kw000092');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${calc total} = recipe41.Total </span>
+<span class="arg">${tax}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000092_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.582 / 20101124 21:16:43.583 / 00:00:00.001</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.583</td>
+<td class="info level">INFO</td>
+<td class="msg">${calc total} = 2.50</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000093">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000093_unfoldlink" onclick="toggle_child_visibility('kw000093');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000093_foldlink" onclick="toggle_child_visibility('kw000093');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Should Be Equal </span>
+<span class="arg">${calc total}, ${total}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000093_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Fails if the given objects are unequal.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.583 / 20101124 21:16:43.584 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000094">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000094_unfoldlink" onclick="toggle_child_visibility('kw000094');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000094_foldlink" onclick="toggle_child_visibility('kw000094');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">And the total with </span>
+<span class="arg">10, % tax is, 2.75</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000094_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.585 / 20101124 21:16:43.589 / 00:00:00.004</td></tr>
+</table>
+<table class="keyword" id="kw000095">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000095_unfoldlink" onclick="toggle_child_visibility('kw000095');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000095_foldlink" onclick="toggle_child_visibility('kw000095');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Then the total with </span>
+<span class="arg">${tax}, ${noop}, ${total}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000095_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.586 / 20101124 21:16:43.589 / 00:00:00.003</td></tr>
+</table>
+<table class="keyword" id="kw000096">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000096_unfoldlink" onclick="toggle_child_visibility('kw000096');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000096_foldlink" onclick="toggle_child_visibility('kw000096');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${calc total} = recipe41.Total </span>
+<span class="arg">${tax}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000096_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.587 / 20101124 21:16:43.587 / 00:00:00.000</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.588</td>
+<td class="info level">INFO</td>
+<td class="msg">${calc total} = 2.75</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000097">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000097_unfoldlink" onclick="toggle_child_visibility('kw000097');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000097_foldlink" onclick="toggle_child_visibility('kw000097');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Should Be Equal </span>
+<span class="arg">${calc total}, ${total}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000097_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Fails if the given objects are unequal.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.588 / 20101124 21:16:43.589 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="test" id="test000009">
+<tr>
+<td>
+<a class="expand" href="javascript:expand_all_children('test000009')">Expand All</a>
+<div class="foldingbutton" id="test000009_unfoldlink" onclick="toggle_child_visibility('test000009');" style="display: none;">-</div>
+<div class="foldingbutton" id="test000009_foldlink" onclick="toggle_child_visibility('test000009');" style="display: block;">+</div>
+<span class="pass">TEST&nbsp;CASE: </span>
+<a class="name" name="test_05.Recipe41.More complex by storing cart to database" title="05.Recipe41.More complex by storing cart to database">More complex by storing cart to database</a>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="test000009_children" style="display: none;">
+<table class="metadata">
+<tr><th>Full Name:</th><td>05.Recipe41.More complex by storing cart to database</td></tr>
+<tr><th>Documentation:</th><td>This test case has special tagging, so it can be excluded. This is in case the developer doesn't have the right database system installed to interact properly.cart.db</td></tr>
+<tr><th>Tags:</th><td>database</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.590 / 20101124 21:16:43.617 / 00:00:00.027</td></tr>
+<tr><th>Status:</th><td class="pass">PASS (critical)</td></tr>
+</table>
+<table class="keyword" id="kw000098">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000098_unfoldlink" onclick="toggle_child_visibility('kw000098');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000098_foldlink" onclick="toggle_child_visibility('kw000098');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Given an empty cart </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000098_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.593 / 20101124 21:16:43.595 / 00:00:00.002</td></tr>
+</table>
+<table class="keyword" id="kw000099">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000099_unfoldlink" onclick="toggle_child_visibility('kw000099');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000099_foldlink" onclick="toggle_child_visibility('kw000099');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">recipe41.Create Empty Cart </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000099_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.594 / 20101124 21:16:43.594 / 00:00:00.000</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000100">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000100_unfoldlink" onclick="toggle_child_visibility('kw000100');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000100_foldlink" onclick="toggle_child_visibility('kw000100');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">When I add a </span>
+<span class="arg">carton of milk, for, 2.50</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000100_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.595 / 20101124 21:16:43.598 / 00:00:00.003</td></tr>
+</table>
+<table class="keyword" id="kw000101">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000101_unfoldlink" onclick="toggle_child_visibility('kw000101');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000101_foldlink" onclick="toggle_child_visibility('kw000101');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">recipe41.Add Item </span>
+<span class="arg">${description}, ${price}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000101_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.597 / 20101124 21:16:43.598 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000102">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000102_unfoldlink" onclick="toggle_child_visibility('kw000102');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000102_foldlink" onclick="toggle_child_visibility('kw000102');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">And I add a </span>
+<span class="arg">frozen pizza, for, 3.50</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000102_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.599 / 20101124 21:16:43.601 / 00:00:00.002</td></tr>
+</table>
+<table class="keyword" id="kw000103">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000103_unfoldlink" onclick="toggle_child_visibility('kw000103');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000103_foldlink" onclick="toggle_child_visibility('kw000103');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">recipe41.Add Item </span>
+<span class="arg">${description}, ${price}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000103_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.600 / 20101124 21:16:43.600 / 00:00:00.000</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000104">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000104_unfoldlink" onclick="toggle_child_visibility('kw000104');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000104_foldlink" onclick="toggle_child_visibility('kw000104');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">And I store the cart </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000104_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.601 / 20101124 21:16:43.604 / 00:00:00.003</td></tr>
+</table>
+<table class="keyword" id="kw000105">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000105_unfoldlink" onclick="toggle_child_visibility('kw000105');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000105_foldlink" onclick="toggle_child_visibility('kw000105');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Set Test Variable </span>
+<span class="arg">${cart id}, store cart</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000105_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Makes a variable available everywhere within the scope of the current test.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.602 / 20101124 21:16:43.603 / 00:00:00.001</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.603</td>
+<td class="info level">INFO</td>
+<td class="msg">${cart id} = store cart</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000106">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000106_unfoldlink" onclick="toggle_child_visibility('kw000106');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000106_foldlink" onclick="toggle_child_visibility('kw000106');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">And I retrieve the cart </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000106_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.605 / 20101124 21:16:43.608 / 00:00:00.003</td></tr>
+</table>
+<table class="keyword" id="kw000107">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000107_unfoldlink" onclick="toggle_child_visibility('kw000107');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000107_foldlink" onclick="toggle_child_visibility('kw000107');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">recipe41.Retrieve Cart </span>
+<span class="arg">${cart id}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000107_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.607 / 20101124 21:16:43.608 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000108">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000108_unfoldlink" onclick="toggle_child_visibility('kw000108');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000108_foldlink" onclick="toggle_child_visibility('kw000108');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Then there are </span>
+<span class="arg">2, items</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000108_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.609 / 20101124 21:16:43.617 / 00:00:00.008</td></tr>
+</table>
+<table class="keyword" id="kw000109">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000109_unfoldlink" onclick="toggle_child_visibility('kw000109');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000109_foldlink" onclick="toggle_child_visibility('kw000109');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${calc size} = recipe41.Size Of Cart </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000109_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.610 / 20101124 21:16:43.610 / 00:00:00.000</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.611</td>
+<td class="info level">INFO</td>
+<td class="msg">${calc size} = 2</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000110">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000110_unfoldlink" onclick="toggle_child_visibility('kw000110');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000110_foldlink" onclick="toggle_child_visibility('kw000110');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Should Be Equal As Numbers </span>
+<span class="arg">${calc size}, ${size}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000110_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Fails if objects are unequal after converting them to real numbers.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.616 / 20101124 21:16:43.616 / 00:00:00.000</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="suite" id="suite000005">
+<tr>
+<td>
+<a class="expand" href="javascript:expand_all_children('suite000005')">Expand All</a>
+<div class="foldingbutton" id="suite000005_unfoldlink" onclick="toggle_child_visibility('suite000005');" style="display: none;">-</div>
+<div class="foldingbutton" id="suite000005_foldlink" onclick="toggle_child_visibility('suite000005');" style="display: block;">+</div>
+<span class="pass">TEST&nbsp;SUITE: </span>
+<a class="name" name="suite_05.Recipe42" title="05.Recipe42">Recipe42</a>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="suite000005_children" style="display: none;">
+<table class="metadata">
+<tr><th>Full Name:</th><td>05.Recipe42</td></tr>
+<tr><th>Source:</th><td><a href="recipe42.txt">/users/gturnquist/dropbox/python_testing_cookbook/code/05/recipe42.txt</a></td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.618 / 20101124 21:17:06.837 / 00:00:23.219</td></tr>
+<tr><th>Overall Status:</th><td class="pass">PASS</td></tr>
+<tr><th>Message:</th><td>2&nbsp;critical&nbsp;tests,&nbsp;2&nbsp;passed,&nbsp;<span>0&nbsp;failed</span><br />2&nbsp;tests&nbsp;total,&nbsp;2&nbsp;passed,&nbsp;<span>0&nbsp;failed</span></td></tr>
+</table>
+<table class="keyword" id="kw000111">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000111_unfoldlink" onclick="toggle_child_visibility('kw000111');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000111_foldlink" onclick="toggle_child_visibility('kw000111');" style="display: block;">+</div>
+<span class="pass">SETUP: </span>
+<span class="name">Startup </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000111_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.664 / 20101124 21:16:46.698 / 00:00:03.034</td></tr>
+</table>
+<table class="keyword" id="kw000112">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000112_unfoldlink" onclick="toggle_child_visibility('kw000112');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000112_foldlink" onclick="toggle_child_visibility('kw000112');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Start Selenium Server </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000112_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Starts the Selenium Server provided with SeleniumLibrary.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.665 / 20101124 21:16:43.678 / 00:00:00.013</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.677</td>
+<td class="info level">INFO</td>
+<td class="msg">Selenium Server started with command "java -jar /Users/gturnquist/ptc/lib/python2.6/site-packages/SeleniumLibrary/lib/selenium-server.jar -port 4444 -firefoxProfileTemplate /Users/gturnquist/ptc/lib/python2.6/site-packages/SeleniumLibrary/firefoxprofile"</td>
+</tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:43.677</td>
+<td class="info level">INFO</td>
+<td class="msg">Selenium server log is written to <a href="file:///users/gturnquist/dropbox/python_testing_cookbook/code/05/selenium_server_log.txt">/users/gturnquist/dropbox/python_testing_cookbook/code/05/selenium_server_log.txt</a>.</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000113">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000113_unfoldlink" onclick="toggle_child_visibility('kw000113');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000113_foldlink" onclick="toggle_child_visibility('kw000113');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Sleep </span>
+<span class="arg">3s</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000113_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Pauses the test executed for the given time.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:43.693 / 20101124 21:16:46.698 / 00:00:03.005</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:46.697</td>
+<td class="info level">INFO</td>
+<td class="msg">Slept 3 seconds</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000114">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000114_unfoldlink" onclick="toggle_child_visibility('kw000114');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000114_foldlink" onclick="toggle_child_visibility('kw000114');" style="display: block;">+</div>
+<span class="pass">TEARDOWN: </span>
+<span class="name">SeleniumLibrary.Stop Selenium Server </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000114_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Stops the selenium server (and closes all browsers).</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:06.831 / 20101124 21:17:06.836 / 00:00:00.005</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="test" id="test000010">
+<tr>
+<td>
+<a class="expand" href="javascript:expand_all_children('test000010')">Expand All</a>
+<div class="foldingbutton" id="test000010_unfoldlink" onclick="toggle_child_visibility('test000010');" style="display: none;">-</div>
+<div class="foldingbutton" id="test000010_foldlink" onclick="toggle_child_visibility('test000010');" style="display: block;">+</div>
+<span class="pass">TEST&nbsp;CASE: </span>
+<a class="name" name="test_05.Recipe42.Inspect empty cart in detail" title="05.Recipe42.Inspect empty cart in detail">Inspect empty cart in detail</a>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="test000010_children" style="display: none;">
+<table class="metadata">
+<tr><th>Full Name:</th><td>05.Recipe42.Inspect empty cart in detail</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:46.698 / 20101124 21:16:56.353 / 00:00:09.655</td></tr>
+<tr><th>Status:</th><td class="pass">PASS (critical)</td></tr>
+</table>
+<table class="keyword" id="kw000115">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000115_unfoldlink" onclick="toggle_child_visibility('kw000115');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000115_foldlink" onclick="toggle_child_visibility('kw000115');" style="display: block;">+</div>
+<span class="pass">SETUP: </span>
+<span class="name">SeleniumLibrary.Open Browser </span>
+<span class="arg"><a href="http://localhost:8000">http://localhost:8000</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000115_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Opens a new browser instance to given URL.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:46.700 / 20101124 21:16:55.913 / 00:00:09.213</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:55.913</td>
+<td class="info level">INFO</td>
+<td class="msg">Opening browser 'firefox' to base url '<a href="http://localhost:8000">http://localhost:8000</a>'</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000116">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000116_unfoldlink" onclick="toggle_child_visibility('kw000116');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000116_foldlink" onclick="toggle_child_visibility('kw000116');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Click Link </span>
+<span class="arg">Cart</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000116_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Clicks a link identified by locator.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:55.914 / 20101124 21:16:56.096 / 00:00:00.182</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:56.096</td>
+<td class="info level">INFO</td>
+<td class="msg">Clicking link 'Cart'.</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000117">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000117_unfoldlink" onclick="toggle_child_visibility('kw000117');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000117_foldlink" onclick="toggle_child_visibility('kw000117');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Page Should Contain </span>
+<span class="arg">Your cart is empty</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000117_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Verifies that current page contains `text`.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:56.097 / 20101124 21:16:56.120 / 00:00:00.023</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:56.120</td>
+<td class="info level">INFO</td>
+<td class="msg">Current page contains text 'Your cart is empty'.</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000118">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000118_unfoldlink" onclick="toggle_child_visibility('kw000118');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000118_foldlink" onclick="toggle_child_visibility('kw000118');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Page Should Contain </span>
+<span class="arg">0 - $0.00</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000118_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Verifies that current page contains `text`.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:56.121 / 20101124 21:16:56.141 / 00:00:00.020</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:56.141</td>
+<td class="info level">INFO</td>
+<td class="msg">Current page contains text '0 - $0.00'.</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000119">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000119_unfoldlink" onclick="toggle_child_visibility('kw000119');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000119_foldlink" onclick="toggle_child_visibility('kw000119');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Capture Page Screenshot </span>
+<span class="arg">recipe42-scenario1-1.png</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000119_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Takes a screenshot of the current page and embeds it into the log.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:56.141 / 20101124 21:16:56.267 / 00:00:00.126</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:16:56.266</td>
+<td class="info level">INFO</td>
+<td class="msg"></td></tr><tr><td colspan="3"><a href="recipe42-scenario1-1.png"><img src="recipe42-scenario1-1.png" width="800px"></a></td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000120">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000120_unfoldlink" onclick="toggle_child_visibility('kw000120');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000120_foldlink" onclick="toggle_child_visibility('kw000120');" style="display: block;">+</div>
+<span class="pass">TEARDOWN: </span>
+<span class="name">SeleniumLibrary.Close All Browsers </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000120_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Closes all open browsers and empties the connection cache.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:56.267 / 20101124 21:16:56.353 / 00:00:00.086</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="test" id="test000011">
+<tr>
+<td>
+<a class="expand" href="javascript:expand_all_children('test000011')">Expand All</a>
+<div class="foldingbutton" id="test000011_unfoldlink" onclick="toggle_child_visibility('test000011');" style="display: none;">-</div>
+<div class="foldingbutton" id="test000011_foldlink" onclick="toggle_child_visibility('test000011');" style="display: block;">+</div>
+<span class="pass">TEST&nbsp;CASE: </span>
+<a class="name" name="test_05.Recipe42.Load up a cart with 2 of the same" title="05.Recipe42.Load up a cart with 2 of the same">Load up a cart with 2 of the same</a>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="test000011_children" style="display: none;">
+<table class="metadata">
+<tr><th>Full Name:</th><td>05.Recipe42.Load up a cart with 2 of the same</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:56.354 / 20101124 21:17:06.829 / 00:00:10.475</td></tr>
+<tr><th>Status:</th><td class="pass">PASS (critical)</td></tr>
+</table>
+<table class="keyword" id="kw000121">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000121_unfoldlink" onclick="toggle_child_visibility('kw000121');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000121_foldlink" onclick="toggle_child_visibility('kw000121');" style="display: block;">+</div>
+<span class="pass">SETUP: </span>
+<span class="name">SeleniumLibrary.Open Browser </span>
+<span class="arg"><a href="http://localhost:8000">http://localhost:8000</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000121_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Opens a new browser instance to given URL.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:16:56.355 / 20101124 21:17:04.837 / 00:00:08.482</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:04.836</td>
+<td class="info level">INFO</td>
+<td class="msg">Opening browser 'firefox' to base url '<a href="http://localhost:8000">http://localhost:8000</a>'</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000122">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000122_unfoldlink" onclick="toggle_child_visibility('kw000122');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000122_foldlink" onclick="toggle_child_visibility('kw000122');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Click Link </span>
+<span class="arg">Science Fiction, don't wait</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000122_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Clicks a link identified by locator.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:04.837 / 20101124 21:17:04.886 / 00:00:00.049</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:04.885</td>
+<td class="info level">INFO</td>
+<td class="msg">Clicking link 'Science Fiction'.</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000123">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000123_unfoldlink" onclick="toggle_child_visibility('kw000123');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000123_foldlink" onclick="toggle_child_visibility('kw000123');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Capture Page Screenshot </span>
+<span class="arg">recipe42-scenario2-1.png</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000123_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Takes a screenshot of the current page and embeds it into the log.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:04.886 / 20101124 21:17:05.003 / 00:00:00.117</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:05.002</td>
+<td class="info level">INFO</td>
+<td class="msg"></td></tr><tr><td colspan="3"><a href="recipe42-scenario2-1.png"><img src="recipe42-scenario2-1.png" width="800px"></a></td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000124">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000124_unfoldlink" onclick="toggle_child_visibility('kw000124');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000124_foldlink" onclick="toggle_child_visibility('kw000124');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Click Link </span>
+<span class="arg">Robots Attack!</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000124_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Clicks a link identified by locator.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:05.003 / 20101124 21:17:05.449 / 00:00:00.446</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:05.449</td>
+<td class="info level">INFO</td>
+<td class="msg">Clicking link 'Robots Attack!'.</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000125">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000125_unfoldlink" onclick="toggle_child_visibility('kw000125');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000125_foldlink" onclick="toggle_child_visibility('kw000125');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Capture Page Screenshot </span>
+<span class="arg">recipe42-scenario2-2.png</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000125_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Takes a screenshot of the current page and embeds it into the log.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:05.450 / 20101124 21:17:05.544 / 00:00:00.094</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:05.541</td>
+<td class="info level">INFO</td>
+<td class="msg"></td></tr><tr><td colspan="3"><a href="recipe42-scenario2-2.png"><img src="recipe42-scenario2-2.png" width="800px"></a></td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000126">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000126_unfoldlink" onclick="toggle_child_visibility('kw000126');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000126_foldlink" onclick="toggle_child_visibility('kw000126');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Input Text </span>
+<span class="arg">quantity, 2</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000126_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Types the given `text` into text field identified by `locator`.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:05.546 / 20101124 21:17:05.573 / 00:00:00.027</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:05.573</td>
+<td class="info level">INFO</td>
+<td class="msg">Typing text '2' into text field 'quantity'</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000127">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000127_unfoldlink" onclick="toggle_child_visibility('kw000127');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000127_foldlink" onclick="toggle_child_visibility('kw000127');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Capture Page Screenshot </span>
+<span class="arg">recipe42-scenario2-3.png</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000127_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Takes a screenshot of the current page and embeds it into the log.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:05.573 / 20101124 21:17:05.677 / 00:00:00.104</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:05.677</td>
+<td class="info level">INFO</td>
+<td class="msg"></td></tr><tr><td colspan="3"><a href="recipe42-scenario2-3.png"><img src="recipe42-scenario2-3.png" width="800px"></a></td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000128">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000128_unfoldlink" onclick="toggle_child_visibility('kw000128');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000128_foldlink" onclick="toggle_child_visibility('kw000128');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Click Button </span>
+<span class="arg">Add to cart</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000128_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Clicks a button identified by `locator`.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:05.677 / 20101124 21:17:06.070 / 00:00:00.393</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:06.070</td>
+<td class="info level">INFO</td>
+<td class="msg">Clicking button 'Add to cart'.</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000129">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000129_unfoldlink" onclick="toggle_child_visibility('kw000129');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000129_foldlink" onclick="toggle_child_visibility('kw000129');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Click Link </span>
+<span class="arg">Cart</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000129_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Clicks a link identified by locator.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:06.071 / 20101124 21:17:06.379 / 00:00:00.308</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:06.379</td>
+<td class="info level">INFO</td>
+<td class="msg">Clicking link 'Cart'.</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000130">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000130_unfoldlink" onclick="toggle_child_visibility('kw000130');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000130_foldlink" onclick="toggle_child_visibility('kw000130');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Capture Page Screenshot </span>
+<span class="arg">recipe42-scenario2-4.png</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000130_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Takes a screenshot of the current page and embeds it into the log.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:06.379 / 20101124 21:17:06.494 / 00:00:00.115</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:06.494</td>
+<td class="info level">INFO</td>
+<td class="msg"></td></tr><tr><td colspan="3"><a href="recipe42-scenario2-4.png"><img src="recipe42-scenario2-4.png" width="800px"></a></td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000131">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000131_unfoldlink" onclick="toggle_child_visibility('kw000131');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000131_foldlink" onclick="toggle_child_visibility('kw000131');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Textfield Value Should Be </span>
+<span class="arg">quantity, 2</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000131_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Verifies the value in text field identified by `locator` is exactly `expected`.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:06.495 / 20101124 21:17:06.538 / 00:00:00.043</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:06.538</td>
+<td class="info level">INFO</td>
+<td class="msg">Content of text field 'quantity' is '2'.</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000132">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000132_unfoldlink" onclick="toggle_child_visibility('kw000132');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000132_foldlink" onclick="toggle_child_visibility('kw000132');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Page Should Contain </span>
+<span class="arg">Robots Attack! (Hard cover)</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000132_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Verifies that current page contains `text`.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:06.538 / 20101124 21:17:06.566 / 00:00:00.028</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:06.566</td>
+<td class="info level">INFO</td>
+<td class="msg">Current page contains text 'Robots Attack! (Hard cover)'.</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000133">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000133_unfoldlink" onclick="toggle_child_visibility('kw000133');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000133_foldlink" onclick="toggle_child_visibility('kw000133');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Html Should Contain </span>
+<span class="arg">&lt;td align="center"&gt;$7.99&lt;/td&gt;</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000133_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:06.567 / 20101124 21:17:06.608 / 00:00:00.041</td></tr>
+</table>
+<table class="keyword" id="kw000134">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000134_unfoldlink" onclick="toggle_child_visibility('kw000134');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000134_foldlink" onclick="toggle_child_visibility('kw000134');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${html} = SeleniumLibrary.Get Source </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000134_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Returns the entire html source of the current page or frame.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:06.568 / 20101124 21:17:06.605 / 00:00:00.037</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:06.606</td>
+<td class="info level">INFO</td>
+<td class="msg">${html} = &lt;head&gt;<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+ &nbsp; &nbsp;<br />
+ &nbsp; &nbsp;&lt;link rel="stylesheet" href="/static/css/style.css"&gt;<br />
+ &nbsp; &nbsp;&lt;title&gt;Simple Satchmo&lt;/title&gt;<br />
+ &nbsp; &nbsp;<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+&lt;/head&gt;&lt;body&gt;<br />
+ &nbsp; &nbsp;<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+ &nbsp; &nbsp;&lt;div id="container"&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&lt;div id="top"&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h...</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000135">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000135_unfoldlink" onclick="toggle_child_visibility('kw000135');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000135_foldlink" onclick="toggle_child_visibility('kw000135');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Should Contain </span>
+<span class="arg">${html}, ${expected}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000135_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Fails if `item1` does not contain `item2` one or more times.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:06.607 / 20101124 21:17:06.608 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000136">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000136_unfoldlink" onclick="toggle_child_visibility('kw000136');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000136_foldlink" onclick="toggle_child_visibility('kw000136');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Html Should Contain </span>
+<span class="arg">&lt;td align="center"&gt;$15.98&lt;/td&gt;</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000136_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:06.609 / 20101124 21:17:06.745 / 00:00:00.136</td></tr>
+</table>
+<table class="keyword" id="kw000137">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000137_unfoldlink" onclick="toggle_child_visibility('kw000137');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000137_foldlink" onclick="toggle_child_visibility('kw000137');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${html} = SeleniumLibrary.Get Source </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000137_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Returns the entire html source of the current page or frame.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:06.610 / 20101124 21:17:06.743 / 00:00:00.133</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:06.744</td>
+<td class="info level">INFO</td>
+<td class="msg">${html} = &lt;head&gt;<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+ &nbsp; &nbsp;<br />
+ &nbsp; &nbsp;&lt;link rel="stylesheet" href="/static/css/style.css"&gt;<br />
+ &nbsp; &nbsp;&lt;title&gt;Simple Satchmo&lt;/title&gt;<br />
+ &nbsp; &nbsp;<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+&lt;/head&gt;&lt;body&gt;<br />
+ &nbsp; &nbsp;<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+ &nbsp; &nbsp;&lt;div id="container"&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&lt;div id="top"&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h...</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000138">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000138_unfoldlink" onclick="toggle_child_visibility('kw000138');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000138_foldlink" onclick="toggle_child_visibility('kw000138');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Should Contain </span>
+<span class="arg">${html}, ${expected}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000138_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Fails if `item1` does not contain `item2` one or more times.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:06.744 / 20101124 21:17:06.745 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000139">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000139_unfoldlink" onclick="toggle_child_visibility('kw000139');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000139_foldlink" onclick="toggle_child_visibility('kw000139');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Html Should Contain </span>
+<span class="arg">&lt;td&gt;$15.98&lt;/td&gt;</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000139_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:06.746 / 20101124 21:17:06.784 / 00:00:00.038</td></tr>
+</table>
+<table class="keyword" id="kw000140">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000140_unfoldlink" onclick="toggle_child_visibility('kw000140');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000140_foldlink" onclick="toggle_child_visibility('kw000140');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">${html} = SeleniumLibrary.Get Source </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000140_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Returns the entire html source of the current page or frame.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:06.747 / 20101124 21:17:06.782 / 00:00:00.035</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:06.782</td>
+<td class="info level">INFO</td>
+<td class="msg">${html} = &lt;head&gt;<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+ &nbsp; &nbsp;<br />
+ &nbsp; &nbsp;&lt;link rel="stylesheet" href="/static/css/style.css"&gt;<br />
+ &nbsp; &nbsp;&lt;title&gt;Simple Satchmo&lt;/title&gt;<br />
+ &nbsp; &nbsp;<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+&lt;/head&gt;&lt;body&gt;<br />
+ &nbsp; &nbsp;<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+ &nbsp; &nbsp;&lt;div id="container"&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&lt;div id="top"&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h...</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000141">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000141_unfoldlink" onclick="toggle_child_visibility('kw000141');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000141_foldlink" onclick="toggle_child_visibility('kw000141');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Should Contain </span>
+<span class="arg">${html}, ${expected}</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000141_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Fails if `item1` does not contain `item2` one or more times.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:06.783 / 20101124 21:17:06.784 / 00:00:00.001</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000142">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000142_unfoldlink" onclick="toggle_child_visibility('kw000142');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000142_foldlink" onclick="toggle_child_visibility('kw000142');" style="display: block;">+</div>
+<span class="pass">TEARDOWN: </span>
+<span class="name">SeleniumLibrary.Close All Browsers </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000142_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Closes all open browsers and empties the connection cache.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:06.785 / 20101124 21:17:06.829 / 00:00:00.044</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="suite" id="suite000006">
+<tr>
+<td>
+<a class="expand" href="javascript:expand_all_children('suite000006')">Expand All</a>
+<div class="foldingbutton" id="suite000006_unfoldlink" onclick="toggle_child_visibility('suite000006');" style="display: none;">-</div>
+<div class="foldingbutton" id="suite000006_foldlink" onclick="toggle_child_visibility('suite000006');" style="display: block;">+</div>
+<span class="pass">TEST&nbsp;SUITE: </span>
+<a class="name" name="suite_05.Recipe43" title="05.Recipe43">Recipe43</a>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="suite000006_children" style="display: none;">
+<table class="metadata">
+<tr><th>Full Name:</th><td>05.Recipe43</td></tr>
+<tr><th>Source:</th><td><a href="recipe43.txt">/users/gturnquist/dropbox/python_testing_cookbook/code/05/recipe43.txt</a></td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:06.838 / 20101124 21:17:30.661 / 00:00:23.823</td></tr>
+<tr><th>Overall Status:</th><td class="pass">PASS</td></tr>
+<tr><th>Message:</th><td>2&nbsp;critical&nbsp;tests,&nbsp;2&nbsp;passed,&nbsp;<span>0&nbsp;failed</span><br />2&nbsp;tests&nbsp;total,&nbsp;2&nbsp;passed,&nbsp;<span>0&nbsp;failed</span></td></tr>
+</table>
+<table class="keyword" id="kw000143">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000143_unfoldlink" onclick="toggle_child_visibility('kw000143');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000143_foldlink" onclick="toggle_child_visibility('kw000143');" style="display: block;">+</div>
+<span class="pass">SETUP: </span>
+<span class="name">Startup </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000143_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:06.840 / 20101124 21:17:09.851 / 00:00:03.011</td></tr>
+</table>
+<table class="keyword" id="kw000144">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000144_unfoldlink" onclick="toggle_child_visibility('kw000144');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000144_foldlink" onclick="toggle_child_visibility('kw000144');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Start Selenium Server </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000144_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Starts the Selenium Server provided with SeleniumLibrary.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:06.841 / 20101124 21:17:06.849 / 00:00:00.008</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:06.848</td>
+<td class="info level">INFO</td>
+<td class="msg">Selenium Server started with command "java -jar /Users/gturnquist/ptc/lib/python2.6/site-packages/SeleniumLibrary/lib/selenium-server.jar -port 4444 -firefoxProfileTemplate /Users/gturnquist/ptc/lib/python2.6/site-packages/SeleniumLibrary/firefoxprofile"</td>
+</tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:06.848</td>
+<td class="info level">INFO</td>
+<td class="msg">Selenium server log is written to <a href="file:///users/gturnquist/dropbox/python_testing_cookbook/code/05/selenium_server_log.txt">/users/gturnquist/dropbox/python_testing_cookbook/code/05/selenium_server_log.txt</a>.</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000145">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000145_unfoldlink" onclick="toggle_child_visibility('kw000145');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000145_foldlink" onclick="toggle_child_visibility('kw000145');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">BuiltIn.Sleep </span>
+<span class="arg">3s</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000145_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Pauses the test executed for the given time.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:06.850 / 20101124 21:17:09.851 / 00:00:03.001</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:09.851</td>
+<td class="info level">INFO</td>
+<td class="msg">Slept 3 seconds</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000146">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000146_unfoldlink" onclick="toggle_child_visibility('kw000146');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000146_foldlink" onclick="toggle_child_visibility('kw000146');" style="display: block;">+</div>
+<span class="pass">TEARDOWN: </span>
+<span class="name">SeleniumLibrary.Stop Selenium Server </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000146_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Stops the selenium server (and closes all browsers).</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:30.655 / 20101124 21:17:30.661 / 00:00:00.006</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="test" id="test000012">
+<tr>
+<td>
+<a class="expand" href="javascript:expand_all_children('test000012')">Expand All</a>
+<div class="foldingbutton" id="test000012_unfoldlink" onclick="toggle_child_visibility('test000012');" style="display: none;">-</div>
+<div class="foldingbutton" id="test000012_foldlink" onclick="toggle_child_visibility('test000012');" style="display: block;">+</div>
+<span class="pass">TEST&nbsp;CASE: </span>
+<a class="name" name="test_05.Recipe43.Logging in to the admin page" title="05.Recipe43.Logging in to the admin page">Logging in to the admin page</a>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="test000012_children" style="display: none;">
+<table class="metadata">
+<tr><th>Full Name:</th><td>05.Recipe43.Logging in to the admin page</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:09.852 / 20101124 21:17:19.538 / 00:00:09.686</td></tr>
+<tr><th>Status:</th><td class="pass">PASS (critical)</td></tr>
+</table>
+<table class="keyword" id="kw000147">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000147_unfoldlink" onclick="toggle_child_visibility('kw000147');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000147_foldlink" onclick="toggle_child_visibility('kw000147');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Open Browser </span>
+<span class="arg"><a href="http://localhost:8000/admin">http://localhost:8000/admin</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000147_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Opens a new browser instance to given URL.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:09.853 / 20101124 21:17:18.832 / 00:00:08.979</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:18.832</td>
+<td class="info level">INFO</td>
+<td class="msg">Opening browser 'firefox' to base url '<a href="http://localhost:8000/admin">http://localhost:8000/admin</a>'</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000148">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000148_unfoldlink" onclick="toggle_child_visibility('kw000148');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000148_foldlink" onclick="toggle_child_visibility('kw000148');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Input Text </span>
+<span class="arg">username, gturnquist</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000148_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Types the given `text` into text field identified by `locator`.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:18.832 / 20101124 21:17:18.892 / 00:00:00.060</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:18.891</td>
+<td class="info level">INFO</td>
+<td class="msg">Typing text 'gturnquist' into text field 'username'</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000149">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000149_unfoldlink" onclick="toggle_child_visibility('kw000149');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000149_foldlink" onclick="toggle_child_visibility('kw000149');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Input Text </span>
+<span class="arg">password, password</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000149_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Types the given `text` into text field identified by `locator`.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:18.892 / 20101124 21:17:18.924 / 00:00:00.032</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:18.924</td>
+<td class="info level">INFO</td>
+<td class="msg">Typing text 'password' into text field 'password'</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000150">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000150_unfoldlink" onclick="toggle_child_visibility('kw000150');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000150_foldlink" onclick="toggle_child_visibility('kw000150');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Submit Form </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000150_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Submits a form identified by `locator`.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:18.924 / 20101124 21:17:19.322 / 00:00:00.398</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:19.321</td>
+<td class="info level">INFO</td>
+<td class="msg">Submitting form ''.</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000151">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000151_unfoldlink" onclick="toggle_child_visibility('kw000151');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000151_foldlink" onclick="toggle_child_visibility('kw000151');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Page Should Contain Link </span>
+<span class="arg">Products</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000151_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Verifies link identified by `locator` is found from current page.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:19.322 / 20101124 21:17:19.389 / 00:00:00.067</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:19.389</td>
+<td class="info level">INFO</td>
+<td class="msg">Current page contains link 'Products'.</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000152">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000152_unfoldlink" onclick="toggle_child_visibility('kw000152');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000152_foldlink" onclick="toggle_child_visibility('kw000152');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Close All Browsers </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000152_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Closes all open browsers and empties the connection cache.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:19.390 / 20101124 21:17:19.537 / 00:00:00.147</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="test" id="test000013">
+<tr>
+<td>
+<a class="expand" href="javascript:expand_all_children('test000013')">Expand All</a>
+<div class="foldingbutton" id="test000013_unfoldlink" onclick="toggle_child_visibility('test000013');" style="display: none;">-</div>
+<div class="foldingbutton" id="test000013_foldlink" onclick="toggle_child_visibility('test000013');" style="display: block;">+</div>
+<span class="pass">TEST&nbsp;CASE: </span>
+<a class="name" name="test_05.Recipe43.Check product catalog" title="05.Recipe43.Check product catalog">Check product catalog</a>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="test000013_children" style="display: none;">
+<table class="metadata">
+<tr><th>Full Name:</th><td>05.Recipe43.Check product catalog</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:19.538 / 20101124 21:17:30.654 / 00:00:11.116</td></tr>
+<tr><th>Status:</th><td class="pass">PASS (critical)</td></tr>
+</table>
+<table class="keyword" id="kw000153">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000153_unfoldlink" onclick="toggle_child_visibility('kw000153');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000153_foldlink" onclick="toggle_child_visibility('kw000153');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">Given that I am logged in </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000153_children" style="display: none;">
+<table class="metadata">
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:19.540 / 20101124 21:17:28.449 / 00:00:08.909</td></tr>
+</table>
+<table class="keyword" id="kw000154">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000154_unfoldlink" onclick="toggle_child_visibility('kw000154');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000154_foldlink" onclick="toggle_child_visibility('kw000154');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Open Browser </span>
+<span class="arg"><a href="http://localhost:8000/admin/">http://localhost:8000/admin/</a></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000154_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Opens a new browser instance to given URL.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:19.540 / 20101124 21:17:27.944 / 00:00:08.404</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:27.944</td>
+<td class="info level">INFO</td>
+<td class="msg">Opening browser 'firefox' to base url '<a href="http://localhost:8000/admin/">http://localhost:8000/admin/</a>'</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000155">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000155_unfoldlink" onclick="toggle_child_visibility('kw000155');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000155_foldlink" onclick="toggle_child_visibility('kw000155');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Input Text </span>
+<span class="arg">username, gturnquist</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000155_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Types the given `text` into text field identified by `locator`.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:27.945 / 20101124 21:17:27.970 / 00:00:00.025</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:27.970</td>
+<td class="info level">INFO</td>
+<td class="msg">Typing text 'gturnquist' into text field 'username'</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000156">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000156_unfoldlink" onclick="toggle_child_visibility('kw000156');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000156_foldlink" onclick="toggle_child_visibility('kw000156');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Input Text </span>
+<span class="arg">password, password</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000156_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Types the given `text` into text field identified by `locator`.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:27.971 / 20101124 21:17:27.994 / 00:00:00.023</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:27.994</td>
+<td class="info level">INFO</td>
+<td class="msg">Typing text 'password' into text field 'password'</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000157">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000157_unfoldlink" onclick="toggle_child_visibility('kw000157');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000157_foldlink" onclick="toggle_child_visibility('kw000157');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Submit Form </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000157_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Submits a form identified by `locator`.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:27.995 / 20101124 21:17:28.449 / 00:00:00.454</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:28.448</td>
+<td class="info level">INFO</td>
+<td class="msg">Submitting form ''.</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000158">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000158_unfoldlink" onclick="toggle_child_visibility('kw000158');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000158_foldlink" onclick="toggle_child_visibility('kw000158');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Click Link </span>
+<span class="arg">Products</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000158_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Clicks a link identified by locator.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:28.449 / 20101124 21:17:30.232 / 00:00:01.783</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:30.232</td>
+<td class="info level">INFO</td>
+<td class="msg">Clicking link 'Products'.</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000159">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000159_unfoldlink" onclick="toggle_child_visibility('kw000159');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000159_foldlink" onclick="toggle_child_visibility('kw000159');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Capture Page Screenshot </span>
+<span class="arg">recipe43-scenario2-1.png</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000159_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Takes a screenshot of the current page and embeds it into the log.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:30.232 / 20101124 21:17:30.466 / 00:00:00.234</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:30.466</td>
+<td class="info level">INFO</td>
+<td class="msg"></td></tr><tr><td colspan="3"><a href="recipe43-scenario2-1.png"><img src="recipe43-scenario2-1.png" width="800px"></a></td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000160">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000160_unfoldlink" onclick="toggle_child_visibility('kw000160');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000160_foldlink" onclick="toggle_child_visibility('kw000160');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Table Should Contain </span>
+<span class="arg">result_list, Robots Attack!</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000160_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Verifies that the `expected content` can be found somewhere in the table.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:30.467 / 20101124 21:17:30.526 / 00:00:00.059</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:30.525</td>
+<td class="info level">INFO</td>
+<td class="msg">Current page contains element 'css=table#result_list:contains('Robots Attack!')'.</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000161">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000161_unfoldlink" onclick="toggle_child_visibility('kw000161');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000161_foldlink" onclick="toggle_child_visibility('kw000161');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Table Row Should Contain </span>
+<span class="arg">result_list, 4, Robots Attack!</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000161_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Verifies that a specific table row contains the `expected_content`.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:30.526 / 20101124 21:17:30.572 / 00:00:00.046</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:30.572</td>
+<td class="info level">INFO</td>
+<td class="msg">Current page contains element 'css=table#result_list tr:nth-child(4):contains('Robots Attack!')'.</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000162">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000162_unfoldlink" onclick="toggle_child_visibility('kw000162');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000162_foldlink" onclick="toggle_child_visibility('kw000162');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Table Row Should Contain </span>
+<span class="arg">result_list, 4, 7.99</span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000162_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Verifies that a specific table row contains the `expected_content`.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:30.573 / 20101124 21:17:30.611 / 00:00:00.038</td></tr>
+</table>
+<table class="messages">
+<tr>
+<td class="time">21:17:30.610</td>
+<td class="info level">INFO</td>
+<td class="msg">Current page contains element 'css=table#result_list tr:nth-child(4):contains('7.99')'.</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+<table class="keyword" id="kw000163">
+<tr>
+<td>
+<div class="foldingbutton" id="kw000163_unfoldlink" onclick="toggle_child_visibility('kw000163');" style="display: none;">-</div>
+<div class="foldingbutton" id="kw000163_foldlink" onclick="toggle_child_visibility('kw000163');" style="display: block;">+</div>
+<span class="pass">KEYWORD: </span>
+<span class="name">SeleniumLibrary.Close All Browsers </span>
+<span class="arg"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div class="indent" id="kw000163_children" style="display: none;">
+<table class="metadata">
+<tr><th>Documentation:</th><td>Closes all open browsers and empties the connection cache.</td></tr>
+<tr><th>Start&nbsp;/&nbsp;End&nbsp;/&nbsp;Elapsed:</th><td>20101124 21:17:30.611 / 20101124 21:17:30.653 / 00:00:00.042</td></tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</body>
+</html>

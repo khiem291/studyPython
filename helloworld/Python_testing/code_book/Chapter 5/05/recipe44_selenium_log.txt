@@ -1,0 +1,3038 @@
+21:16:08.253 INFO - Java: Apple Inc. 17.1-b03-307
+21:16:08.254 INFO - OS: Mac OS X 10.6.4 x86_64
+21:16:08.268 INFO - v2.0 [a2], with Core v2.0 [a2]
+21:16:08.367 INFO - RemoteWebDriver instances should connect to: http://192.168.183.1:4444/wd/hub
+21:16:08.368 INFO - Version Jetty/5.1.x
+21:16:08.369 INFO - Started HttpContext[/selenium-server/driver,/selenium-server/driver]
+21:16:08.370 INFO - Started HttpContext[/selenium-server,/selenium-server]
+21:16:08.370 INFO - Started HttpContext[/,/]
+21:16:08.532 INFO - Started org.openqa.jetty.jetty.servlet.ServletHandler@1d3c468a
+21:16:08.532 INFO - Started HttpContext[/wd,/wd]
+21:16:08.538 INFO - Started SocketListener on 0.0.0.0:4444
+21:16:08.538 INFO - Started org.openqa.jetty.jetty.Server@790bc49d
+21:16:18.419 INFO - Checking Resource aliases
+21:16:18.423 INFO - Command request: getNewBrowserSession[*firefox, http://localhost, ] on session null
+21:16:18.426 INFO - creating new remote session
+21:16:18.494 INFO - Allocated session d779eea6b3fc4bb089a79d30fa7f5d9c for http://localhost, launching...
+21:16:18.627 INFO - Preparing Firefox profile...
+21:16:23.362 INFO - Launching Firefox...
+21:16:26.835 INFO - Got result: OK,d779eea6b3fc4bb089a79d30fa7f5d9c on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:26.841 INFO - Command request: open[http://yahoo.com, False] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:26.842 WARN - you appear to be changing domains from http://localhost to http://yahoo.com
+this may lead to a 'Permission denied' from the browser (unless it is running as *iehta or *chrome,
+or alternatively the selenium server is running in proxy injection mode)
+21:16:29.955 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:29.960 INFO - Command request: waitForPageToLoad[30000, ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:30.061 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:30.071 INFO - Command request: isElementPresent[//input[(@name='p' or @id='p') and (@type='text' or @type='password' or not(@type))] | //textarea[@name='p' or @id='p'], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:30.125 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:30.131 INFO - Command request: isVisible[//input[(@name='p' or @id='p') and (@type='text' or @type='password' or not(@type))] | //textarea[@name='p' or @id='p'], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:30.150 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:30.154 INFO - Command request: type[//input[(@name='p' or @id='p') and (@type='text' or @type='password' or not(@type))] | //textarea[@name='p' or @id='p'], Python Testing Cookbook] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:30.180 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:30.185 INFO - Command request: isElementPresent[//input[(@name='search-submit' or @id='search-submit') and (@type='button' or @type='submit')] | //button[@name='search-submit' or @id='search-submit'], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:30.207 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:30.211 INFO - Command request: isVisible[//input[(@name='search-submit' or @id='search-submit') and (@type='button' or @type='submit')] | //button[@name='search-submit' or @id='search-submit'], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:30.270 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:30.275 INFO - Command request: click[//input[(@name='search-submit' or @id='search-submit') and (@type='button' or @type='submit')] | //button[@name='search-submit' or @id='search-submit'], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:30.347 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:30.352 INFO - Command request: waitForPageToLoad[30000, ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:31.738 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:31.742 INFO - Command request: getTitle[, ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:31.752 INFO - Got result: OK,Python Testing Cookbook - Yahoo! Search Results on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:31.758 INFO - Command request: open[http://localhost:8000, False] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.157 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.161 INFO - Command request: waitForPageToLoad[30000, ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.182 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.185 INFO - Command request: isElementPresent[//a[(@name='Cart' or @id='Cart' or contains(., 'Cart'))], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.194 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.198 INFO - Command request: isVisible[//a[(@name='Cart' or @id='Cart' or contains(., 'Cart'))], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.207 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.211 INFO - Command request: click[//a[(@name='Cart' or @id='Cart' or contains(., 'Cart'))], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.231 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.234 INFO - Command request: waitForPageToLoad[30000, ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.360 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.364 INFO - Command request: getHtmlSource[, ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.386 INFO - Got result: OK,<head>
+
+
+
+
+
+    
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Simple Satchmo</title>
+    
+
+
+
+
+
+
+</head><body>
+    
+
+
+
+
+
+
+    <div id="container">
+	    <div id="top">
+	        <h1>Simple Satchmo</h1>
+	    </div>
+
+	    <div id="navbar">
+	    <ul>
+	    	
+    <li class="first"><a href="/">Home</a></li>
+    <li>Cart</li>
+
+	   	</ul>
+    </div>
+
+    <div id="sidebar-secondary">
+		
+		<div>
+			
+<h3>Search</h3>
+<form id="search" action="/search/" method="get">
+	
+    <input size="20" name="keywords" id="search_keywords" type="text"><br>
+    <input value="Search" type="submit">
+ </form>
+
+
+		</div>
+		<div>
+			
+			<h3>Shop Categories</h3>
+			
+			<div id="menu_container">
+                
+                    
+                        <ul><li id="category-3"><a href="/category/book/">Books</a><ul><li id="category-4"><a href="/category/book/fiction/">Fiction</a><ul><li id="category-5"><a href="/category/book/fiction/scifi/">Science Fiction</a></li></ul></li><li id="category-6"><a href="/category/book/nonfiction/">Non Fiction</a></li></ul></li><li id="category-1"><a href="/category/shirts/">Shirts</a><ul><li id="category-2"><a href="/category/shirts/shortsleeve/">Short Sleeve</a></li></ul></li><li id="category-7"><a href="/category/software/">Software</a></li></ul>
+                    
+                
+			</div>
+			
+			
+			
+			
+
+
+			
+			
+		</div>
+		
+	</div>
+
+	<div id="sidebar-primary">
+		
+		<h3>Quick Links</h3>
+		
+		<a href="/product/view/recent/">Recently Added</a>
+		
+		<br><a href="/product/view/bestsellers/">Best Sellers</a><br>
+        
+         <a href="/category/">Category Index</a><br> 
+        
+        <a href="/quickorder/">Quick Order</a> 
+		
+
+
+
+	    <h3>Account Information</h3>
+	    
+	    
+        <a href="/accounts/login/?next=/cart/">Log in</a><br>
+	    
+
+		
+	    <a href="/cart/">Cart</a>
+
+	    
+            (0 - $0.00) <br>
+            
+            <a href="/checkout/">Check out</a>
+	    
+	
+		
+
+
+    
+		
+	    <p><a href="/contact/">Contact Us</a></p>
+
+		
+
+
+<form action="" method="post"><div style="display: none;"><input name="csrfmiddlewaretoken" value="c865e0e18f44913afe7496dd1088a593" type="hidden"></div>
+<p> Change language </p>
+    <select name="language">
+        
+    </select>
+<input value="Change" type="submit">
+</form>
+
+
+
+		
+		
+
+
+		
+		
+	</div>
+
+	<div id="content">
+	    
+
+
+
+    <h4>Your cart is empty.</h4>
+
+
+	</div>
+
+	<div id="footer">
+		
+		Powered by <a href="http://www.satchmoproject.com">Satchmo</a>.
+		
+	</div>
+
+    </div>
+	
+    
+    
+    
+	
+</body> on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.390 INFO - Command request: getHtmlSource[, ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.472 INFO - Got result: OK,<head>
+
+
+
+
+
+    
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Simple Satchmo</title>
+    
+
+
+
+
+
+
+</head><body>
+    
+
+
+
+
+
+
+    <div id="container">
+	    <div id="top">
+	        <h1>Simple Satchmo</h1>
+	    </div>
+
+	    <div id="navbar">
+	    <ul>
+	    	
+    <li class="first"><a href="/">Home</a></li>
+    <li>Cart</li>
+
+	   	</ul>
+    </div>
+
+    <div id="sidebar-secondary">
+		
+		<div>
+			
+<h3>Search</h3>
+<form id="search" action="/search/" method="get">
+	
+    <input size="20" name="keywords" id="search_keywords" type="text"><br>
+    <input value="Search" type="submit">
+ </form>
+
+
+		</div>
+		<div>
+			
+			<h3>Shop Categories</h3>
+			
+			<div id="menu_container">
+                
+                    
+                        <ul><li id="category-3"><a href="/category/book/">Books</a><ul><li id="category-4"><a href="/category/book/fiction/">Fiction</a><ul><li id="category-5"><a href="/category/book/fiction/scifi/">Science Fiction</a></li></ul></li><li id="category-6"><a href="/category/book/nonfiction/">Non Fiction</a></li></ul></li><li id="category-1"><a href="/category/shirts/">Shirts</a><ul><li id="category-2"><a href="/category/shirts/shortsleeve/">Short Sleeve</a></li></ul></li><li id="category-7"><a href="/category/software/">Software</a></li></ul>
+                    
+                
+			</div>
+			
+			
+			
+			
+
+
+			
+			
+		</div>
+		
+	</div>
+
+	<div id="sidebar-primary">
+		
+		<h3>Quick Links</h3>
+		
+		<a href="/product/view/recent/">Recently Added</a>
+		
+		<br><a href="/product/view/bestsellers/">Best Sellers</a><br>
+        
+         <a href="/category/">Category Index</a><br> 
+        
+        <a href="/quickorder/">Quick Order</a> 
+		
+
+
+
+	    <h3>Account Information</h3>
+	    
+	    
+        <a href="/accounts/login/?next=/cart/">Log in</a><br>
+	    
+
+		
+	    <a href="/cart/">Cart</a>
+
+	    
+            (0 - $0.00) <br>
+            
+            <a href="/checkout/">Check out</a>
+	    
+	
+		
+
+
+    
+		
+	    <p><a href="/contact/">Contact Us</a></p>
+
+		
+
+
+<form action="" method="post"><div style="display: none;"><input name="csrfmiddlewaretoken" value="c865e0e18f44913afe7496dd1088a593" type="hidden"></div>
+<p> Change language </p>
+    <select name="language">
+        
+    </select>
+<input value="Change" type="submit">
+</form>
+
+
+
+		
+		
+
+
+		
+		
+	</div>
+
+	<div id="content">
+	    
+
+
+
+    <h4>Your cart is empty.</h4>
+
+
+	</div>
+
+	<div id="footer">
+		
+		Powered by <a href="http://www.satchmoproject.com">Satchmo</a>.
+		
+	</div>
+
+    </div>
+	
+    
+    
+    
+	
+</body> on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.482 INFO - Command request: open[http://localhost:8000, False] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.669 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.673 INFO - Command request: waitForPageToLoad[30000, ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.686 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.697 INFO - Command request: isElementPresent[//a[(@name='Science Fiction' or @id='Science Fiction' or contains(., 'Science Fiction'))], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.714 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.718 INFO - Command request: isVisible[//a[(@name='Science Fiction' or @id='Science Fiction' or contains(., 'Science Fiction'))], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.739 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.743 INFO - Command request: click[//a[(@name='Science Fiction' or @id='Science Fiction' or contains(., 'Science Fiction'))], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.761 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.775 INFO - Command request: isElementPresent[//a[(@name='Robots Attack!' or @id='Robots Attack!' or contains(., 'Robots Attack!'))], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.817 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.821 INFO - Command request: isVisible[//a[(@name='Robots Attack!' or @id='Robots Attack!' or contains(., 'Robots Attack!'))], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.838 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.845 INFO - Command request: click[//a[(@name='Robots Attack!' or @id='Robots Attack!' or contains(., 'Robots Attack!'))], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.867 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:32.877 INFO - Command request: waitForPageToLoad[30000, ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.041 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.059 INFO - Command request: isElementPresent[//input[(@name='quantity' or @id='quantity') and (@type='text' or @type='password' or not(@type))] | //textarea[@name='quantity' or @id='quantity'], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.078 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.081 INFO - Command request: isVisible[//input[(@name='quantity' or @id='quantity') and (@type='text' or @type='password' or not(@type))] | //textarea[@name='quantity' or @id='quantity'], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.098 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.105 INFO - Command request: type[//input[(@name='quantity' or @id='quantity') and (@type='text' or @type='password' or not(@type))] | //textarea[@name='quantity' or @id='quantity'], 2] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.125 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.131 INFO - Command request: isElementPresent[//input[(@name='addcart' or @id='addcart') and (@type='button' or @type='submit')] | //button[@name='addcart' or @id='addcart'], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.147 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.150 INFO - Command request: isVisible[//input[(@name='addcart' or @id='addcart') and (@type='button' or @type='submit')] | //button[@name='addcart' or @id='addcart'], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.170 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.173 INFO - Command request: click[//input[(@name='addcart' or @id='addcart') and (@type='button' or @type='submit')] | //button[@name='addcart' or @id='addcart'], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.194 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.201 INFO - Command request: isElementPresent[//a[(@name='Cart' or @id='Cart' or contains(., 'Cart'))], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.217 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.223 INFO - Command request: isVisible[//a[(@name='Cart' or @id='Cart' or contains(., 'Cart'))], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.243 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.247 INFO - Command request: click[//a[(@name='Cart' or @id='Cart' or contains(., 'Cart'))], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.273 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.277 INFO - Command request: waitForPageToLoad[30000, ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.738 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.741 INFO - Command request: getHtmlSource[, ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.759 INFO - Got result: OK,<head>
+
+
+
+
+
+    
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Simple Satchmo</title>
+    
+
+
+
+
+
+
+</head><body>
+    
+
+
+
+
+
+
+    <div id="container">
+	    <div id="top">
+	        <h1>Simple Satchmo</h1>
+	    </div>
+
+	    <div id="navbar">
+	    <ul>
+	    	
+    <li class="first"><a href="/">Home</a></li>
+    <li>Cart</li>
+
+	   	</ul>
+    </div>
+
+    <div id="sidebar-secondary">
+		
+		<div>
+			
+<h3>Search</h3>
+<form id="search" action="/search/" method="get">
+	
+    <input size="20" name="keywords" id="search_keywords" type="text"><br>
+    <input value="Search" type="submit">
+ </form>
+
+
+		</div>
+		<div>
+			
+			<h3>Shop Categories</h3>
+			
+			<div id="menu_container">
+                
+                    
+                        <ul><li id="category-3"><a href="/category/book/">Books</a><ul><li id="category-4"><a href="/category/book/fiction/">Fiction</a><ul><li id="category-5"><a href="/category/book/fiction/scifi/">Science Fiction</a></li></ul></li><li id="category-6"><a href="/category/book/nonfiction/">Non Fiction</a></li></ul></li><li id="category-1"><a href="/category/shirts/">Shirts</a><ul><li id="category-2"><a href="/category/shirts/shortsleeve/">Short Sleeve</a></li></ul></li><li id="category-7"><a href="/category/software/">Software</a></li></ul>
+                    
+                
+			</div>
+			
+			
+			
+			
+
+
+			
+			
+		</div>
+		
+	</div>
+
+	<div id="sidebar-primary">
+		
+		<h3>Quick Links</h3>
+		
+		<a href="/product/view/recent/">Recently Added</a>
+		
+		<br><a href="/product/view/bestsellers/">Best Sellers</a><br>
+        
+         <a href="/category/">Category Index</a><br> 
+        
+        <a href="/quickorder/">Quick Order</a> 
+		
+
+
+
+	    <h3>Account Information</h3>
+	    
+	    
+        <a href="/accounts/login/?next=/cart/">Log in</a><br>
+	    
+
+		
+	    <a href="/cart/">Cart</a>
+
+	    
+            (2 - $15.98) <br>
+            
+            <a href="/checkout/">Check out</a>
+	    
+	
+		
+
+
+    
+		
+	    <p><a href="/contact/">Contact Us</a></p>
+
+		
+
+
+<form action="" method="post"><div style="display: none;"><input name="csrfmiddlewaretoken" value="c865e0e18f44913afe7496dd1088a593" type="hidden"></div>
+<p> Change language </p>
+    <select name="language">
+        
+    </select>
+<input value="Change" type="submit">
+</form>
+
+
+
+		
+		
+
+
+		
+		
+	</div>
+
+	<div id="content">
+	    
+
+
+
+    <h4>Your Cart</h4>
+    <table><tbody><tr><th></th>
+    <th align="left">Quantity</th>
+    <th>Item</th>
+    
+		<th>Price</th>
+	
+    <th align="center">Total</th>
+    </tr>
+
+    
+        <tr><td>
+            <form action="/cart/remove/" method="post"><div style="display: none;"><input name="csrfmiddlewaretoken" value="c865e0e18f44913afe7496dd1088a593" type="hidden"></div>
+                <input name="cartitem" value="71" type="hidden">
+                <input value="Remove" type="submit">
+            </form>
+            </td>
+            <td align="center">
+                <form class="qtyform" id="form-71" action="/cart/qty/" method="post"><div style="display: none;"><input name="csrfmiddlewaretoken" value="c865e0e18f44913afe7496dd1088a593" type="hidden"></div>
+                    <input name="cartitem" value="71" type="hidden">
+					<input name="quantity" id="id_quantity" value="2" type="text">
+                    <input id="id_update_submit" value="update amount" type="submit">
+                </form>
+            </td>
+            <td><a href="/product/robot-attack_hard/">Robots Attack! (Hard cover)</a></td>
+			
+			<td align="center">$7.99</td>
+            <td align="center">$15.98</td>
+        </tr>
+		
+
+		
+
+    
+    <tr><td colspan="4" align="right">Cart Total:</td>
+        <td>$15.98</td></tr>
+    </tbody></table>
+    
+
+    <a href="/checkout/">Check out</a>
+
+
+	</div>
+
+	<div id="footer">
+		
+		Powered by <a href="http://www.satchmoproject.com">Satchmo</a>.
+		
+	</div>
+
+    </div>
+	
+    
+    
+    
+	
+</body> on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.762 INFO - Command request: isElementPresent[//input[(@name='quantity' or @id='quantity') and (@type='text' or @type='password' or not(@type))] | //textarea[@name='quantity' or @id='quantity'], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.792 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.796 INFO - Command request: isVisible[//input[(@name='quantity' or @id='quantity') and (@type='text' or @type='password' or not(@type))] | //textarea[@name='quantity' or @id='quantity'], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.816 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.819 INFO - Command request: getEval[this.page().findElement("//input[(@name='quantity' or @id='quantity') and (@type='text' or @type='password' or not(@type))] | //textarea[@name='quantity' or @id='quantity']").tagName;, ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.831 INFO - Got result: OK,INPUT on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.834 INFO - Command request: getEval[this.page().findElement("//input[(@name='quantity' or @id='quantity') and (@type='text' or @type='password' or not(@type))] | //textarea[@name='quantity' or @id='quantity']").value;, ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.846 INFO - Got result: OK,2 on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.851 INFO - Command request: getHtmlSource[, ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.868 INFO - Got result: OK,<head>
+
+
+
+
+
+    
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Simple Satchmo</title>
+    
+
+
+
+
+
+
+</head><body>
+    
+
+
+
+
+
+
+    <div id="container">
+	    <div id="top">
+	        <h1>Simple Satchmo</h1>
+	    </div>
+
+	    <div id="navbar">
+	    <ul>
+	    	
+    <li class="first"><a href="/">Home</a></li>
+    <li>Cart</li>
+
+	   	</ul>
+    </div>
+
+    <div id="sidebar-secondary">
+		
+		<div>
+			
+<h3>Search</h3>
+<form id="search" action="/search/" method="get">
+	
+    <input size="20" name="keywords" id="search_keywords" type="text"><br>
+    <input value="Search" type="submit">
+ </form>
+
+
+		</div>
+		<div>
+			
+			<h3>Shop Categories</h3>
+			
+			<div id="menu_container">
+                
+                    
+                        <ul><li id="category-3"><a href="/category/book/">Books</a><ul><li id="category-4"><a href="/category/book/fiction/">Fiction</a><ul><li id="category-5"><a href="/category/book/fiction/scifi/">Science Fiction</a></li></ul></li><li id="category-6"><a href="/category/book/nonfiction/">Non Fiction</a></li></ul></li><li id="category-1"><a href="/category/shirts/">Shirts</a><ul><li id="category-2"><a href="/category/shirts/shortsleeve/">Short Sleeve</a></li></ul></li><li id="category-7"><a href="/category/software/">Software</a></li></ul>
+                    
+                
+			</div>
+			
+			
+			
+			
+
+
+			
+			
+		</div>
+		
+	</div>
+
+	<div id="sidebar-primary">
+		
+		<h3>Quick Links</h3>
+		
+		<a href="/product/view/recent/">Recently Added</a>
+		
+		<br><a href="/product/view/bestsellers/">Best Sellers</a><br>
+        
+         <a href="/category/">Category Index</a><br> 
+        
+        <a href="/quickorder/">Quick Order</a> 
+		
+
+
+
+	    <h3>Account Information</h3>
+	    
+	    
+        <a href="/accounts/login/?next=/cart/">Log in</a><br>
+	    
+
+		
+	    <a href="/cart/">Cart</a>
+
+	    
+            (2 - $15.98) <br>
+            
+            <a href="/checkout/">Check out</a>
+	    
+	
+		
+
+
+    
+		
+	    <p><a href="/contact/">Contact Us</a></p>
+
+		
+
+
+<form action="" method="post"><div style="display: none;"><input name="csrfmiddlewaretoken" value="c865e0e18f44913afe7496dd1088a593" type="hidden"></div>
+<p> Change language </p>
+    <select name="language">
+        
+    </select>
+<input value="Change" type="submit">
+</form>
+
+
+
+		
+		
+
+
+		
+		
+	</div>
+
+	<div id="content">
+	    
+
+
+
+    <h4>Your Cart</h4>
+    <table><tbody><tr><th></th>
+    <th align="left">Quantity</th>
+    <th>Item</th>
+    
+		<th>Price</th>
+	
+    <th align="center">Total</th>
+    </tr>
+
+    
+        <tr><td>
+            <form action="/cart/remove/" method="post"><div style="display: none;"><input name="csrfmiddlewaretoken" value="c865e0e18f44913afe7496dd1088a593" type="hidden"></div>
+                <input name="cartitem" value="71" type="hidden">
+                <input value="Remove" type="submit">
+            </form>
+            </td>
+            <td align="center">
+                <form class="qtyform" id="form-71" action="/cart/qty/" method="post"><div style="display: none;"><input name="csrfmiddlewaretoken" value="c865e0e18f44913afe7496dd1088a593" type="hidden"></div>
+                    <input name="cartitem" value="71" type="hidden">
+					<input name="quantity" id="id_quantity" value="2" type="text">
+                    <input id="id_update_submit" value="update amount" type="submit">
+                </form>
+            </td>
+            <td><a href="/product/robot-attack_hard/">Robots Attack! (Hard cover)</a></td>
+			
+			<td align="center">$7.99</td>
+            <td align="center">$15.98</td>
+        </tr>
+		
+
+		
+
+    
+    <tr><td colspan="4" align="right">Cart Total:</td>
+        <td>$15.98</td></tr>
+    </tbody></table>
+    
+
+    <a href="/checkout/">Check out</a>
+
+
+	</div>
+
+	<div id="footer">
+		
+		Powered by <a href="http://www.satchmoproject.com">Satchmo</a>.
+		
+	</div>
+
+    </div>
+	
+    
+    
+    
+	
+</body> on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.871 INFO - Command request: getHtmlSource[, ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.888 INFO - Got result: OK,<head>
+
+
+
+
+
+    
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Simple Satchmo</title>
+    
+
+
+
+
+
+
+</head><body>
+    
+
+
+
+
+
+
+    <div id="container">
+	    <div id="top">
+	        <h1>Simple Satchmo</h1>
+	    </div>
+
+	    <div id="navbar">
+	    <ul>
+	    	
+    <li class="first"><a href="/">Home</a></li>
+    <li>Cart</li>
+
+	   	</ul>
+    </div>
+
+    <div id="sidebar-secondary">
+		
+		<div>
+			
+<h3>Search</h3>
+<form id="search" action="/search/" method="get">
+	
+    <input size="20" name="keywords" id="search_keywords" type="text"><br>
+    <input value="Search" type="submit">
+ </form>
+
+
+		</div>
+		<div>
+			
+			<h3>Shop Categories</h3>
+			
+			<div id="menu_container">
+                
+                    
+                        <ul><li id="category-3"><a href="/category/book/">Books</a><ul><li id="category-4"><a href="/category/book/fiction/">Fiction</a><ul><li id="category-5"><a href="/category/book/fiction/scifi/">Science Fiction</a></li></ul></li><li id="category-6"><a href="/category/book/nonfiction/">Non Fiction</a></li></ul></li><li id="category-1"><a href="/category/shirts/">Shirts</a><ul><li id="category-2"><a href="/category/shirts/shortsleeve/">Short Sleeve</a></li></ul></li><li id="category-7"><a href="/category/software/">Software</a></li></ul>
+                    
+                
+			</div>
+			
+			
+			
+			
+
+
+			
+			
+		</div>
+		
+	</div>
+
+	<div id="sidebar-primary">
+		
+		<h3>Quick Links</h3>
+		
+		<a href="/product/view/recent/">Recently Added</a>
+		
+		<br><a href="/product/view/bestsellers/">Best Sellers</a><br>
+        
+         <a href="/category/">Category Index</a><br> 
+        
+        <a href="/quickorder/">Quick Order</a> 
+		
+
+
+
+	    <h3>Account Information</h3>
+	    
+	    
+        <a href="/accounts/login/?next=/cart/">Log in</a><br>
+	    
+
+		
+	    <a href="/cart/">Cart</a>
+
+	    
+            (2 - $15.98) <br>
+            
+            <a href="/checkout/">Check out</a>
+	    
+	
+		
+
+
+    
+		
+	    <p><a href="/contact/">Contact Us</a></p>
+
+		
+
+
+<form action="" method="post"><div style="display: none;"><input name="csrfmiddlewaretoken" value="c865e0e18f44913afe7496dd1088a593" type="hidden"></div>
+<p> Change language </p>
+    <select name="language">
+        
+    </select>
+<input value="Change" type="submit">
+</form>
+
+
+
+		
+		
+
+
+		
+		
+	</div>
+
+	<div id="content">
+	    
+
+
+
+    <h4>Your Cart</h4>
+    <table><tbody><tr><th></th>
+    <th align="left">Quantity</th>
+    <th>Item</th>
+    
+		<th>Price</th>
+	
+    <th align="center">Total</th>
+    </tr>
+
+    
+        <tr><td>
+            <form action="/cart/remove/" method="post"><div style="display: none;"><input name="csrfmiddlewaretoken" value="c865e0e18f44913afe7496dd1088a593" type="hidden"></div>
+                <input name="cartitem" value="71" type="hidden">
+                <input value="Remove" type="submit">
+            </form>
+            </td>
+            <td align="center">
+                <form class="qtyform" id="form-71" action="/cart/qty/" method="post"><div style="display: none;"><input name="csrfmiddlewaretoken" value="c865e0e18f44913afe7496dd1088a593" type="hidden"></div>
+                    <input name="cartitem" value="71" type="hidden">
+					<input name="quantity" id="id_quantity" value="2" type="text">
+                    <input id="id_update_submit" value="update amount" type="submit">
+                </form>
+            </td>
+            <td><a href="/product/robot-attack_hard/">Robots Attack! (Hard cover)</a></td>
+			
+			<td align="center">$7.99</td>
+            <td align="center">$15.98</td>
+        </tr>
+		
+
+		
+
+    
+    <tr><td colspan="4" align="right">Cart Total:</td>
+        <td>$15.98</td></tr>
+    </tbody></table>
+    
+
+    <a href="/checkout/">Check out</a>
+
+
+	</div>
+
+	<div id="footer">
+		
+		Powered by <a href="http://www.satchmoproject.com">Satchmo</a>.
+		
+	</div>
+
+    </div>
+	
+    
+    
+    
+	
+</body> on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.892 INFO - Command request: getHtmlSource[, ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.908 INFO - Got result: OK,<head>
+
+
+
+
+
+    
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Simple Satchmo</title>
+    
+
+
+
+
+
+
+</head><body>
+    
+
+
+
+
+
+
+    <div id="container">
+	    <div id="top">
+	        <h1>Simple Satchmo</h1>
+	    </div>
+
+	    <div id="navbar">
+	    <ul>
+	    	
+    <li class="first"><a href="/">Home</a></li>
+    <li>Cart</li>
+
+	   	</ul>
+    </div>
+
+    <div id="sidebar-secondary">
+		
+		<div>
+			
+<h3>Search</h3>
+<form id="search" action="/search/" method="get">
+	
+    <input size="20" name="keywords" id="search_keywords" type="text"><br>
+    <input value="Search" type="submit">
+ </form>
+
+
+		</div>
+		<div>
+			
+			<h3>Shop Categories</h3>
+			
+			<div id="menu_container">
+                
+                    
+                        <ul><li id="category-3"><a href="/category/book/">Books</a><ul><li id="category-4"><a href="/category/book/fiction/">Fiction</a><ul><li id="category-5"><a href="/category/book/fiction/scifi/">Science Fiction</a></li></ul></li><li id="category-6"><a href="/category/book/nonfiction/">Non Fiction</a></li></ul></li><li id="category-1"><a href="/category/shirts/">Shirts</a><ul><li id="category-2"><a href="/category/shirts/shortsleeve/">Short Sleeve</a></li></ul></li><li id="category-7"><a href="/category/software/">Software</a></li></ul>
+                    
+                
+			</div>
+			
+			
+			
+			
+
+
+			
+			
+		</div>
+		
+	</div>
+
+	<div id="sidebar-primary">
+		
+		<h3>Quick Links</h3>
+		
+		<a href="/product/view/recent/">Recently Added</a>
+		
+		<br><a href="/product/view/bestsellers/">Best Sellers</a><br>
+        
+         <a href="/category/">Category Index</a><br> 
+        
+        <a href="/quickorder/">Quick Order</a> 
+		
+
+
+
+	    <h3>Account Information</h3>
+	    
+	    
+        <a href="/accounts/login/?next=/cart/">Log in</a><br>
+	    
+
+		
+	    <a href="/cart/">Cart</a>
+
+	    
+            (2 - $15.98) <br>
+            
+            <a href="/checkout/">Check out</a>
+	    
+	
+		
+
+
+    
+		
+	    <p><a href="/contact/">Contact Us</a></p>
+
+		
+
+
+<form action="" method="post"><div style="display: none;"><input name="csrfmiddlewaretoken" value="c865e0e18f44913afe7496dd1088a593" type="hidden"></div>
+<p> Change language </p>
+    <select name="language">
+        
+    </select>
+<input value="Change" type="submit">
+</form>
+
+
+
+		
+		
+
+
+		
+		
+	</div>
+
+	<div id="content">
+	    
+
+
+
+    <h4>Your Cart</h4>
+    <table><tbody><tr><th></th>
+    <th align="left">Quantity</th>
+    <th>Item</th>
+    
+		<th>Price</th>
+	
+    <th align="center">Total</th>
+    </tr>
+
+    
+        <tr><td>
+            <form action="/cart/remove/" method="post"><div style="display: none;"><input name="csrfmiddlewaretoken" value="c865e0e18f44913afe7496dd1088a593" type="hidden"></div>
+                <input name="cartitem" value="71" type="hidden">
+                <input value="Remove" type="submit">
+            </form>
+            </td>
+            <td align="center">
+                <form class="qtyform" id="form-71" action="/cart/qty/" method="post"><div style="display: none;"><input name="csrfmiddlewaretoken" value="c865e0e18f44913afe7496dd1088a593" type="hidden"></div>
+                    <input name="cartitem" value="71" type="hidden">
+					<input name="quantity" id="id_quantity" value="2" type="text">
+                    <input id="id_update_submit" value="update amount" type="submit">
+                </form>
+            </td>
+            <td><a href="/product/robot-attack_hard/">Robots Attack! (Hard cover)</a></td>
+			
+			<td align="center">$7.99</td>
+            <td align="center">$15.98</td>
+        </tr>
+		
+
+		
+
+    
+    <tr><td colspan="4" align="right">Cart Total:</td>
+        <td>$15.98</td></tr>
+    </tbody></table>
+    
+
+    <a href="/checkout/">Check out</a>
+
+
+	</div>
+
+	<div id="footer">
+		
+		Powered by <a href="http://www.satchmoproject.com">Satchmo</a>.
+		
+	</div>
+
+    </div>
+	
+    
+    
+    
+	
+</body> on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:34.912 INFO - Command request: open[http://localhost:8000/admin, False] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.137 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.140 INFO - Command request: waitForPageToLoad[30000, ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.156 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.163 INFO - Command request: isElementPresent[//input[(@name='username' or @id='username') and (@type='text' or @type='password' or not(@type))] | //textarea[@name='username' or @id='username'], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.184 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.188 INFO - Command request: isVisible[//input[(@name='username' or @id='username') and (@type='text' or @type='password' or not(@type))] | //textarea[@name='username' or @id='username'], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.203 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.206 INFO - Command request: type[//input[(@name='username' or @id='username') and (@type='text' or @type='password' or not(@type))] | //textarea[@name='username' or @id='username'], gturnquist] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.227 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.231 INFO - Command request: isElementPresent[//input[(@name='password' or @id='password') and (@type='text' or @type='password' or not(@type))] | //textarea[@name='password' or @id='password'], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.246 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.248 INFO - Command request: isVisible[//input[(@name='password' or @id='password') and (@type='text' or @type='password' or not(@type))] | //textarea[@name='password' or @id='password'], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.265 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.270 INFO - Command request: type[//input[(@name='password' or @id='password') and (@type='text' or @type='password' or not(@type))] | //textarea[@name='password' or @id='password'], password] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.291 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.295 INFO - Command request: isElementPresent[//input[(@name='login' or @id='login') and (@type='button' or @type='submit')] | //button[@name='login' or @id='login'], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.309 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.313 INFO - Command request: isVisible[//input[(@name='login' or @id='login') and (@type='button' or @type='submit')] | //button[@name='login' or @id='login'], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.330 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.334 INFO - Command request: click[//input[(@name='login' or @id='login') and (@type='button' or @type='submit')] | //button[@name='login' or @id='login'], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.355 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.365 INFO - Command request: waitForPageToLoad[30000, ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.785 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.789 INFO - Command request: getHtmlSource[, ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.813 INFO - Got result: OK,<head>
+
+
+<title>Site administration | Simple Satchmo Site Administration</title>
+<link rel="stylesheet" type="text/css" href="/media/css/base.css">
+<link rel="stylesheet" type="text/css" href="/media/css/dashboard.css">
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="/media/css/ie.css" /><![endif]-->
+
+<script type="text/javascript">window.__admin_media_prefix__ = "/media/";</script>
+
+
+
+
+<link rel="stylesheet" href="/static/css/blackbird.css">
+<script type="text/javascript" src="/static/js/blackbird.js"></script>
+
+
+
+
+<script src="/static/js/jquery-1.4.2.js" type="text/javascript"></script>
+
+
+	<script type="text/javascript"><!--
+	var satchmo = satchmo || {};
+	satchmo.select_if_one = function(selector, label) {
+		var elt = $(selector);
+		if (elt && elt.length>0 && elt[0].options.length == 2) {
+			try { log.debug('selecting default ' + label); } catch(err) {};
+			elt[0].options[1].selected = true;
+		}
+	}
+    $(function() {
+		satchmo.select_if_one('#id_site', 'site');
+	});
+	-->
+	</script>
+
+<script type="text/javascript" src="/admin/jsi18n/"></script>
+<script type="text/javascript">
+var satchmo = satchmo || {};
+satchmo.module_status = {};
+l10n = {
+	show : '(show)',
+	hide : '(hide)'
+}
+
+satchmo.setup_toggle = function(elt) {
+	var module = $(elt);
+	module.click(function() { satchmo.toggle_module(this); });
+	module.append(' <span class="status">' + l10n.hide + '</span>');
+	var pid = module.parent().attr('id');
+	satchmo.module_status[pid] = true;
+}
+
+satchmo.toggle_module = function(elt) {
+	//console.log('toggle: ' + elt);
+	var pid = $(elt).parent().attr('id');
+	//console.log('pid: ' + pid);
+	var content = $('#' + pid + ' .module-content');
+	var span = $('#' + pid + ' h2 .status');
+	if (satchmo.module_status[pid]) {
+		content.slideUp('fast');
+		span.text(l10n.show);
+		var status = false;
+	}
+	else {
+		content.slideDown('fast');
+		span.text(l10n.hide);
+		var status = true;
+	}
+	satchmo.module_status[pid] = status;
+};
+
+$(function() {
+	$('#content-related h2.module-title').each(function() { 
+		satchmo.setup_toggle(this);
+	});
+	satchmo.toggle_module($('#recent-actions-module h2'));
+});
+</script>
+
+<meta name="robots" content="NONE,NOARCHIVE">
+</head><body class="dashboard">
+
+<!-- Container -->
+<div id="container">
+
+    
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+        
+<h1 id="site-name">Simple Satchmo Site Administration</h1>
+
+        </div>
+        
+        <div id="user-tools">
+            Welcome,
+            <strong>gturnquist</strong>.
+            
+                
+                
+                    <a href="/admin/doc/">Documentation</a> /
+                
+                
+                
+                    <a href="/admin/password_change/">
+                
+                Change password</a> /
+                
+                
+                    <a href="/admin/logout/">
+                
+                Log out</a>
+            
+        </div>
+        
+        
+
+
+    </div>
+    <!-- END Header -->
+    
+    
+
+        
+
+    <!-- Content -->
+    <div id="content" class="colMS">
+        
+        <h1>Site administration</h1>
+        
+<div id="content-main">
+
+
+    
+        <div class="module">
+        <table summary="Models available in the App_Plugins application.">
+        <caption><a href="app_plugins/" class="section">App_Plugins</a></caption>
+        
+            <tbody><tr>
+            
+                <th scope="row"><a href="app_plugins/pluginpoint/">Plugin points</a></th>
+            
+
+            
+                <td><a href="app_plugins/pluginpoint/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="app_plugins/pluginpoint/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="app_plugins/plugin/">Plugins</a></th>
+            
+
+            
+                <td><a href="app_plugins/plugin/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="app_plugins/plugin/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="app_plugins/userpluginpreference/">User plugin preferences</a></th>
+            
+
+            
+                <td><a href="app_plugins/userpluginpreference/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="app_plugins/userpluginpreference/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+        </tbody></table>
+        </div>
+    
+        <div class="module">
+        <table summary="Models available in the Area application.">
+        <caption><a href="area/" class="section">Area</a></caption>
+        
+            <tbody><tr>
+            
+                <th scope="row"><a href="area/taxrate/">Tax Rates</a></th>
+            
+
+            
+                <td><a href="area/taxrate/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="area/taxrate/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+        </tbody></table>
+        </div>
+    
+        <div class="module">
+        <table summary="Models available in the Auth application.">
+        <caption><a href="auth/" class="section">Auth</a></caption>
+        
+            <tbody><tr>
+            
+                <th scope="row"><a href="auth/group/">Groups</a></th>
+            
+
+            
+                <td><a href="auth/group/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="auth/group/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="auth/user/">Users</a></th>
+            
+
+            
+                <td><a href="auth/user/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="auth/user/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+        </tbody></table>
+        </div>
+    
+        <div class="module">
+        <table summary="Models available in the Comments application.">
+        <caption><a href="comments/" class="section">Comments</a></caption>
+        
+            <tbody><tr>
+            
+                <th scope="row"><a href="comments/comment/">Comments</a></th>
+            
+
+            
+                <td><a href="comments/comment/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="comments/comment/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+        </tbody></table>
+        </div>
+    
+        <div class="module">
+        <table summary="Models available in the Configurable application.">
+        <caption><a href="configurable/" class="section">Configurable</a></caption>
+        
+            <tbody><tr>
+            
+                <th scope="row"><a href="configurable/configurableproduct/">Configurable Products</a></th>
+            
+
+            
+                <td><a href="configurable/configurableproduct/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="configurable/configurableproduct/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="configurable/productvariation/">Product variations</a></th>
+            
+
+            
+                <td><a href="configurable/productvariation/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="configurable/productvariation/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+        </tbody></table>
+        </div>
+    
+        <div class="module">
+        <table summary="Models available in the Contact application.">
+        <caption><a href="contact/" class="section">Contact</a></caption>
+        
+            <tbody><tr>
+            
+                <th scope="row"><a href="contact/contactinteractiontype/">Contact interaction types</a></th>
+            
+
+            
+                <td><a href="contact/contactinteractiontype/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="contact/contactinteractiontype/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="contact/contactorganizationrole/">Contact organization roles</a></th>
+            
+
+            
+                <td><a href="contact/contactorganizationrole/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="contact/contactorganizationrole/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="contact/contactorganization/">Contact organization types</a></th>
+            
+
+            
+                <td><a href="contact/contactorganization/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="contact/contactorganization/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="contact/contactrole/">Contact roles</a></th>
+            
+
+            
+                <td><a href="contact/contactrole/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="contact/contactrole/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="contact/contact/">Contacts</a></th>
+            
+
+            
+                <td><a href="contact/contact/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="contact/contact/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="contact/interaction/">Interactions</a></th>
+            
+
+            
+                <td><a href="contact/interaction/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="contact/interaction/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="contact/organization/">Organizations</a></th>
+            
+
+            
+                <td><a href="contact/organization/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="contact/organization/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+        </tbody></table>
+        </div>
+    
+        <div class="module">
+        <table summary="Models available in the Custom application.">
+        <caption><a href="custom/" class="section">Custom</a></caption>
+        
+            <tbody><tr>
+            
+                <th scope="row"><a href="custom/customproduct/">Custom Products</a></th>
+            
+
+            
+                <td><a href="custom/customproduct/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="custom/customproduct/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="custom/customtextfield/">Custom text fields</a></th>
+            
+
+            
+                <td><a href="custom/customtextfield/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="custom/customtextfield/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+        </tbody></table>
+        </div>
+    
+        <div class="module">
+        <table summary="Models available in the L10N application.">
+        <caption><a href="l10n/" class="section">L10N</a></caption>
+        
+            <tbody><tr>
+            
+                <th scope="row"><a href="l10n/country/">Countries</a></th>
+            
+
+            
+                <td><a href="l10n/country/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="l10n/country/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+        </tbody></table>
+        </div>
+    
+        <div class="module">
+        <table summary="Models available in the Product application.">
+        <caption><a href="product/" class="section">Product</a></caption>
+        
+            <tbody><tr>
+            
+                <th scope="row"><a href="product/attributeoption/">Attribute options</a></th>
+            
+
+            
+                <td><a href="product/attributeoption/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="product/attributeoption/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="product/category/">Categories</a></th>
+            
+
+            
+                <td><a href="product/category/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="product/category/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="product/discount/">Discounts</a></th>
+            
+
+            
+                <td><a href="product/discount/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="product/discount/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="product/optiongroup/">Option Groups</a></th>
+            
+
+            
+                <td><a href="product/optiongroup/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="product/optiongroup/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="product/option/">Option Items</a></th>
+            
+
+            
+                <td><a href="product/option/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="product/option/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="product/product/">Products</a></th>
+            
+
+            
+                <td><a href="product/product/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="product/product/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="product/taxclass/">Tax Classes</a></th>
+            
+
+            
+                <td><a href="product/taxclass/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="product/taxclass/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+        </tbody></table>
+        </div>
+    
+        <div class="module">
+        <table summary="Models available in the Registration application.">
+        <caption><a href="registration/" class="section">Registration</a></caption>
+        
+            <tbody><tr>
+            
+                <th scope="row"><a href="registration/registrationprofile/">Registration profiles</a></th>
+            
+
+            
+                <td><a href="registration/registrationprofile/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="registration/registrationprofile/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+        </tbody></table>
+        </div>
+    
+        <div class="module">
+        <table summary="Models available in the Shop application.">
+        <caption><a href="shop/" class="section">Shop</a></caption>
+        
+            <tbody><tr>
+            
+                <th scope="row"><a href="shop/cartitem/">Cart Items</a></th>
+            
+
+            
+                <td><a href="shop/cartitem/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="shop/cartitem/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="shop/orderitem/">Order Line Items</a></th>
+            
+
+            
+                <td><a href="shop/orderitem/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="shop/orderitem/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="shop/orderauthorization/">Order Payment Authorizations</a></th>
+            
+
+            
+                <td><a href="shop/orderauthorization/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="shop/orderauthorization/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="shop/orderpayment/">Order Payments</a></th>
+            
+
+            
+                <td><a href="shop/orderpayment/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="shop/orderpayment/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="shop/order/">Product Orders</a></th>
+            
+
+            
+                <td><a href="shop/order/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="shop/order/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="shop/cart/">Shopping Carts</a></th>
+            
+
+            
+                <td><a href="shop/cart/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="shop/cart/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="shop/config/">Store Configurations</a></th>
+            
+
+            
+                <td><a href="shop/config/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="shop/config/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+        </tbody></table>
+        </div>
+    
+        <div class="module">
+        <table summary="Models available in the Sites application.">
+        <caption><a href="sites/" class="section">Sites</a></caption>
+        
+            <tbody><tr>
+            
+                <th scope="row"><a href="sites/site/">Sites</a></th>
+            
+
+            
+                <td><a href="sites/site/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="sites/site/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+        </tbody></table>
+        </div>
+    
+
+</div>
+
+        
+<div id="content-related">
+    <div class="module" id="recent-actions-module">
+        <h2 class="module-title">Recent Actions <span class="status">(show)</span></h2>
+		<div style="overflow: hidden; height: 48.5844px; display: block; margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px;" class="module-content">
+        <h3>My Actions</h3>
+            
+            
+            
+            <p>None available</p>
+            
+		</div>
+    </div>
+
+	
+
+    <div class="module" id="Orders">
+		<h2 class="module-title">Satchmo Orders <span class="status">(hide)</span></h2>
+		<div class="module-content">
+        	<h2><a href="shop/order/?status__exact=New">New Orders</a></h2>
+			
+
+<ul>
+
+</ul>
+
+	        <h2><a href="shop/order/?status__exact=In%20Process">Orders in Process</a></h2>
+			
+
+<ul>
+
+</ul>
+
+	        <h2><a href="shop/order/">View all Orders</a></h2>
+	    </div>
+	</div>
+
+	<div class="module" id="satchmo-helpers">
+		<h2 class="module-title">Admin Tools <span class="status">(hide)</span></h2>
+		<div class="module-content">
+			<ul>
+		    	<li>
+					<a href="/settings/">Edit Site Settings</a><br>
+				</li>
+				<li>
+		    		<a href="/admin/inventory/edit/">Edit Inventory</a><br>
+				</li>
+				<li>
+		    		<a href="/inventory/export/">Export Product Defs</a><br>
+				</li>
+				<li>
+		    		<a href="/admin/variations/">Product Variation Manager</a><br>
+				</li>
+				<li>
+		    		<a href="/cache/">Cache Status</a><br>
+				</li>
+				
+
+
+			</ul>
+		</div>
+	</div>	
+</div>
+
+        <br class="clear">
+    </div>
+    <!-- END Content -->
+
+    <div id="footer"></div>
+</div>
+<!-- END Container -->
+
+<div class="bbSmall bbTopRight" style="display: none;" id="blackbird"><div class="header"><div class="left"><div id="bbFilters" class="filters" title="click to filter by message type"><span class="debug" type="debug"></span><span class="info" type="info"></span><span class="warn" type="warn"></span><span class="error" type="error"></span><span class="profile" type="profile"></span></div></div><div class="right"><div id="bbControls" class="controls"><span class="large" id="bbSize" title="large" op="resize"></span><span class="clear" title="clear" op="clear"></span><span class="close" title="close" op="close"></span></div></div></div><div class="main"><div class="left"></div><div class="mainBody"><ol></ol></div><div class="right"></div></div><div class="footer"><div class="left"><label for="bbVis"><input id="bbVis" type="checkbox">Visible on page load</label></div><div class="right"></div></div></div></body> on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:35.826 INFO - Command request: open[http://localhost:8000/admin, False] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:36.244 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:36.247 INFO - Command request: waitForPageToLoad[30000, ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:36.258 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:36.261 INFO - Command request: getHtmlSource[, ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:36.287 INFO - Got result: OK,<head>
+
+
+<title>Site administration | Simple Satchmo Site Administration</title>
+<link rel="stylesheet" type="text/css" href="/media/css/base.css">
+<link rel="stylesheet" type="text/css" href="/media/css/dashboard.css">
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="/media/css/ie.css" /><![endif]-->
+
+<script type="text/javascript">window.__admin_media_prefix__ = "/media/";</script>
+
+
+
+
+<link rel="stylesheet" href="/static/css/blackbird.css">
+<script type="text/javascript" src="/static/js/blackbird.js"></script>
+
+
+
+
+<script src="/static/js/jquery-1.4.2.js" type="text/javascript"></script>
+
+
+	<script type="text/javascript"><!--
+	var satchmo = satchmo || {};
+	satchmo.select_if_one = function(selector, label) {
+		var elt = $(selector);
+		if (elt && elt.length>0 && elt[0].options.length == 2) {
+			try { log.debug('selecting default ' + label); } catch(err) {};
+			elt[0].options[1].selected = true;
+		}
+	}
+    $(function() {
+		satchmo.select_if_one('#id_site', 'site');
+	});
+	-->
+	</script>
+
+<script type="text/javascript" src="/admin/jsi18n/"></script>
+<script type="text/javascript">
+var satchmo = satchmo || {};
+satchmo.module_status = {};
+l10n = {
+	show : '(show)',
+	hide : '(hide)'
+}
+
+satchmo.setup_toggle = function(elt) {
+	var module = $(elt);
+	module.click(function() { satchmo.toggle_module(this); });
+	module.append(' <span class="status">' + l10n.hide + '</span>');
+	var pid = module.parent().attr('id');
+	satchmo.module_status[pid] = true;
+}
+
+satchmo.toggle_module = function(elt) {
+	//console.log('toggle: ' + elt);
+	var pid = $(elt).parent().attr('id');
+	//console.log('pid: ' + pid);
+	var content = $('#' + pid + ' .module-content');
+	var span = $('#' + pid + ' h2 .status');
+	if (satchmo.module_status[pid]) {
+		content.slideUp('fast');
+		span.text(l10n.show);
+		var status = false;
+	}
+	else {
+		content.slideDown('fast');
+		span.text(l10n.hide);
+		var status = true;
+	}
+	satchmo.module_status[pid] = status;
+};
+
+$(function() {
+	$('#content-related h2.module-title').each(function() { 
+		satchmo.setup_toggle(this);
+	});
+	satchmo.toggle_module($('#recent-actions-module h2'));
+});
+</script>
+
+<meta name="robots" content="NONE,NOARCHIVE">
+</head><body class="dashboard">
+
+<!-- Container -->
+<div id="container">
+
+    
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+        
+<h1 id="site-name">Simple Satchmo Site Administration</h1>
+
+        </div>
+        
+        <div id="user-tools">
+            Welcome,
+            <strong>gturnquist</strong>.
+            
+                
+                
+                    <a href="/admin/doc/">Documentation</a> /
+                
+                
+                
+                    <a href="/admin/password_change/">
+                
+                Change password</a> /
+                
+                
+                    <a href="/admin/logout/">
+                
+                Log out</a>
+            
+        </div>
+        
+        
+
+
+    </div>
+    <!-- END Header -->
+    
+    
+
+        
+
+    <!-- Content -->
+    <div id="content" class="colMS">
+        
+        <h1>Site administration</h1>
+        
+<div id="content-main">
+
+
+    
+        <div class="module">
+        <table summary="Models available in the App_Plugins application.">
+        <caption><a href="app_plugins/" class="section">App_Plugins</a></caption>
+        
+            <tbody><tr>
+            
+                <th scope="row"><a href="app_plugins/pluginpoint/">Plugin points</a></th>
+            
+
+            
+                <td><a href="app_plugins/pluginpoint/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="app_plugins/pluginpoint/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="app_plugins/plugin/">Plugins</a></th>
+            
+
+            
+                <td><a href="app_plugins/plugin/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="app_plugins/plugin/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="app_plugins/userpluginpreference/">User plugin preferences</a></th>
+            
+
+            
+                <td><a href="app_plugins/userpluginpreference/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="app_plugins/userpluginpreference/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+        </tbody></table>
+        </div>
+    
+        <div class="module">
+        <table summary="Models available in the Area application.">
+        <caption><a href="area/" class="section">Area</a></caption>
+        
+            <tbody><tr>
+            
+                <th scope="row"><a href="area/taxrate/">Tax Rates</a></th>
+            
+
+            
+                <td><a href="area/taxrate/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="area/taxrate/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+        </tbody></table>
+        </div>
+    
+        <div class="module">
+        <table summary="Models available in the Auth application.">
+        <caption><a href="auth/" class="section">Auth</a></caption>
+        
+            <tbody><tr>
+            
+                <th scope="row"><a href="auth/group/">Groups</a></th>
+            
+
+            
+                <td><a href="auth/group/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="auth/group/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="auth/user/">Users</a></th>
+            
+
+            
+                <td><a href="auth/user/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="auth/user/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+        </tbody></table>
+        </div>
+    
+        <div class="module">
+        <table summary="Models available in the Comments application.">
+        <caption><a href="comments/" class="section">Comments</a></caption>
+        
+            <tbody><tr>
+            
+                <th scope="row"><a href="comments/comment/">Comments</a></th>
+            
+
+            
+                <td><a href="comments/comment/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="comments/comment/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+        </tbody></table>
+        </div>
+    
+        <div class="module">
+        <table summary="Models available in the Configurable application.">
+        <caption><a href="configurable/" class="section">Configurable</a></caption>
+        
+            <tbody><tr>
+            
+                <th scope="row"><a href="configurable/configurableproduct/">Configurable Products</a></th>
+            
+
+            
+                <td><a href="configurable/configurableproduct/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="configurable/configurableproduct/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="configurable/productvariation/">Product variations</a></th>
+            
+
+            
+                <td><a href="configurable/productvariation/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="configurable/productvariation/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+        </tbody></table>
+        </div>
+    
+        <div class="module">
+        <table summary="Models available in the Contact application.">
+        <caption><a href="contact/" class="section">Contact</a></caption>
+        
+            <tbody><tr>
+            
+                <th scope="row"><a href="contact/contactinteractiontype/">Contact interaction types</a></th>
+            
+
+            
+                <td><a href="contact/contactinteractiontype/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="contact/contactinteractiontype/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="contact/contactorganizationrole/">Contact organization roles</a></th>
+            
+
+            
+                <td><a href="contact/contactorganizationrole/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="contact/contactorganizationrole/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="contact/contactorganization/">Contact organization types</a></th>
+            
+
+            
+                <td><a href="contact/contactorganization/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="contact/contactorganization/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="contact/contactrole/">Contact roles</a></th>
+            
+
+            
+                <td><a href="contact/contactrole/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="contact/contactrole/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="contact/contact/">Contacts</a></th>
+            
+
+            
+                <td><a href="contact/contact/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="contact/contact/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="contact/interaction/">Interactions</a></th>
+            
+
+            
+                <td><a href="contact/interaction/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="contact/interaction/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="contact/organization/">Organizations</a></th>
+            
+
+            
+                <td><a href="contact/organization/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="contact/organization/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+        </tbody></table>
+        </div>
+    
+        <div class="module">
+        <table summary="Models available in the Custom application.">
+        <caption><a href="custom/" class="section">Custom</a></caption>
+        
+            <tbody><tr>
+            
+                <th scope="row"><a href="custom/customproduct/">Custom Products</a></th>
+            
+
+            
+                <td><a href="custom/customproduct/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="custom/customproduct/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="custom/customtextfield/">Custom text fields</a></th>
+            
+
+            
+                <td><a href="custom/customtextfield/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="custom/customtextfield/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+        </tbody></table>
+        </div>
+    
+        <div class="module">
+        <table summary="Models available in the L10N application.">
+        <caption><a href="l10n/" class="section">L10N</a></caption>
+        
+            <tbody><tr>
+            
+                <th scope="row"><a href="l10n/country/">Countries</a></th>
+            
+
+            
+                <td><a href="l10n/country/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="l10n/country/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+        </tbody></table>
+        </div>
+    
+        <div class="module">
+        <table summary="Models available in the Product application.">
+        <caption><a href="product/" class="section">Product</a></caption>
+        
+            <tbody><tr>
+            
+                <th scope="row"><a href="product/attributeoption/">Attribute options</a></th>
+            
+
+            
+                <td><a href="product/attributeoption/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="product/attributeoption/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="product/category/">Categories</a></th>
+            
+
+            
+                <td><a href="product/category/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="product/category/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="product/discount/">Discounts</a></th>
+            
+
+            
+                <td><a href="product/discount/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="product/discount/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="product/optiongroup/">Option Groups</a></th>
+            
+
+            
+                <td><a href="product/optiongroup/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="product/optiongroup/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="product/option/">Option Items</a></th>
+            
+
+            
+                <td><a href="product/option/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="product/option/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="product/product/">Products</a></th>
+            
+
+            
+                <td><a href="product/product/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="product/product/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="product/taxclass/">Tax Classes</a></th>
+            
+
+            
+                <td><a href="product/taxclass/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="product/taxclass/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+        </tbody></table>
+        </div>
+    
+        <div class="module">
+        <table summary="Models available in the Registration application.">
+        <caption><a href="registration/" class="section">Registration</a></caption>
+        
+            <tbody><tr>
+            
+                <th scope="row"><a href="registration/registrationprofile/">Registration profiles</a></th>
+            
+
+            
+                <td><a href="registration/registrationprofile/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="registration/registrationprofile/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+        </tbody></table>
+        </div>
+    
+        <div class="module">
+        <table summary="Models available in the Shop application.">
+        <caption><a href="shop/" class="section">Shop</a></caption>
+        
+            <tbody><tr>
+            
+                <th scope="row"><a href="shop/cartitem/">Cart Items</a></th>
+            
+
+            
+                <td><a href="shop/cartitem/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="shop/cartitem/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="shop/orderitem/">Order Line Items</a></th>
+            
+
+            
+                <td><a href="shop/orderitem/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="shop/orderitem/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="shop/orderauthorization/">Order Payment Authorizations</a></th>
+            
+
+            
+                <td><a href="shop/orderauthorization/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="shop/orderauthorization/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="shop/orderpayment/">Order Payments</a></th>
+            
+
+            
+                <td><a href="shop/orderpayment/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="shop/orderpayment/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="shop/order/">Product Orders</a></th>
+            
+
+            
+                <td><a href="shop/order/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="shop/order/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="shop/cart/">Shopping Carts</a></th>
+            
+
+            
+                <td><a href="shop/cart/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="shop/cart/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+            <tr>
+            
+                <th scope="row"><a href="shop/config/">Store Configurations</a></th>
+            
+
+            
+                <td><a href="shop/config/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="shop/config/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+        </tbody></table>
+        </div>
+    
+        <div class="module">
+        <table summary="Models available in the Sites application.">
+        <caption><a href="sites/" class="section">Sites</a></caption>
+        
+            <tbody><tr>
+            
+                <th scope="row"><a href="sites/site/">Sites</a></th>
+            
+
+            
+                <td><a href="sites/site/add/" class="addlink">Add</a></td>
+            
+
+            
+                <td><a href="sites/site/" class="changelink">Change</a></td>
+            
+            </tr>
+        
+        </tbody></table>
+        </div>
+    
+
+</div>
+
+        
+<div id="content-related">
+    <div class="module" id="recent-actions-module">
+        <h2 class="module-title">Recent Actions <span class="status">(show)</span></h2>
+		<div style="overflow: hidden; height: 45.2304px; display: block; margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px;" class="module-content">
+        <h3>My Actions</h3>
+            
+            
+            
+            <p>None available</p>
+            
+		</div>
+    </div>
+
+	
+
+    <div class="module" id="Orders">
+		<h2 class="module-title">Satchmo Orders <span class="status">(hide)</span></h2>
+		<div class="module-content">
+        	<h2><a href="shop/order/?status__exact=New">New Orders</a></h2>
+			
+
+<ul>
+
+</ul>
+
+	        <h2><a href="shop/order/?status__exact=In%20Process">Orders in Process</a></h2>
+			
+
+<ul>
+
+</ul>
+
+	        <h2><a href="shop/order/">View all Orders</a></h2>
+	    </div>
+	</div>
+
+	<div class="module" id="satchmo-helpers">
+		<h2 class="module-title">Admin Tools <span class="status">(hide)</span></h2>
+		<div class="module-content">
+			<ul>
+		    	<li>
+					<a href="/settings/">Edit Site Settings</a><br>
+				</li>
+				<li>
+		    		<a href="/admin/inventory/edit/">Edit Inventory</a><br>
+				</li>
+				<li>
+		    		<a href="/inventory/export/">Export Product Defs</a><br>
+				</li>
+				<li>
+		    		<a href="/admin/variations/">Product Variation Manager</a><br>
+				</li>
+				<li>
+		    		<a href="/cache/">Cache Status</a><br>
+				</li>
+				
+
+
+			</ul>
+		</div>
+	</div>	
+</div>
+
+        <br class="clear">
+    </div>
+    <!-- END Content -->
+
+    <div id="footer"></div>
+</div>
+<!-- END Container -->
+
+<div class="bbSmall bbTopRight" style="display: none;" id="blackbird"><div class="header"><div class="left"><div id="bbFilters" class="filters" title="click to filter by message type"><span class="debug" type="debug"></span><span class="info" type="info"></span><span class="warn" type="warn"></span><span class="error" type="error"></span><span class="profile" type="profile"></span></div></div><div class="right"><div id="bbControls" class="controls"><span class="large" id="bbSize" title="large" op="resize"></span><span class="clear" title="clear" op="clear"></span><span class="close" title="close" op="close"></span></div></div></div><div class="main"><div class="left"></div><div class="mainBody"><ol></ol></div><div class="right"></div></div><div class="footer"><div class="left"><label for="bbVis"><input id="bbVis" type="checkbox">Visible on page load</label></div><div class="right"></div></div></div></body> on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:36.292 INFO - Command request: isElementPresent[//a[(@name='Products' or @id='Products' or contains(., 'Products'))], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:36.305 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:36.308 INFO - Command request: isVisible[//a[(@name='Products' or @id='Products' or contains(., 'Products'))], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:36.327 INFO - Got result: OK,true on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:36.334 INFO - Command request: click[//a[(@name='Products' or @id='Products' or contains(., 'Products'))], ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:36.352 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:36.358 INFO - Command request: waitForPageToLoad[30000, ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:37.471 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:37.475 INFO - Command request: getHtmlSource[, ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:37.497 INFO - Got result: OK,<head>
+
+
+<title>Select Configurable Product to change | Simple Satchmo Site Administration</title>
+<link rel="stylesheet" type="text/css" href="/media/css/base.css">
+
+  
+
+<link rel="stylesheet" type="text/css" href="/media/css/base.css">
+<style type="text/css">
+#content-related { float:right; width:29em; position:relative; margin-right: -30em;}
+#content-related .module h2 { cursor: default; }
+#content-related .module h2 .status { font-style: italic; }
+div.tabular .vCurrencyField { width: 70%; }
+</style>
+
+  <link rel="stylesheet" type="text/css" href="/media/css/changelists.css">
+  
+  
+    
+    <script type="text/javascript" src="/admin/jsi18n/"></script>
+  
+  
+  
+
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="/media/css/ie.css" /><![endif]-->
+
+<script type="text/javascript">window.__admin_media_prefix__ = "/media/";</script>
+
+
+
+
+<link rel="stylesheet" href="/static/css/blackbird.css">
+<script type="text/javascript" src="/static/js/blackbird.js"></script>
+
+
+
+
+<script src="/static/js/jquery-1.4.2.js" type="text/javascript"></script>
+
+
+	<script type="text/javascript"><!--
+	var satchmo = satchmo || {};
+	satchmo.select_if_one = function(selector, label) {
+		var elt = $(selector);
+		if (elt && elt.length>0 && elt[0].options.length == 2) {
+			try { log.debug('selecting default ' + label); } catch(err) {};
+			elt[0].options[1].selected = true;
+		}
+	}
+    $(function() {
+		satchmo.select_if_one('#id_site', 'site');
+	});
+	-->
+	</script>
+
+<script type="text/javascript" src="/media/js/core.js"></script>
+<script type="text/javascript" src="/media/js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="/media/js/jquery.min.js"></script>
+<script type="text/javascript" src="/media/js/jquery.init.js"></script>
+<script type="text/javascript" src="/media/js/actions.min.js"></script>
+
+<script type="text/javascript">
+(function($) {
+    $(document).ready(function($) {
+        $("tr input.action-select").actions();
+    });
+})(django.jQuery);
+</script>
+
+
+<meta name="robots" content="NONE,NOARCHIVE">
+</head><body class="change-list">
+
+<!-- Container -->
+<div id="container">
+
+    
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+        
+<h1 id="site-name">Simple Satchmo Site Administration</h1>
+
+        </div>
+        
+        <div id="user-tools">
+            Welcome,
+            <strong>gturnquist</strong>.
+            
+                
+                
+                    <a href="/admin/doc/">Documentation</a> /
+                
+                
+                
+                    <a href="/admin/password_change/">
+                
+                Change password</a> /
+                
+                
+                    <a href="/admin/logout/">
+                
+                Log out</a>
+            
+        </div>
+        
+        
+
+
+    </div>
+    <!-- END Header -->
+    
+    <div class="breadcrumbs">
+      <a href="../../">
+        Home
+      </a>
+       Ý 
+       <a href="../">
+         Configurable
+      </a>
+      Ý 
+      Configurable Products
+    </div>
+  
+    
+
+        
+
+    <!-- Content -->
+    <div id="content" class="flex">
+        
+        <h1>Select Configurable Product to change</h1>
+        
+  <div id="content-main">
+    
+      
+        <ul class="object-tools">
+          <li>
+            <a href="add/" class="addlink">
+              Add Configurable Product
+            </a>
+          </li>
+        </ul>
+      
+    
+    
+    <div class="module" id="changelist">
+      
+
+
+
+      
+
+
+      
+        
+      
+      
+      <form id="changelist-form" action="" method="post"><div style="display: none;"><input name="csrfmiddlewaretoken" value="c865e0e18f44913afe7496dd1088a593" type="hidden"></div>
+      
+
+      
+          
+<div class="actions">
+    <label>Action: <select name="action">
+<option value="" selected="selected">---------</option>
+<option value="delete_selected">Delete selected Configurable Products</option>
+</select></label><input class="select-across" value="0" name="select_across" type="hidden">
+    <button type="submit" class="button" title="Run the selected action" name="index" value="0">Go</button>
+    
+        <script type="text/javascript">var _actions_icnt="3";</script>
+        <span style="display: inline;" class="action-counter">0 of 3 selected</span>
+        
+    
+</div>
+
+          
+
+<table id="result_list" cellspacing="0">
+<thead>
+<tr>
+<th class="action-checkbox-column">
+
+<input style="display: inline;" id="action-toggle" type="checkbox">
+</th><th>
+<a href="?ot=asc&amp;o=1">
+Configurable Product
+</a></th>
+</tr>
+</thead>
+<tbody>
+
+<tr class="row1"><td><input class="action-select" value="4" name="_selected_action" type="checkbox"></td><th><a href="4/">robot-attack</a></th></tr>
+
+<tr class="row2"><td><input class="action-select" value="1" name="_selected_action" type="checkbox"></td><th><a href="1/">dj-rocks</a></th></tr>
+
+<tr class="row1"><td><input class="action-select" value="3" name="_selected_action" type="checkbox"></td><th><a href="3/">neat-book</a></th></tr>
+
+</tbody>
+</table>
+
+
+          
+      
+      
+
+<p class="paginator">
+
+3 Configurable Products
+
+
+</p>
+
+      </form>
+    </div>
+  </div>
+
+        
+        <br class="clear">
+    </div>
+    <!-- END Content -->
+
+    <div id="footer"></div>
+</div>
+<!-- END Container -->
+
+<div class="bbSmall bbTopRight" style="display: none;" id="blackbird"><div class="header"><div class="left"><div id="bbFilters" class="filters" title="click to filter by message type"><span class="debug" type="debug"></span><span class="info" type="info"></span><span class="warn" type="warn"></span><span class="error" type="error"></span><span class="profile" type="profile"></span></div></div><div class="right"><div id="bbControls" class="controls"><span class="large" id="bbSize" title="large" op="resize"></span><span class="clear" title="clear" op="clear"></span><span class="close" title="close" op="close"></span></div></div></div><div class="main"><div class="left"></div><div class="mainBody"><ol></ol></div><div class="right"></div></div><div class="footer"><div class="left"><label for="bbVis"><input id="bbVis" type="checkbox">Visible on page load</label></div><div class="right"></div></div></div></body> on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:37.802 INFO - Command request: testComplete[, ] on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:37.802 INFO - Killing Firefox...
+21:16:37.858 INFO - Got result: OK on session d779eea6b3fc4bb089a79d30fa7f5d9c
+21:16:37.998 INFO - Command request: shutDownSeleniumServer[, ] on session null
+21:16:37.999 INFO - Shutdown command received
+21:16:38.000 INFO - Got result: OK on session null
+21:16:38.001 INFO - initiating shutdown
